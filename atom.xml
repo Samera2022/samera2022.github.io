@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2023-01-26T05:39:14.646Z</updated>
+  <updated>2023-03-14T03:45:39.022Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「教程机器人」ver0.0.5更新</title>
+    <link href="/2023/02/25/Tutorial-UpdateInfo-Version-0-0-5/"/>
+    <id>/2023/02/25/Tutorial-UpdateInfo-Version-0-0-5/</id>
+    <published>2023-02-25T07:08:22.000Z</published>
+    <updated>2023-03-14T03:45:39.022Z</updated>
+    
+    <summary type="html">
+    
+      「教程机器人」version0.0.5-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「教程机器人」ver0.0.4更新</title>
+    <link href="/2023/01/31/Tutorial-UpdateInfo-Version-0-0-4/"/>
+    <id>/2023/01/31/Tutorial-UpdateInfo-Version-0-0-4/</id>
+    <published>2023-01-31T08:40:08.000Z</published>
+    <updated>2023-03-14T03:42:31.623Z</updated>
+    
+    <summary type="html">
+    
+      「教程机器人」version0.0.4-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>「教程机器人」ver0.0.3更新</title>
