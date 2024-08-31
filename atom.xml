@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Samera2022の窝</title>
+  <title>第三贮藏站点</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2023-03-14T03:45:39.022Z</updated>
+  <updated>2023-08-27T05:43:05.361Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.1更新</title>
+    <link href="/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-1/"/>
+    <id>/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-1/</id>
+    <published>2023-08-12T05:08:25.000Z</published>
+    <updated>2023-08-27T05:43:05.361Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.1-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.3更新</title>
+    <link href="/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-3/"/>
+    <id>/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-3/</id>
+    <published>2023-08-12T04:12:34.000Z</published>
+    <updated>2023-08-27T06:14:05.002Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.3-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.2更新</title>
+    <link href="/2023/08/07/DesktopHelper-UpdateInfo-Version-0-0-2/"/>
+    <id>/2023/08/07/DesktopHelper-UpdateInfo-Version-0-0-2/</id>
+    <published>2023-08-07T07:58:29.000Z</published>
+    <updated>2023-08-27T06:13:17.018Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.2-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>「教程机器人」ver0.0.5更新</title>
