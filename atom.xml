@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2023-08-27T05:43:05.361Z</updated>
+  <updated>2024-09-01T09:57:07.208Z</updated>
   <id>/</id>
   
   <author>
@@ -17,15 +17,171 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>「桌面终端」ver0.0.1更新</title>
-    <link href="/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-1/"/>
-    <id>/2023/08/12/DesktopHelper-UpdateInfo-Version-0-0-1/</id>
-    <published>2023-08-12T05:08:25.000Z</published>
-    <updated>2023-08-27T05:43:05.361Z</updated>
+    <title>Test</title>
+    <link href="/2024/09/01/Test/"/>
+    <id>/2024/09/01/Test/</id>
+    <published>2024-09-01T09:57:07.000Z</published>
+    <updated>2024-09-01T09:57:07.208Z</updated>
     
     <summary type="html">
     
-      「桌面终端」version0.0.1-STABLE更新日志
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」0.0.5.1更新</title>
+    <link href="/2024/06/10/DesktopHelper-UpdateInfo-Version-0-0-5-1/"/>
+    <id>/2024/06/10/DesktopHelper-UpdateInfo-Version-0-0-5-1/</id>
+    <published>2024-06-10T13:03:00.000Z</published>
+    <updated>2024-09-01T13:36:06.468Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.5.1-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」0.0.5更新</title>
+    <link href="/2024/05/26/DesktopHelper-UpdateInfo-Version-0-0-5/"/>
+    <id>/2024/05/26/DesktopHelper-UpdateInfo-Version-0-0-5/</id>
+    <published>2024-05-26T13:50:00.000Z</published>
+    <updated>2024-09-01T13:31:13.390Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.5-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.4.3更新</title>
+    <link href="/2024/05/05/DesktopHelper-UpdateInfo-Version-0-0-4-3/"/>
+    <id>/2024/05/05/DesktopHelper-UpdateInfo-Version-0-0-4-3/</id>
+    <published>2024-05-05T07:00:00.000Z</published>
+    <updated>2024-09-01T13:28:10.700Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.4.3-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.4.2更新</title>
+    <link href="/2024/02/20/DesktopHelper-UpdateInfo-Version-0-0-4-2/"/>
+    <id>/2024/02/20/DesktopHelper-UpdateInfo-Version-0-0-4-2/</id>
+    <published>2024-02-20T05:22:00.000Z</published>
+    <updated>2024-09-01T13:26:20.780Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.4.2-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.4.1更新</title>
+    <link href="/2024/02/08/DesktopHelper-UpdateInfo-Version-0-0-4-1/"/>
+    <id>/2024/02/08/DesktopHelper-UpdateInfo-Version-0-0-4-1/</id>
+    <published>2024-02-08T10:44:00.000Z</published>
+    <updated>2024-09-01T13:24:41.332Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.4.1-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.4更新</title>
+    <link href="/2024/01/27/DesktopHelper-UpdateInfo-Version-0-0-4/"/>
+    <id>/2024/01/27/DesktopHelper-UpdateInfo-Version-0-0-4/</id>
+    <published>2024-01-27T11:20:00.000Z</published>
+    <updated>2024-09-01T13:23:13.247Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.4-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」pre_ver0.0.4更新</title>
+    <link href="/2023/09/03/DesktopHelper-UpdateInfo-Pre-Version-0-0-4/"/>
+    <id>/2023/09/03/DesktopHelper-UpdateInfo-Pre-Version-0-0-4/</id>
+    <published>2023-09-03T08:48:00.000Z</published>
+    <updated>2024-09-01T13:20:31.719Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」pre_version0.0.4更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.3.1更新</title>
+    <link href="/2023/08/26/DesktopHelper-UpdateInfo-Version-0-0-3-1/"/>
+    <id>/2023/08/26/DesktopHelper-UpdateInfo-Version-0-0-3-1/</id>
+    <published>2023-08-26T01:58:00.000Z</published>
+    <updated>2024-09-01T13:19:09.111Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.3.1-STABLE更新日志
     
     </summary>
     
@@ -66,6 +222,26 @@
     <summary type="html">
     
       「桌面终端」version0.0.2-STABLE更新日志
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="桌面终端" scheme="/tags/%E6%A1%8C%E9%9D%A2%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「桌面终端」ver0.0.1更新</title>
+    <link href="/2023/08/05/DesktopHelper-UpdateInfo-Version-0-0-1/"/>
+    <id>/2023/08/05/DesktopHelper-UpdateInfo-Version-0-0-1/</id>
+    <published>2023-08-05T05:08:25.000Z</published>
+    <updated>2024-09-01T13:11:05.563Z</updated>
+    
+    <summary type="html">
+    
+      「桌面终端」version0.0.1-STABLE更新日志
     
     </summary>
     
