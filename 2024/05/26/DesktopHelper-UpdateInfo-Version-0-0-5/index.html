@@ -362,7 +362,9 @@
 <li>“notification add <content> <index>“ 其中，index为可填项，content为必填项。content的格式要求为{<isfinished>,<startdate>,<enddate>}<content>或{<enddate>}<content> 执行该指令后将会将指定提示插入目标行数（如果填写了index）或直接添加到末尾一行（如果未填写index）。</content></enddate></content></enddate></startdate></isfinished></index></content></li>
 <li>“notification remove <index>“ 执行该指令后将会将指定目标行数的提示移除。</index></li>
 <li>“notification finished <index>“ 执行该指令后将会把目标行数的提示切换至完成状态。</index></li>
-<li>“notification unfinished <index>“ 执行该指令后将会把目标行数的提示切换至未完成状态。<h2 id="字体系统"><a href="#字体系统" class="headerlink" title="字体系统"></a>字体系统</h2></index></li>
+<li>“notification unfinished <index>“ 执行该指令后将会把目标行数的提示切换至未完成状态。</index></li>
+</ul>
+<h2 id="字体系统"><a href="#字体系统" class="headerlink" title="字体系统"></a>字体系统</h2><ul>
 <li>字体系统目前适用于notification系统。使用格式为[&amp;<para>&amp;<para>…]，比如：[&amp;XA&amp;XB]</para></para></li>
 <li>目前支持绝大多数Font的参数，已支持的参数对应表如下所示：<br>[&amp;FF(fontFamily)]调整字体  [&amp;FS<fontsize>]调整字号  [&amp;XA]粗体  [&amp;XB]斜体  [&amp;XC]下划线  [&amp;XD]删除线  [&amp;XE]上标  [&amp;XF]下标  [&amp;CF]字体颜色  [&amp;CB]背景颜色  [&amp;SA]段落上方留空大小  [&amp;SB]段落下方留空大小  [&amp;FL]首行缩进  [&amp;LI]段落左缩进  [&amp;RI]段落右缩进  [&amp;LS]行间距</fontsize></li>
 <li>特别地，对于[&amp;CF]和[&amp;CB]两个与颜色相关的参数，使用时应当传入色彩信息[&amp;CF(<r>,<g>,<b>)]，比如：[&amp;CF(0,0,0)]。</b></g></r></li>

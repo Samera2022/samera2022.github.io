@@ -355,7 +355,9 @@
 <li>注册指令变更。注册指令不再使用output(new Mixture[]{Mixture&lt;&gt;(String, Style)…}, Boolean);语句，转而使用formatter(Boolean,Mixture&lt;&gt;(String, Style)…);语句。相较于原先语句该语句能够较好的结合数组和泛型，借助可变参数方法将抽象的数组cast为泛型数组调用output进行输出，再利用SafeVarargs注解消除编译器对formatter方法的警告。简而言之，就是利用formatter方法对output方法进行了一定程度的封装。</li>
 <li>指令参数变更。指令参数由原先的Mixture&lt;Boolean,ArrayList<string>&gt;改为ArrayList<string>，毕竟原先这个类型确实长得比较离谱……直接粗暴地把delete(Boolean)和指令本体结合起来，确实不太好。而且delete原本是Command注解里面的参数，再在方法的参数里面出现就太冗杂了。或许我可以在output或者formatter的方法里面直接反射获取目标方法的注解，然后得到delete参数？这样就不需要在方法多个if分支里面重复写false或者true了，其实本来也可以直接在方法体里写一个新的boolean delete声明，但是这样的话再调用delete的时候编译器老是会提示，就让人看得比较烦。</string></string></li>
 <li>总线升级！已省去Command注解中的delete()和hasTextOutput()的使用，转为在CommandHeads相应指令的方法体中直接调用formatter()方法填入相应参数。</li>
-<li>修正fuzzyMatcher方法，更正了该方法的逻辑。<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2></li>
+<li>修正fuzzyMatcher方法，更正了该方法的逻辑。</li>
+</ul>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><ul>
 <li>修正delete指令。</li>
 </ul>
 <h1 id="Added-amp-amp-Description"><a href="#Added-amp-amp-Description" class="headerlink" title="[Added]&amp;&amp;[Description]"></a>[Added]&amp;&amp;[Description]</h1><ul>
@@ -368,11 +370,15 @@
 <li>“quiz create <quizname>“ 执行该指令后将会在本机新建一个名为<quizname>的测试。若该测试已存在，则会询问是否覆盖该测试。选Yes会复写原有测试，选No会在原有测试上追加，关闭窗体则会取消新建操作。</quizname></quizname></li>
 <li>“quiz start <quizname>“ 执行该指令后将会尝试在本机查找名为<quizname>的测试并启动。</quizname></quizname></li>
 <li>“quiz delete <quizname>“ 执行该指令后将会删除本机上名为<quizname>的测试，并且无法找回。</quizname></quizname></li>
-<li>“quiz list” 执行该指令后将会列出本机上可用的所有测试。<h2 id="frame指令"><a href="#frame指令" class="headerlink" title="frame指令"></a>frame指令</h2></li>
+<li>“quiz list” 执行该指令后将会列出本机上可用的所有测试。</li>
+</ul>
+<h2 id="frame指令"><a href="#frame指令" class="headerlink" title="frame指令"></a>frame指令</h2><ul>
 <li>概述：frame指令是用于操作拓展窗体行为的指令。其中拓展窗体并不是主程序所对应的mainFrame，而是用于辅助显示的拓展大屏幕。其中，这个大屏幕与主程序共享dsdFileContent(DefaultStyledDocument)，基本相当于与主程序共享负责文件读取与操作输出的中间组件。</li>
 <li>“frame broaden” 执行该指令后将会让拓展窗体变得可见。</li>
 <li>“frame close” 执行该指令后将会让拓展窗体变得不可见。但是通常情况下可以使用dispose来代替。</li>
-<li>“frame dispose” 执行该指令后将会关闭拓展窗体，并释放一部分资源。<h2 id="openai指令"><a href="#openai指令" class="headerlink" title="openai指令"></a>openai指令</h2></li>
+<li>“frame dispose” 执行该指令后将会关闭拓展窗体，并释放一部分资源。</li>
+</ul>
+<h2 id="openai指令"><a href="#openai指令" class="headerlink" title="openai指令"></a>openai指令</h2><ul>
 <li>“openai <question>“ 执行该指令后将会联网请求openai模型<question>的内容，并等待回复。目前仅支持单一对话询问。</question></question></li>
 </ul>
 
