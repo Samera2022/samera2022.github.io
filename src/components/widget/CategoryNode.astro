@@ -5,9 +5,10 @@ import ButtonLink from "../control/ButtonLink.astro";
 interface Props {
 	node: Category;
 	depth?: number;
+	hasExpandableSibling?: boolean;
 }
 
-const { node, depth = 0 } = Astro.props;
+const { node, depth = 0, hasExpandableSibling = false } = Astro.props;
 const INDENT_PER_LEVEL = 12;
 const indentPx = depth * INDENT_PER_LEVEL;
 const hasChildren = node.children.length > 0;
@@ -29,7 +30,11 @@ const hasChildren = node.children.length > 0;
 			</summary>
 			<div class="ml-4 mt-1">
 				{node.children.map((child) => (
-					<Astro.self node={child} depth={depth + 1} />
+					<Astro.self
+						node={child}
+						depth={depth + 1}
+						hasExpandableSibling={node.children.some((n) => n.children.length > 0)}
+					/>
 				))}
 			</div>
 		</details>
@@ -40,7 +45,9 @@ const hasChildren = node.children.length > 0;
 			<button class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all pl-2 hover:pl-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)]">
 				<div class="flex items-center justify-between relative mr-2">
 					<div class="flex items-center overflow-hidden text-left whitespace-nowrap overflow-ellipsis">
-						<span class="text-[8px] inline-block w-4 flex-shrink-0 origin-center flex items-center justify-center text-neutral-500 dark:text-neutral-500">●</span>
+						{hasExpandableSibling && (
+							<span class="text-[8px] inline-block w-4 flex-shrink-0 origin-center flex items-center justify-center text-neutral-500 dark:text-neutral-500">●</span>
+						)}
 						<span class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis">{node.name.trim()}</span>
 					</div>
 					{node.count > 0 && (

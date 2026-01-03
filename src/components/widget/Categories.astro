@@ -6,6 +6,7 @@ import WidgetLayout from "./WidgetLayout.astro";
 import CategoryNode from "./CategoryNode.astro";
 
 const categories = await getCategoryList();
+const rootHasExpandable = categories.some((c) => c.children.length > 0);
 
 const COLLAPSED_HEIGHT = "7.5rem";
 const COLLAPSE_THRESHOLD = 5;
@@ -24,6 +25,6 @@ const style = Astro.props.style;
                 class={className} style={style}
 >
     {categories.map((category) => (
-        <CategoryNode node={category} depth={0} />
+        <CategoryNode node={category} depth={0} hasExpandableSibling={rootHasExpandable} />
     ))}
 </WidgetLayout>
