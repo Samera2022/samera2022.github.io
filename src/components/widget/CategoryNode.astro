@@ -13,46 +13,35 @@ const indentPx = depth * INDENT_PER_LEVEL;
 const hasChildren = node.children.length > 0;
 ---
 
-<li class="space-y-1">
-	{hasChildren ? (
-		<details
-			class="group rounded-lg"
-			style={`margin-left: ${indentPx}px`}
-			aria-label={`Toggle ${node.fullPath} category`}
-		>
-			<summary
-				class="flex items-center gap-2 cursor-pointer select-none py-1 px-1 rounded-md hover:bg-[var(--btn-plain-bg-hover)] marker:content-['']"
-			>
-				<span class="text-xs transition-transform group-open:rotate-90">▶</span>
-				<span class="font-semibold text-sm">{node.name.trim()}</span>
-				<span class="text-xs text-neutral-400">({node.count})</span>
-			</summary>
-			<div class="mt-1 ml-4 space-y-1 border-l border-neutral-800/40 pl-3">
-				<ButtonLink
-					url={node.url}
-					badge={String(node.count)}
-					label={`View all posts in the ${node.fullPath} category`}
-				>
-					{node.fullPath}
-				</ButtonLink>
-				{node.children.length > 0 && (
-					<ul class="space-y-1">
-						{node.children.map((child) => (
-							<Astro.self node={child} depth={depth + 1} />
-						))}
-					</ul>
+{hasChildren ? (
+	<div style={`margin-left: ${indentPx}px`}>
+		<details class="group">
+			<summary class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all pl-2 hover:pl-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)] cursor-pointer list-none flex items-center justify-between">
+				<div class="flex items-center gap-1">
+					<span class="text-xs transition-transform group-open:rotate-90 inline-block">▶</span>
+					<span class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis">{node.name.trim()}</span>
+				</div>
+				{node.count > 0 && (
+					<div class="transition px-2 h-7 mr-2 min-w-[2rem] rounded-lg text-sm font-bold text-[var(--btn-content)] dark:text-[var(--deep-text)] bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)] flex items-center justify-center">
+						{node.count}
+					</div>
 				)}
+			</summary>
+			<div class="ml-4 mt-1">
+				{node.children.map((child) => (
+					<Astro.self node={child} depth={depth + 1} />
+				))}
 			</div>
 		</details>
-	) : (
-		<div style={`margin-left: ${indentPx}px`}>
-			<ButtonLink
-				url={node.url}
-				badge={String(node.count)}
-				label={`View all posts in the ${node.fullPath} category`}
-			>
-				{node.fullPath}
-			</ButtonLink>
-		</div>
-	)}
-</li>
+	</div>
+) : (
+	<div style={`margin-left: ${indentPx}px`}>
+		<ButtonLink
+			url={node.url}
+			badge={String(node.count)}
+			label={`View all posts in the ${node.fullPath} category`}
+		>
+			{node.name.trim()}
+		</ButtonLink>
+	</div>
+)}

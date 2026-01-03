@@ -23,9 +23,7 @@ const style = Astro.props.style;
 <WidgetLayout name={i18n(I18nKey.categories)} id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
                 class={className} style={style}
 >
-    <ul class="space-y-1">
-        {categories.map((category) => (
-            <CategoryNode node={category} depth={0} />
-        ))}
-    </ul>
+    {categories.map((category) => (
+        <CategoryNode node={category} depth={0} />
+    ))}
 </WidgetLayout>
