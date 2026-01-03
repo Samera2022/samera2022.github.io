@@ -17,8 +17,8 @@ const hasChildren = node.children.length > 0;
 	<div style={`margin-left: ${indentPx}px`}>
 		<details class="group">
 			<summary class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all pl-2 hover:pl-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)] cursor-pointer list-none flex items-center justify-between">
-				<div class="flex items-center gap-1">
-					<span class="text-xs transition-transform group-open:rotate-90 inline-block">▶</span>
+				<div class="flex items-center relative mr-2">
+					<span class="text-xs transition-transform group-open:rotate-90 inline-block w-4 flex-shrink-0">▶</span>
 					<span class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis">{node.name.trim()}</span>
 				</div>
 				{node.count > 0 && (
@@ -35,13 +35,16 @@ const hasChildren = node.children.length > 0;
 		</details>
 	</div>
 ) : (
-	<div style={`margin-left: ${indentPx}px`}>
-		<ButtonLink
-			url={node.url}
-			badge={String(node.count)}
-			label={`View all posts in the ${node.fullPath} category`}
-		>
-			{node.name.trim()}
-		</ButtonLink>
+	<div style={`margin-left: ${indentPx}px`} class="flex items-center">
+		<span class="w-4 flex-shrink-0"></span>
+		<div class="flex-1">
+			<ButtonLink
+				url={node.url}
+				badge={String(node.count)}
+				label={`View all posts in the ${node.fullPath} category`}
+			>
+				{node.name.trim()}
+			</ButtonLink>
+		</div>
 	</div>
 )}
