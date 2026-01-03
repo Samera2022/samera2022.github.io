@@ -1,32 +1,16 @@
 ---
 import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
-import { getCategoryList, type Category } from "../../utils/content-utils";
-import ButtonLink from "../control/ButtonLink.astro";
+import { getCategoryList } from "../../utils/content-utils";
 import WidgetLayout from "./WidgetLayout.astro";
+import CategoryNode from "./CategoryNode.astro";
 
 const categories = await getCategoryList();
 
 const COLLAPSED_HEIGHT = "7.5rem";
 const COLLAPSE_THRESHOLD = 5;
 
-type FlatCategory = Category & { depth: number };
-
-const flattenCategories = (
-    nodes: Category[],
-    depth = 0,
-    acc: FlatCategory[] = [],
-): FlatCategory[] => {
-    nodes.forEach((node) => {
-        acc.push({ ...node, depth });
-        flattenCategories(node.children, depth + 1, acc);
-    });
-    return acc;
-};
-
-const flatCategories = flattenCategories(categories);
-
-const isCollapsed = flatCategories.length >= COLLAPSE_THRESHOLD;
+const isCollapsed = categories.length >= COLLAPSE_THRESHOLD;
 
 interface Props {
 	class?: string;
@@ -40,16 +24,8 @@ const style = Astro.props.style;
                 class={className} style={style}
 >
     <ul class="space-y-1">
-        {flatCategories.map((c) => (
-            <li class="space-y-1" style={`margin-left: ${c.depth * 12}px`}>
-                <ButtonLink
-                    url={c.url}
-                    badge={String(c.count)}
-                    label={`View all posts in the ${c.fullPath} category`}
-                >
-                    {c.name.trim()}
-                </ButtonLink>
-            </li>
+        {categories.map((category) => (
+            <CategoryNode node={category} depth={0} />
         ))}
     </ul>
 </WidgetLayout>

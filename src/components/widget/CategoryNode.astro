@@ -1,0 +1,58 @@
+---
+import type { Category } from "../../utils/content-utils";
+import ButtonLink from "../control/ButtonLink.astro";
+
+interface Props {
+	node: Category;
+	depth?: number;
+}
+
+const { node, depth = 0 } = Astro.props;
+const INDENT_PER_LEVEL = 12;
+const indentPx = depth * INDENT_PER_LEVEL;
+const hasChildren = node.children.length > 0;
+---
+
+<li class="space-y-1">
+	{hasChildren ? (
+		<details
+			class="group rounded-lg"
+			style={`margin-left: ${indentPx}px`}
+			aria-label={`Toggle ${node.fullPath} category`}
+		>
+			<summary
+				class="flex items-center gap-2 cursor-pointer select-none py-1 px-1 rounded-md hover:bg-[var(--btn-plain-bg-hover)] marker:content-['']"
+			>
+				<span class="text-xs transition-transform group-open:rotate-90">▶</span>
+				<span class="font-semibold text-sm">{node.name.trim()}</span>
+				<span class="text-xs text-neutral-400">({node.count})</span>
+			</summary>
+			<div class="mt-1 ml-4 space-y-1 border-l border-neutral-800/40 pl-3">
+				<ButtonLink
+					url={node.url}
+					badge={String(node.count)}
+					label={`View all posts in the ${node.fullPath} category`}
+				>
+					{node.fullPath}
+				</ButtonLink>
+				{node.children.length > 0 && (
+					<ul class="space-y-1">
+						{node.children.map((child) => (
+							<Astro.self node={child} depth={depth + 1} />
+						))}
+					</ul>
+				)}
+			</div>
+		</details>
+	) : (
+		<div style={`margin-left: ${indentPx}px`}>
+			<ButtonLink
+				url={node.url}
+				badge={String(node.count)}
+				label={`View all posts in the ${node.fullPath} category`}
+			>
+				{node.fullPath}
+			</ButtonLink>
+		</div>
+	)}
+</li>
