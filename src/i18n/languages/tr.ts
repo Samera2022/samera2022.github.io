@@ -24,6 +24,7 @@ export const tr: Translation = {
 	[Key.minutesCount]: "dakika",
 	[Key.postCount]: "gönderi",
 	[Key.postsCount]: "gönderiler",
+	[Key.postsInCategory]: "Bu kategorideki gönderi",
 
 	[Key.themeColor]: "Tema Rengi",
 

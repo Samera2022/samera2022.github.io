@@ -24,6 +24,7 @@ export const vi: Translation = {
 	[Key.minutesCount]: "phút đọc",
 	[Key.postCount]: "bài viết",
 	[Key.postsCount]: "bài viết",
+	[Key.postsInCategory]: "Bài viết trong danh mục này",
 
 	[Key.themeColor]: "Màu giao diện",
 
