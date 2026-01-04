@@ -11,7 +11,7 @@
     "url": "/about/",
     "title": "关于 - Samera2022",
     "description": "关于",
-    "content": "AboutThis is the demo site for Fuwari.saicaca/fuwariWaiting for api.github.com...00K0K0KWaiting... Sources of images used in this site Unsplash 星と少女 by Stella Rabbit - v1.4 Showcase by Rabbit_YourMajesty"
+    "content": "AboutWelcome to this Site! Thie site is owned by Samera2022.Samera2022/Samera2022Waiting for api.github.com...00K0K0KWaiting...For friends visiting this site for the first time, this website mainly posts updates on my various projects. Sometimes I also share some of my technical blogs, but the main focus is on GitHub project updates.These are the open-source projects I have / had been maintaining:Terminal window1 Active > MouseMacros < (Java App)2 Inactive > WeatherAnalysisDashboard < (Julia App)3 Inactive > Idle < (Android App)4 Inactive > DesktopHelper < (Java App)5 Inactive > mcAIBot < (Mineflayer Minecraft Bot)6 Deprecated > Custom.mirai < (Mirai Bot)7 Deprecated > Custom.spigot < (Minecraft Plugin)8 Deprecated > FunctionalRobot < (Mirai Bot)9 Deprecated > TutorialRobot < (Mirai Bot)10 Deprecated > RWMod < (Minecraft Forge Mod)NOTEProjects which were marked as Deprecated were my early works. The grammar in them may be relatively simple and messy, and they are not worth forking or drawing inspiration from. Listing them out was just to show that I had maintained these projects before."
   },
   {
     "id": "/archive/",
@@ -25,7 +25,7 @@
     "url": "/friends/",
     "title": "友链 - Samera2022",
     "description": "友链",
-    "content": "FriendsEdit src/_data/friends.json to add sites.You can also edit src/content/spec/friends.md to Change text here."
+    "content": "FriendsWelcome! This is the cozy corner for sites I enjoy visiting and the people behind them. If you think we should be friends, I’d love to hear from you.How to swap links Share the basics: site name, URL, a one-line intro, and an avatar (square works best). Tell me what your site is about (tech, design, writing, photography, etc.). I keep the list tidy —— no spammy or heavily commercial sites. Create an issue / Start a discussion in samera2022.github.io respiratory, or just send your info to Samera2022@163.com. Notably, updates are not timely for e-mails, so that it is suggested to send your info by issue/discussion. I’ll add you as soon as I can. My Friend link1 {2 \"siteTitle\": \"Samera2022\",3 \"siteDesc\": \"A Java Programmer\",4 \"siteUrl\": \"https://samera2022.github.io\",5 \"siteIcon\": \"https://raw.githubusercontent.com/Samera2022/Samera2022/refs/heads/main/Avatar.jpg\"6 }Friend link format (copy/paste)1 {2 \"siteTitle\": \"xxx\",3 \"siteDesc\": \"xxx\",4 \"siteUrl\": \"https://xxx.xxx\",5 \"siteIcon\": \"https://xxx.xxx/xxx.jpg\"6 }"
   },
   {
     "id": "/",
