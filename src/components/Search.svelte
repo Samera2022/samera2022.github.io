@@ -15,6 +15,11 @@ let searchIndex: any = null;
 let searchDocuments: any[] = [];
 let initialized = false;
 
+// Chunk loading state
+let searchIndexMeta: any = null;
+let loadedChunks: Set<string> = new Set();
+let chunkCache: Map<string, any[]> = new Map();
+
 const fakeResult: SearchResult[] = [
 	{
 		url: url("/"),
@@ -75,6 +80,36 @@ function createExcerpt(content: string, keyword: string, length: number = 150): 
 	return highlightText(excerpt, keyword);
 }
 
+// Load a specific chunk
+async function loadChunk(chunkFile: string): Promise<any[]> {
+	if (chunkCache.has(chunkFile)) {
+		return chunkCache.get(chunkFile)!;
+	}
+
+	try {
+		const response = await fetch(`/search/${chunkFile}`);
+		const documents = await response.json();
+		chunkCache.set(chunkFile, documents);
+		loadedChunks.add(chunkFile);
+		console.log(`Loaded chunk: ${chunkFile} (${documents.length} documents)`);
+		return documents;
+	} catch (error) {
+		console.error(`Failed to load chunk ${chunkFile}:`, error);
+		return [];
+	}
+}
+
+// Index documents into FlexSearch
+function indexDocuments(documents: any[]) {
+	for (const doc of documents) {
+		if (!searchDocuments.find(d => d.id === doc.id)) {
+			searchDocuments.push(doc);
+			const searchText = `${doc.title} ${doc.description} ${doc.content}`;
+			searchIndex.add(doc.id, searchText);
+		}
+	}
+}
+
 const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 	if (!keyword) {
 		setPanelVisibility(false, isDesktop);
@@ -91,7 +126,14 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 	try {
 		let searchResults: SearchResult[] = [];
 
-		if (import.meta.env.PROD && searchIndex) {
+		if (import.meta.env.PROD && searchIndex && searchIndexMeta) {
+			// Load first chunk if nothing loaded yet
+			if (loadedChunks.size === 0 && searchIndexMeta.chunks.length > 0) {
+				const firstChunk = searchIndexMeta.chunks[0];
+				const documents = await loadChunk(firstChunk.file);
+				indexDocuments(documents);
+			}
+
 			// Search using FlexSearch
 			const results = searchIndex.search(keyword, { limit: 10, suggest: true });
 			
@@ -107,6 +149,35 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 					excerpt: createExcerpt(doc.content, keyword),
 				};
 			}).filter(Boolean);
+
+			// If results are insufficient and there are unloaded chunks, load more
+			if (searchResults.length < 5 && loadedChunks.size < searchIndexMeta.chunks.length) {
+				const unloadedChunks = searchIndexMeta.chunks.filter(
+					(chunk: any) => !loadedChunks.has(chunk.file)
+				);
+				
+				if (unloadedChunks.length > 0) {
+					// Load next chunk
+					const nextChunk = unloadedChunks[0];
+					const documents = await loadChunk(nextChunk.file);
+					indexDocuments(documents);
+					
+					// Re-search with updated index
+					const newResults = searchIndex.search(keyword, { limit: 10, suggest: true });
+					searchResults = newResults.map((id: string) => {
+						const doc = searchDocuments.find(d => d.id === id);
+						if (!doc) return null;
+						
+						return {
+							url: doc.url,
+							meta: {
+								title: doc.title,
+							},
+							excerpt: createExcerpt(doc.content, keyword),
+						};
+					}).filter(Boolean);
+				}
+			}
 		} else if (import.meta.env.DEV) {
 			searchResults = fakeResult;
 		} else {
@@ -133,10 +204,9 @@ onMount(async () => {
 	}
 
 	try {
-		// Load search index
-		const response = await fetch('/search-index.json');
-		const documents = await response.json();
-		searchDocuments = documents;
+		// Load search index metadata
+		const response = await fetch('/search/index.json');
+		searchIndexMeta = await response.json();
 
 		// Create FlexSearch index with Chinese and English support
 		searchIndex = new FlexSearch.Index({
@@ -144,13 +214,7 @@ onMount(async () => {
 			resolution: 9
 		});
 
-		// Index all documents
-		documents.forEach((doc: any) => {
-			const searchText = `${doc.title} ${doc.description} ${doc.content}`;
-			searchIndex.add(doc.id, searchText);
-		});
-
-		console.log(`FlexSearch initialized with ${documents.length} documents`);
+		console.log(`Search initialized with ${searchIndexMeta.totalDocuments} documents in ${searchIndexMeta.chunks.length} chunks`);
 		initialized = true;
 
 		// Trigger search if there's already a keyword

@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const distDir = path.join(__dirname, "../dist");
-const outputFile = path.join(distDir, "search-index.json");
+const _outputFile = path.join(distDir, "search-index.json");
 
 // Recursively find all HTML files
 /**
@@ -102,9 +102,9 @@ function extractContent(htmlPath) {
 	}
 }
 
-// Build the search index
+// Build the search index with chunking
 async function buildSearchIndex() {
-	console.log("Building search index...");
+	console.log("Building search index with chunking...");
 
 	if (!fs.existsSync(distDir)) {
 		console.error(`Error: dist directory not found at ${distDir}`);
@@ -126,10 +126,79 @@ async function buildSearchIndex() {
 	}
 
 	console.log(`\nIndexed ${documents.length} pages`);
-	console.log(`Writing search index to ${outputFile}`);
 
-	fs.writeFileSync(outputFile, JSON.stringify(documents, null, 2), "utf-8");
+	// Group documents into chunks by path
+	/** @type {{ posts: any[], pages: any[] }} */
+	const chunks = {
+		posts: [],
+		pages: [],
+	};
 
+	for (const doc of documents) {
+		if (doc.url.startsWith("/posts/")) {
+			chunks.posts.push(doc);
+		} else {
+			chunks.pages.push(doc);
+		}
+	}
+
+	// Create search directory
+	const searchDir = path.join(distDir, "search");
+	if (!fs.existsSync(searchDir)) {
+		fs.mkdirSync(searchDir, { recursive: true });
+	}
+
+	// Write chunk files
+	const chunkFiles = [];
+
+	if (chunks.posts.length > 0) {
+		const postsFile = "chunk-posts.json";
+		fs.writeFileSync(
+			path.join(searchDir, postsFile),
+			JSON.stringify(chunks.posts, null, 2),
+			"utf-8",
+		);
+		chunkFiles.push({
+			file: postsFile,
+			count: chunks.posts.length,
+			category: "posts",
+		});
+		console.log(`Created ${postsFile} with ${chunks.posts.length} posts`);
+	}
+
+	if (chunks.pages.length > 0) {
+		const pagesFile = "chunk-pages.json";
+		fs.writeFileSync(
+			path.join(searchDir, pagesFile),
+			JSON.stringify(chunks.pages, null, 2),
+			"utf-8",
+		);
+		chunkFiles.push({
+			file: pagesFile,
+			count: chunks.pages.length,
+			category: "pages",
+		});
+		console.log(`Created ${pagesFile} with ${chunks.pages.length} pages`);
+	}
+
+	// Write index file
+	const indexData = {
+		version: 1,
+		totalDocuments: documents.length,
+		chunks: chunkFiles,
+		timestamp: new Date().toISOString(),
+	};
+
+	fs.writeFileSync(
+		path.join(searchDir, "index.json"),
+		JSON.stringify(indexData, null, 2),
+		"utf-8",
+	);
+
+	console.log("\nCreated search index:");
+	console.log(`  - Total documents: ${indexData.totalDocuments}`);
+	console.log(`  - Chunks: ${chunkFiles.length}`);
+	console.log(`  - Location: ${searchDir}`);
 	console.log("Search index built successfully!");
 }
 
