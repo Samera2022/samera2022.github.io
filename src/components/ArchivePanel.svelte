@@ -4,6 +4,7 @@ import { onMount } from "svelte";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getPostUrlBySlug } from "../utils/url-utils";
+import { groupPostsByYear, type Post, type TimelineGroup } from "../utils/timeline-utils";
 
 export let tags: string[] = [];
 export let categories: string[] = [];
@@ -14,22 +15,7 @@ tags = params.has("tag") ? params.getAll("tag") : [];
 categories = params.has("category") ? params.getAll("category") : [];
 const uncategorized = params.get("uncategorized");
 
-interface Post {
-	slug: string;
-	data: {
-		title: string;
-		tags: string[];
-		category?: string | null;
-		published: Date;
-	};
-}
-
-interface Group {
-	year: number;
-	posts: Post[];
-}
-
-let groups: Group[] = [];
+let groups: TimelineGroup[] = [];
 
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -83,35 +69,7 @@ onMount(async () => {
 		filteredPosts = filteredPosts.filter((post) => !post.data.category);
 	}
 
-	const grouped = filteredPosts.reduce(
-		(acc, post) => {
-			const year = post.data.published.getFullYear();
-			if (!acc[year]) {
-				acc[year] = [];
-			}
-			acc[year].push(post);
-			return acc;
-		},
-		{} as Record<number, Post[]>,
-	);
-
-	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
-		year: Number.parseInt(yearStr, 10),
-		posts: grouped[Number.parseInt(yearStr, 10)],
-	}));
-
-	groupedPostsArray.sort((a, b) => b.year - a.year);
-
-	// Sort posts within each year by full date (including time)
-	groupedPostsArray.forEach((group) => {
-		group.posts.sort((a, b) => {
-			const dateA = new Date(a.data.published);
-			const dateB = new Date(b.data.published);
-			return dateB.getTime() - dateA.getTime();
-		});
-	});
-
-	groups = groupedPostsArray;
+	groups = groupPostsByYear(filteredPosts);
 });
 </script>
 
