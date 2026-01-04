@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://fuwari.vercel.app/</link><language>zh_CN</language><item><title>MouseMacros-1.2.1 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -7,7 +7,7 @@
 &lt;li&gt;修正了ExitDialog的退出逻辑，使得不选单选框直接点结束时会直接销毁ExitDialog窗体。&lt;/li&gt;
 &lt;li&gt;修正打包逻辑，1.2.0的打包结果实际上是1.2.0-26m01a的结果）））&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.2.0 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-120-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-120-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 02 Jan 2026 11:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-120-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-120-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 02 Jan 2026 11:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-02 19:03] 1.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -23,7 +23,7 @@
 &lt;li&gt;修改exe的文件名会导致无法找到启动文件……因此不建议修改发布时的程序名。&lt;/li&gt;
 &lt;li&gt;修改了SettingsDialog的主界面，使其更加有条理。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.2.0-26m01a Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-120-26m01a-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-120-26m01a-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 09:15:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.0-26m01a Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-120-26m01a-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-120-26m01a-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 09:15:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.0-26m01a &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.0-26m01a&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -36,7 +36,7 @@
 &lt;li&gt;修正了打包逻辑，在该版本之前打包的exe应当全部改名为MouseMacros.exe才能正常运行。&lt;/li&gt;
 &lt;li&gt;修改exe的文件名会导致无法找到启动文件……因此不建议修改发布时的程序名。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.1.0 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-110-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-110-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 04:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.1.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-110-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-110-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 04:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 12:52] 1.1.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.1.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -49,7 +49,7 @@
 &lt;ul&gt;
 &lt;li&gt;修复了1.0.4中的Tooltip长文本显示相关逻辑，使之更加准确地生效。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.4 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-104-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-104-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.4 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-104-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-104-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 00:00] 1.0.4 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.4&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -62,7 +62,7 @@
 &lt;ul&gt;
 &lt;li&gt;修改了CacheManager的逻辑，使之和ConfigManager保持一致。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.3 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-103-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-103-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.3 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-103-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-103-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-31 15:45] 1.0.3 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.3&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -81,7 +81,7 @@
 &lt;ul&gt;
 &lt;li&gt;修正了Abort Operation的效果，使之可以在循环执行中正确地生效。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.2 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-102-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-102-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 28 Dec 2025 08:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.2 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-102-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-102-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 28 Dec 2025 08:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-28 16:52] 1.0.2 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.2&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -94,7 +94,7 @@
 &lt;ul&gt;
 &lt;li&gt;1.0.0中不小心删除了Macro Settings的保存设置按钮，这次重新添加了进去。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.1 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-101-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-101-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 27 Dec 2025 15:16:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-101-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-101-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 27 Dec 2025 15:16:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-27 23:16] 1.0.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -129,7 +129,7 @@
 &lt;li&gt;源代码大概其实只有1MB左右的大小，但是带上精简的运行环境就需要34.2MB了……&lt;/li&gt;
 &lt;li&gt;有人可能会说，为什么1.0.0的软件包要2.84MB，而这一次的只要1.05MB了呢？是不是压缩水平提升了？啊其实不是啊，是因为我之前不小心把项目的根目录放进源代码目录里面了……在我编写EVB和Jpackage打包的时候才发现这一点，然后才改过来。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.0 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-100-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-100-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 09 Jul 2025 13:31:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-100-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-100-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 09 Jul 2025 13:31:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-09 21:31] 1.0.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -146,7 +146,7 @@
 &lt;li&gt;在创建settings.custom_hotkey界面后，不点击任何对话框直接按键盘，将会直接改动start_record的按键设置。&lt;/li&gt;
 &lt;li&gt;JFileChooser的界面无法应用暗色模式……要重写这个类实在太费劲了。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-0.1.0 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-010-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-010-release/</guid><description>MouseMacros Updates</description><pubDate>Tue, 08 Jul 2025 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.1.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-010-release/</guid><description>MouseMacros Updates</description><pubDate>Tue, 08 Jul 2025 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-08 15:08] 0.1.0
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.1.0&quot;&gt;Click here to Release&lt;/a&gt;
@@ -159,7 +159,7 @@
 &lt;ul&gt;
 &lt;li&gt;重构项目整体结构，降低代码耦合度&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-0.0.2 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-002-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-002-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 06 Jul 2025 14:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.0.2 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-002-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-002-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 06 Jul 2025 14:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-06 22:51] 0.0.2
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.0.2&quot;&gt;Click here to Release&lt;/a&gt;
@@ -180,7 +180,7 @@
 &lt;p&gt;目前已添加以下可配置项：
 (boolean)跟随系统设置，(boolean)启用深色模式，(String)切换语言，(String)默认鼠标宏存储地址，&lt;a href=&quot;Map%3CString,String%3E&quot;&gt;未实装，不可用&lt;/a&gt;按键映射表，
 注意：&quot;跟随系统设置&quot;与(&quot;启用深色模式&quot;, &quot;切换语言&quot;)存在上位关系。如果选择了&quot;跟随系统设置&quot;，那么后二者就不再接受用户更改，直接读取系统的相应设置。&lt;/p&gt;
-</content:encoded></item><item><title>MouseMacros-0.0.1 Release</title><link>https://fuwari.vercel.app/posts/mousemacros/mousemacros-001-release/</link><guid isPermaLink="true">https://fuwari.vercel.app/posts/mousemacros/mousemacros-001-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 05 Jul 2025 12:20:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.0.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-001-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-001-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 05 Jul 2025 12:20:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-05 20:20] 0.0.1
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.0.1&quot;&gt;Click here to Release&lt;/a&gt;

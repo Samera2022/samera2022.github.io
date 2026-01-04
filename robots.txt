@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /_astro/
 
-Sitemap: https://fuwari.vercel.app/sitemap-index.xml
+Sitemap: https://samera2022.github.io/sitemap-index.xml
