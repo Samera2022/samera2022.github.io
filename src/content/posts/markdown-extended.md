@@ -20,6 +20,19 @@ Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
 ::github{repo="saicaca/fuwari"}
 ```
 
+## GitHub File Cards
+You can add dynamic cards that link to a specific file in a GitHub repository, on page load, the file metadata is pulled from the GitHub API.
+
+::githubfile{repo="saicaca/fuwari" file="README.md" description="Theme overview"}
+
+Create a GitHub file card with the code `::githubfile{repo="<owner>/<repo>" file="path/to/file.ext"}`.
+
+Optional parameters: `description` (string) and `path` (alias for `file`).
+
+```markdown
+::githubfile{repo="saicaca/fuwari" file="README.md" description="Theme overview"}
+```
+
 ## Admonitions
 
 Following types of admonitions are supported: `note` `tip` `important` `warning` `caution`
