@@ -5,12 +5,14 @@ import Icon from "@iconify/svelte";
 import { url } from "@utils/url-utils.ts";
 import { onMount } from "svelte";
 import type { SearchResult } from "@/global";
+import FlexSearch from "flexsearch";
 
 let keywordDesktop = "";
 let keywordMobile = "";
 let result: SearchResult[] = [];
 let isSearching = false;
-let pagefindLoaded = false;
+let searchIndex: any = null;
+let searchDocuments: any[] = [];
 let initialized = false;
 
 const fakeResult: SearchResult[] = [
@@ -47,6 +49,32 @@ const setPanelVisibility = (show: boolean, isDesktop: boolean): void => {
 	}
 };
 
+// Highlight search terms in text
+function highlightText(text: string, keyword: string): string {
+	if (!keyword || !text) return text;
+	const regex = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+	return text.replace(regex, '<mark>$1</mark>');
+}
+
+// Create excerpt from content
+function createExcerpt(content: string, keyword: string, length: number = 150): string {
+	if (!content) return '';
+	
+	const lowerContent = content.toLowerCase();
+	const lowerKeyword = keyword.toLowerCase();
+	const index = lowerContent.indexOf(lowerKeyword);
+	
+	if (index === -1) {
+		return highlightText(content.substring(0, length) + (content.length > length ? '...' : ''), keyword);
+	}
+	
+	const start = Math.max(0, index - 50);
+	const end = Math.min(content.length, index + keyword.length + 100);
+	const excerpt = (start > 0 ? '...' : '') + content.substring(start, end) + (end < content.length ? '...' : '');
+	
+	return highlightText(excerpt, keyword);
+}
+
 const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 	if (!keyword) {
 		setPanelVisibility(false, isDesktop);
@@ -63,16 +91,27 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 	try {
 		let searchResults: SearchResult[] = [];
 
-		if (import.meta.env.PROD && pagefindLoaded && window.pagefind) {
-			const response = await window.pagefind.search(keyword);
-			searchResults = await Promise.all(
-				response.results.map((item) => item.data()),
-			);
+		if (import.meta.env.PROD && searchIndex) {
+			// Search using FlexSearch
+			const results = searchIndex.search(keyword, { limit: 10, suggest: true });
+			
+			searchResults = results.map((id: string) => {
+				const doc = searchDocuments.find(d => d.id === id);
+				if (!doc) return null;
+				
+				return {
+					url: doc.url,
+					meta: {
+						title: doc.title,
+					},
+					excerpt: createExcerpt(doc.content, keyword),
+				};
+			}).filter(Boolean);
 		} else if (import.meta.env.DEV) {
 			searchResults = fakeResult;
 		} else {
 			searchResults = [];
-			console.error("Pagefind is not available in production environment.");
+			console.error("Search is not available in production environment.");
 		}
 
 		result = searchResults;
@@ -86,42 +125,40 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 	}
 };
 
-onMount(() => {
-	const initializeSearch = () => {
+onMount(async () => {
+	if (import.meta.env.DEV) {
+		console.log("Search is not available in development mode. Using mock data.");
 		initialized = true;
-		pagefindLoaded =
-			typeof window !== "undefined" &&
-			!!window.pagefind &&
-			typeof window.pagefind.search === "function";
-		console.log("Pagefind status on init:", pagefindLoaded);
+		return;
+	}
+
+	try {
+		// Load search index
+		const response = await fetch('/search-index.json');
+		const documents = await response.json();
+		searchDocuments = documents;
+
+		// Create FlexSearch index with Chinese and English support
+		searchIndex = new FlexSearch.Index({
+			tokenize: "full",
+			resolution: 9
+		});
+
+		// Index all documents
+		documents.forEach((doc: any) => {
+			const searchText = `${doc.title} ${doc.description} ${doc.content}`;
+			searchIndex.add(doc.id, searchText);
+		});
+
+		console.log(`FlexSearch initialized with ${documents.length} documents`);
+		initialized = true;
+
+		// Trigger search if there's already a keyword
 		if (keywordDesktop) search(keywordDesktop, true);
 		if (keywordMobile) search(keywordMobile, false);
-	};
-
-	if (import.meta.env.DEV) {
-		console.log(
-			"Pagefind is not available in development mode. Using mock data.",
-		);
-		initializeSearch();
-	} else {
-		document.addEventListener("pagefindready", () => {
-			console.log("Pagefind ready event received.");
-			initializeSearch();
-		});
-		document.addEventListener("pagefindloaderror", () => {
-			console.warn(
-				"Pagefind load error event received. Search functionality will be limited.",
-			);
-			initializeSearch(); // Initialize with pagefindLoaded as false
-		});
-
-		// Fallback in case events are not caught or pagefind is already loaded by the time this script runs
-		setTimeout(() => {
-			if (!initialized) {
-				console.log("Fallback: Initializing search after timeout.");
-				initializeSearch();
-			}
-		}, 2000); // Adjust timeout as needed
+	} catch (error) {
+		console.error("Failed to initialize search:", error);
+		initialized = true; // Still mark as initialized to allow fallback behavior
 	}
 });
 

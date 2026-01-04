@@ -1,13 +1,19 @@
 ---
 title: MouseMacros-1.2.0-26m01a Release
-published: 2026-01-01
+published: 2026-01-01 17:15
 description: MouseMacros Updates
-tags: [Java]
-category: Updates/MouseMacros
+tags: ["Java","Updates"]
+category: Projects/MouseMacros
 draft: false
 ---
 
+::githubfile{repo="Samera2022/MouseMacros" file="README.md" description="Release 1.2.0-26m01a"}
+
+<div style="text-align: center;">
+
 [2026-01-01 17:15] 1.2.0-26m01a
+[Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/1.2.0-26m01a)
+</div>
 
 ## [Added]
  - 为AboutDialog添加了Github跳转按钮。

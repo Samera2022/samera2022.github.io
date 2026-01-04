@@ -5,8 +5,8 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getPostUrlBySlug } from "../utils/url-utils";
 
-export let tags: string[];
-export let categories: string[];
+export let tags: string[] = [];
+export let categories: string[] = [];
 export let sortedPosts: Post[] = [];
 
 const params = new URLSearchParams(window.location.search);
@@ -19,7 +19,7 @@ interface Post {
 	data: {
 		title: string;
 		tags: string[];
-		category?: string;
+		category?: string | null;
 		published: Date;
 	};
 }
@@ -41,6 +41,20 @@ function formatTag(tagList: string[]) {
 	return tagList.map((t) => `#${t}`).join(" ");
 }
 
+function getCategoryPrefix(category: string | null | undefined, selectedCategories: string[]) {
+	if (!category || selectedCategories.length === 0) return "";
+	
+	// Check if the post's category is a child of any selected category
+	for (const selectedCat of selectedCategories) {
+		if (category.startsWith(selectedCat + "/")) {
+			// Return the relative path after the selected category
+			const relativePath = category.substring(selectedCat.length + 1);
+			return `/${relativePath}/`;
+		}
+	}
+	return "";
+}
+
 onMount(async () => {
 	let filteredPosts: Post[] = sortedPosts;
 
@@ -54,7 +68,14 @@ onMount(async () => {
 
 	if (categories.length > 0) {
 		filteredPosts = filteredPosts.filter(
-			(post) => post.data.category && categories.includes(post.data.category),
+			(post) => {
+				const category = post.data.category;
+				if (!category) return false;
+				// Match exact category or any child category
+				return categories.some(cat => 
+					category === cat || category.startsWith(cat + "/")
+				);
+			}
 		);
 	}
 
@@ -80,6 +101,15 @@ onMount(async () => {
 	}));
 
 	groupedPostsArray.sort((a, b) => b.year - a.year);
+
+	// Sort posts within each year by full date (including time)
+	groupedPostsArray.forEach((group) => {
+		group.posts.sort((a, b) => {
+			const dateA = new Date(a.data.published);
+			const dateB = new Date(b.data.published);
+			return dateB.getTime() - dateA.getTime();
+		});
+	});
 
 	groups = groupedPostsArray;
 });
@@ -133,6 +163,9 @@ onMount(async () => {
                      group-hover:translate-x-1 transition-all group-hover:text-[var(--primary)]
                      text-75 pr-8 whitespace-nowrap overflow-ellipsis overflow-hidden"
                         >
+                            {#if getCategoryPrefix(post.data.category, categories)}
+                                <span class="text-50">{getCategoryPrefix(post.data.category, categories)}</span>
+                            {/if}
                             {post.data.title}
                         </div>
 

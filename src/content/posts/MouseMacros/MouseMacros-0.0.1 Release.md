@@ -1,15 +1,21 @@
 ---
 title: MouseMacros-0.0.1 Release
-published: 2025-07-05
+published: 2025-07-05 20:20
 description: MouseMacros Updates
-tags: [Java]
-category: Updates/MouseMacros
+tags: ["Java","Updates"]
+category: Projects/MouseMacros
 draft: false
 ---
 
-[2025-07-05 20:20] 0.0.1
+::githubfile{repo="Samera2022/MouseMacros" file="README.md" description="Release 0.0.1"}
 
-# [Added]
+<div style="text-align: center;">
+
+[2025-07-05 20:20] 0.0.1
+[Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/0.0.1)
+</div>
+
+## [Added]
  - 添加开始/停止录制鼠标宏功能
  - 添加保存/读取鼠标宏功能
  - 添加自定义热键功能
