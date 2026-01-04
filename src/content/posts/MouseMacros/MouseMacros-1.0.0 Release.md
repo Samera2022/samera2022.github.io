@@ -7,12 +7,11 @@ category: Projects/MouseMacros
 draft: false
 ---
 
-::githubfile{repo="Samera2022/MouseMacros" file="README.md" description="Release 1.0.0"}
+::github{repo="Samera2022/MouseMacros"}
 
 <div style="text-align: center;">
 
-[2025-07-09 21:31] 1.0.0
-[Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/1.0.0)
+[2025-07-09 21:31] 1.0.0 [Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/1.0.0)
 </div>
 
 ## [Added]

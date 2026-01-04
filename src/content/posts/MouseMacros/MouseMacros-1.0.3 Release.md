@@ -7,12 +7,11 @@ category: Projects/MouseMacros
 draft: false
 ---
 
-::githubfile{repo="Samera2022/MouseMacros" file="README.md" description="Release 1.0.3"}
+::github{repo="Samera2022/MouseMacros"}
 
 <div style="text-align: center;">
 
-[2025-12-31 15:45] 1.0.3
-[Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/1.0.3)
+[2025-12-31 15:45] 1.0.3 [Click here to Release](www.github.com/Samera2022/MouseMacros/releases/tag/1.0.3)
 </div>
 
 这是2025年的最后一个release了呢
