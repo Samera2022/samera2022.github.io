@@ -8,33 +8,50 @@ interface Props {
 }
 
 const { node, depth = 0, hasExpandableSibling = false } = Astro.props;
-const INDENT_PER_LEVEL = 12;
-const indentPx = depth * INDENT_PER_LEVEL;
 const hasChildren = node.children.length > 0;
 ---
 
-{hasChildren ? (
-	<div style={`margin-left: ${indentPx}px`}>
-		<details class="category-details">
-			<summary class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all pl-2 hover:pl-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)] cursor-pointer list-none flex items-center justify-between">
-				<div class="flex items-center relative mr-2 flex-1">
-					<span class="category-arrow text-[8px] transition-transform inline-block w-4 flex-shrink-0 origin-center flex items-center justify-center">▶</span>
-					<a
-						data-category-link
-						href={node.url}
-						aria-label={`View all posts in the ${node.fullPath} category`}
-						class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis no-underline text-inherit hover:text-[var(--primary)]"
-					>
-						{node.name.trim()}
-					</a>
+<div class="category-node">
+	<div class="flex items-center w-full">
+		<!-- 箭头/圆点区域 -->
+		<div class="flex items-center justify-center flex-shrink-0 w-5">
+			{hasChildren ? (
+				<div 
+					class="flex items-center justify-center w-5 h-5 rounded-md transition-all duration-200 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] category-toggle-container cursor-pointer" 
+					data-toggle
+					role="button"
+					tabindex="0"
+					aria-label={`Toggle children of ${node.name}`}
+					aria-expanded="false"
+				>
+					<span class="category-toggle text-[10px] transition-all duration-300 text-black/50 hover:text-[var(--primary)] dark:text-white/50 dark:hover:text-[var(--primary)] pointer-events-none">▶</span>
 				</div>
-				{node.count > 0 && (
-					<div class="transition px-2 h-7 mr-2 min-w-[2rem] rounded-lg text-sm font-bold text-[var(--btn-content)] dark:text-[var(--deep-text)] bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)] flex items-center justify-center">
-						{node.count}
+			) : hasExpandableSibling ? (
+				<span class="text-[8px] text-neutral-500 dark:text-neutral-500">●</span>
+			) : null}
+		</div>
+		
+		<!-- 分类按钮 -->
+		<div class="flex-1 min-w-0">
+			<a href={node.url} aria-label={`View all posts in the ${node.fullPath} category`} class="block">
+				<button class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all px-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)]">
+					<div class="flex items-center justify-between">
+						<span class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis">{node.name.trim()}</span>
+						{node.count > 0 && (
+							<div class="transition px-2 h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold text-[var(--btn-content)] dark:text-[var(--deep-text)] bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)] flex items-center justify-center flex-shrink-0">
+								{node.count}
+							</div>
+						)}
 					</div>
-				)}
-			</summary>
-			<div class="ml-4 mt-1">
+				</button>
+			</a>
+		</div>
+	</div>
+	
+	<!-- 子分类 -->
+	{hasChildren && (
+		<div class="ml-5 category-children grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+			<div class="overflow-hidden">
 				{node.children.map((child) => (
 					<Astro.self
 						node={child}
@@ -43,45 +60,54 @@ const hasChildren = node.children.length > 0;
 					/>
 				))}
 			</div>
-		</details>
-	</div>
-) : (
-	<div style={`margin-left: ${indentPx}px`}>
-		<a href={node.url} aria-label={`View all posts in the ${node.fullPath} category`}>
-			<button class="w-full h-10 rounded-lg bg-none hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition-all pl-2 hover:pl-3 text-neutral-700 hover:text-[var(--primary)] dark:text-neutral-300 dark:hover:text-[var(--primary)]">
-				<div class="flex items-center justify-between relative mr-2">
-					<div class="flex items-center overflow-hidden text-left whitespace-nowrap overflow-ellipsis">
-						{hasExpandableSibling && (
-							<span class="text-[8px] inline-block w-4 flex-shrink-0 origin-center flex items-center justify-center text-neutral-500 dark:text-neutral-500">●</span>
-						)}
-						<span class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis">{node.name.trim()}</span>
-					</div>
-					{node.count > 0 && (
-						<div class="transition px-2 h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold text-[var(--btn-content)] dark:text-[var(--deep-text)] bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)] flex items-center justify-center">
-							{node.count}
-						</div>
-					)}
-				</div>
-			</button>
-		</a>
-	</div>
-)}
-
-<style>
-	.category-details[open] > summary .category-arrow {
-		transform: rotate(90deg);
-	}
-</style>
+		</div>
+	)}
+</div>
 
 <script>
-if (typeof window !== "undefined") {
-	window.addEventListener("click", (e) => {
-		const target = e.target as HTMLElement | null;
-		if (!target) return;
-		const link = target.closest("[data-category-link]");
-		if (link) {
+(function initCategoryTree() {
+	if ((window as any).__catTreeInited) return;
+	(window as any).__catTreeInited = true;
+
+	function toggleNode(toggleEl: HTMLElement) {
+		const node = toggleEl.closest('.category-node');
+		if (!node) return;
+		const children = node.querySelector(':scope > .category-children') as HTMLElement | null;
+		const icon = toggleEl.querySelector('.category-toggle') as HTMLElement | null;
+		if (!children || !icon) return;
+
+		const isExpanded = children.classList.contains('grid-rows-[1fr]');
+
+		if (isExpanded) {
+			children.classList.remove('grid-rows-[1fr]');
+			children.classList.add('grid-rows-[0fr]');
+			icon.style.transform = 'rotate(0deg)';
+			toggleEl.setAttribute('aria-expanded', 'false');
+		} else {
+			children.classList.remove('grid-rows-[0fr]');
+			children.classList.add('grid-rows-[1fr]');
+			icon.style.transform = 'rotate(90deg)';
+			toggleEl.setAttribute('aria-expanded', 'true');
+		}
+	}
+
+	// 点击事件委托
+	document.addEventListener('click', (e) => {
+		const target = (e.target as HTMLElement).closest('.category-toggle-container') as HTMLElement | null;
+		if (target) {
+			e.preventDefault();
 			e.stopPropagation();
+			toggleNode(target);
 		}
 	});
-}
+
+	// 键盘事件
+	document.addEventListener('keydown', (e) => {
+		const target = e.target as HTMLElement;
+		if ((e.key === 'Enter' || e.key === ' ') && target.classList?.contains('category-toggle-container')) {
+			e.preventDefault();
+			toggleNode(target);
+		}
+	});
+})();
 </script>
