@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>Timeline Directive Demo</title><link>https://samera2022.github.io/posts/timeline-demo/</link><guid isPermaLink="true">https://samera2022.github.io/posts/timeline-demo/</guid><description>Example of the timeline Markdown directive rendered by the rehype timeline plugin.</description><pubDate>Mon, 05 Jan 2026 02:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post shows how to render a timeline directly from Markdown using the custom &lt;code&gt;timeline&lt;/code&gt; directive. Adjust categories/tags/limit to change the dataset during build time.&lt;/p&gt;
+&lt;h2&gt;Basic timeline&lt;/h2&gt;
+&lt;p&gt;The simplest timeline without filters:&lt;/p&gt;
+&lt;p&gt;:::timeline
+:::&lt;/p&gt;
+&lt;h2&gt;Filter by category (with children)&lt;/h2&gt;
+&lt;p&gt;This example keeps posts under &lt;code&gt;Projects&lt;/code&gt; (also matches &lt;code&gt;Projects/MouseMacros&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;:::timeline {category=&quot;Projects&quot;}
+:::&lt;/p&gt;
+&lt;h2&gt;Filter by multiple tags and limit to 5 items&lt;/h2&gt;
+&lt;p&gt;:::timeline {tags=&quot;Java,Updates&quot; limit=&quot;5&quot;}
+:::&lt;/p&gt;
+&lt;h2&gt;Show uncategorized posts&lt;/h2&gt;
+&lt;p&gt;Use the boolean flag &lt;code&gt;uncategorized&lt;/code&gt; (no value needed) to include posts without a category.&lt;/p&gt;
+&lt;p&gt;:::timeline {uncategorized}
+:::&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
