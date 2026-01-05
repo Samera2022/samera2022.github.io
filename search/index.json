@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "totalDocuments": 16,
+  "totalDocuments": 18,
   "chunks": [
     {
       "file": "chunk-posts.json",
@@ -9,9 +9,9 @@
     },
     {
       "file": "chunk-pages.json",
-      "count": 3,
+      "count": 5,
       "category": "pages"
     }
   ],
-  "timestamp": "2026-01-05T12:10:23.790Z"
+  "timestamp": "2026-01-05T14:09:36.914Z"
 }
