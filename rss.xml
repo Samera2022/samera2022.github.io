@@ -170,6 +170,40 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;/ul&gt;
 &lt;h3&gt;License&lt;/h3&gt;
 &lt;p&gt;This project is licensed under the GNU General Public License v3.0 License - see the &lt;code&gt;LICENSE&lt;/code&gt; file for details.&lt;/p&gt;
+</content:encoded></item><item><title>About MouseMacros</title><link>https://samera2022.github.io/posts/mousemacros/aboutmousemacros/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/aboutmousemacros/</guid><description>About MouseMacros</description><pubDate>Fri, 31 Dec 9999 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}s&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;你好，这里是&lt;code&gt;Projects/MouseMacros&lt;/code&gt;。欢迎收听&lt;code&gt;About MouseMacros&lt;/code&gt;，我是主持人Samera2022。今天我们就来聊一聊&lt;code&gt;MouseMacros&lt;/code&gt;的一些简单介绍，以及我为什么要开发&lt;code&gt;MouseMacros&lt;/code&gt;这个项目。&lt;/p&gt;
+&lt;h1&gt;Why &lt;code&gt;MouseMacros&lt;/code&gt; is a better choice?&lt;/h1&gt;
+&lt;p&gt;如果你打开github搜索&lt;code&gt;mouse-recorder&lt;/code&gt;,&lt;code&gt;auto-clicker&lt;/code&gt;,&lt;code&gt;mouse-macro&lt;/code&gt;等词条，或者打开google搜索&lt;code&gt;Mouse Macros&lt;/code&gt;的话，你很可能会见到雪花般的鼠标宏项目。但是，让我们变得实际一点，这里面的很多项目其实并不适合用户使用。
+:::note
+首先我想向下文提到的开源作者们致敬，尽管他们的项目可能存在一些问题，但是他们践行了宝贵的开源精神！此外，需要注意的是，我对他们项目的看法也可能并不正确。如果您有别的见解，欢迎来联系我，我们可以进行更加深入的讨论。
+:::
+:::note
+抱歉，我可能会引用别人的仓库。如果您是仓库的作者，并且不希望您的仓库出现在这里，请联系我，我会立刻撤下。
+:::
+不妨让我们简单地举出一些例子：&lt;/p&gt;
+&lt;p&gt;↓该项目不具有Releases，其初衷并非服务用户，这只是自己的开发备份。
+::github{repo=&quot;jborza/mouse-macros&quot;}
+↓该项目具有Releases，但是相关功能和GUI均比较简陋。
+::github{repo=&quot;n43e120/MouseMacro&quot;}
+↓该项目具有Releases和较为美观的GUI，但是相关功能较少。
+::github{repo=&quot;guinhx/ActionRecorder&quot;}
+↓该项目具有Releases，美观的GUI与（和前者相比）比较多的功能，但是文件包过大。
+::github{repo=&quot;p6laris/SnapClicker&quot;}
+:::note
+就最后一个项目而言，它的总体功能数比&lt;code&gt;MouseMacros&lt;/code&gt;要少很多，但是其文件包大小基本为&lt;code&gt;MouseMacros&lt;/code&gt;的两倍。这是我评价其文件包过大的依据。
+:::
+这些事情不止发生在这些项目，甚至可以说，你看到的很多项目（包括github以外的，有些甚至还有可能是付费的）很可能都有以上的弊端。而&lt;code&gt;MouseMacros&lt;/code&gt;则在&lt;code&gt;功能多-臃肿&lt;/code&gt;中取得了一个恰当的平衡。首先&lt;code&gt;MouseMacros&lt;/code&gt;是免费的开源项目，其诞生的初衷就是为了服务用户，让用户以一种Straight-forward的方式快捷地享受鼠标宏所带来的便利。因此，常用的功能，我选择直接放在&lt;code&gt;MainFrame&lt;/code&gt;中。对于需求简单的用户直接点击“开始”和“结束”就可以了。&lt;/p&gt;
+&lt;p&gt;而对于要求略高的用户，他们可以选择在&lt;code&gt;SettingsDialog&lt;/code&gt;和&lt;code&gt;MacroSettingsDialog&lt;/code&gt;中进行更进一步的个性化设置，我也将一些比较常用的功能内置在了这两个设置窗体中。而对于一些“窗体大小”、“关闭方式”、“历史保存地址”等并不那么直接，但又切实显著地影响到使用体验的功能，我选择直接放在cache.json中，由程序自动配置，进而降低用户的信息熵与决策成本。&lt;/p&gt;
+&lt;p&gt;制作一个鼠标宏是快速的，但是制作一个&lt;code&gt;好用的&lt;/code&gt;鼠标宏却并非轻松。制作一个&lt;code&gt;用户友好&lt;/code&gt;的鼠标宏则需要更加多的时间投入和精力投入以进行打磨。&lt;/p&gt;
+&lt;h1&gt;Why I chose to develop &lt;code&gt;MouseMacros&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;这在其他地方没有提到，但我是一个P社&lt;code&gt;Paradox&lt;/code&gt;玩家。具体地说，我主要游玩群星&lt;code&gt;Stellaris&lt;/code&gt;，并且偏向于其中的一个神奇的流派——智能机械格式塔扩张流派——或者更简单地说，塔械爆铺流。我在里面需要手动操作上百个球，这并非夸张。在我的一个千星存档中，我甚至需要直接操作230个殖民地！这听起来很吓人，实际上也确实是的。不过这么多殖民地也为我带来了巨大的资源收益。言归正传，我对于每种资源都有特定的产出专精模式。用另一种话说，这两百多个殖民地其实共用了相同的几个建筑的模板。而我想要建设这些殖民地，这意味着我需要整整操作230次。当我在漫长的游戏时间中真的完成了这一项工作，我觉得这是非常令人疲劳的。因此我寻找是否有这样一种方便轻松的方式，能够替代我执行相同的动作。&lt;/p&gt;
+&lt;p&gt;第一时间，我想到了&lt;code&gt;宏鼠标&lt;/code&gt;。这是一种昂贵的鼠标，在生产时就预置了&lt;code&gt;鼠标宏&lt;/code&gt;的功能。我不想额外花费金钱，因此我选择去互联网寻找功能相似的软件。不幸的是，我在简体中文互联网上寻找到的软件大多具有广告，或者需要付费（不是买断制，是定期订阅）。我又在除简体中文互联网以外的地方寻找，发现情况稍微好些，至少它们的GUI看起来更加现代化，但是仍然存在高昂买断价格的问题。而对于那些免费的软件，他们的功能过于简单，不足以满足我的需求。同时，他们简陋的发布网页和非常简陋GUI界面（注：现代化的GUI是针对昂贵的买断软件而言的），以及他们所在的不知名的小网站，使我害怕我的电脑感染恶意软件。&lt;/p&gt;
+&lt;p&gt;究其根本，最关键的问题在于&lt;code&gt;免费的软件各个方面都过于简陋以至于我不敢贸然使用&lt;/code&gt;而&lt;code&gt;看起来不错的软件价格高昂&lt;/code&gt;。更进一步地，当时我在github上并没有发现很多功能相似的仓库，即便有，也几乎没有给出能直接使用的Releases。（后来被证实，这是因为那些仓库用了诸如&lt;code&gt;auto-clicker&lt;/code&gt;等其他的标签和名字，以至于我完全没有检索到。）然而，我认为制作一个鼠标宏在技术上是比较清晰的。因此我对于这个现象感到困惑，所以决定尝试自己开发一款&lt;code&gt;MouseMacros&lt;/code&gt;的软件，想看看这到底有多困难。事实证明，这相对地是比较轻松的一个工作。好吧，至少和我修改这个基于Astro的网页相比，这个还是较为轻松的。最开始我只是想着自己使用，也没有怎么考虑用户交互的事情。后来考虑到我也从开源社区中下载了很多软件，同时维护这个项目可以使我收获经验，所以我决定顺手将开发的成果贡献回开源社区。这也是我在推出1.0.0后仍然积极维护并推出了很多Releases的原因。&lt;/p&gt;
+&lt;h1&gt;End&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;MouseMacros&lt;/code&gt;花费了我很多的心血，如果这确实帮到您的话，还请您不要吝啬手中的Star，为我点亮那颗星吧。
+::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;hr /&gt;
 </content:encoded></item><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.1&quot;&gt;Click here to Release&lt;/a&gt;
