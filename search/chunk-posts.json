@@ -1,5 +1,12 @@
 [
   {
+    "id": "/posts/Projects/AdvancedClipboard/advancedclipboard-001/",
+    "url": "/posts/Projects/AdvancedClipboard/advancedclipboard-001/",
+    "title": "AdvancedClipboard-0.0.1 Release - Samera2022",
+    "description": "AdvancedClipboard Updates",
+    "content": "AdvancedClipboard-0.0.1 Release"
+  },
+  {
     "id": "/posts/Projects/MouseMacros/aboutmousemacros/",
     "url": "/posts/Projects/MouseMacros/aboutmousemacros/",
     "title": "About MouseMacros - Samera2022",
@@ -166,5 +173,12 @@
     "title": "UnusualChineseChess-2.0.0 Release - Samera2022",
     "description": "UnusualChineseChess Updates",
     "content": "UnusualChineseChess-2.0.0 Release"
+  },
+  {
+    "id": "/posts/Projects/UnusualChineseChess/unusualchinesechess-201-release/",
+    "url": "/posts/Projects/UnusualChineseChess/unusualchinesechess-201-release/",
+    "title": "UnusualChineseChess-2.0.1 Release - Samera2022",
+    "description": "UnusualChineseChess Updates",
+    "content": "UnusualChineseChess-2.0.1 Release"
   }
 ]
