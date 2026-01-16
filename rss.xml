@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>AdvancedClipboard-0.0.1 Release</title><link>https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</link><guid isPermaLink="true">https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</guid><description>AdvancedClipboard Updates</description><pubDate>Thu, 15 Jan 2026 07:30:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>IDEA完整修改项目名称的方法</title><link>https://samera2022.github.io/posts/java/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</link><guid isPermaLink="true">https://samera2022.github.io/posts/java/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</guid><description>在IntelliJ IDEA中完整修改项目名称的方法</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;h1&gt;修改流程&lt;/h1&gt;
+&lt;p&gt;首先你需要在&lt;code&gt;文件-&amp;gt;项目结构-&amp;gt;项目&lt;/code&gt;条目下，修改右侧的&lt;code&gt;名称&lt;/code&gt;和&lt;code&gt;编译器输出&lt;/code&gt;为新的名字。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;res/20260116-01.png&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;若需要修改模块名称，则需要在&lt;code&gt;文件-&amp;gt;项目结构&lt;/code&gt;的&lt;code&gt;项目设置-&amp;gt;模块&lt;/code&gt;条目下，修改相应的信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;res/20260116-02.png&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;之后你需要修改项目文件夹根目录的名字，可在主界面左侧的&lt;code&gt;项目&lt;/code&gt;界面，右键最上方的模块，选择&lt;code&gt;打开于-&amp;gt;资源管理器&lt;/code&gt;来快捷跳转。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;res/20260116-03.png&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;修改成功后可 重启IDEA 或 &lt;code&gt;文件-&amp;gt;关闭项目&lt;/code&gt;，右键原来的项目，选择&lt;code&gt;从最近的项目中移除...&lt;/code&gt;或直接点击右侧的×号。&lt;/p&gt;
+&lt;p&gt;:::warning
+现在仍然不能直接在IDEA中打开修改后的项目文件夹，因为项目目前无法建立正确的索引。直观地来看，表现为左侧只出现.iml和.gitignore，同时无法识别其他的文件（夹）。
+:::&lt;/p&gt;
+&lt;p&gt;然后在资源管理器中打开&lt;code&gt;项目名称/.idea&lt;/code&gt;，修改&lt;code&gt;modules.xml&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;project version=&quot;4&quot;&amp;gt;
+  &amp;lt;component name=&quot;ProjectModuleManager&quot;&amp;gt;
+    &amp;lt;modules&amp;gt;
+      &amp;lt;module fileurl=&quot;file://$PROJECT_DIR$/YourProjectOldName.iml&quot; filepath=&quot;$PROJECT_DIR$/YourProjectOldName.iml&quot; /&amp;gt;
+      &amp;lt;module fileurl=&quot;file://$PROJECT_DIR$/YourProjectNewName.iml&quot; filepath=&quot;$PROJECT_DIR$/YourProjectNewName.iml&quot; /&amp;gt;
+    &amp;lt;/modules&amp;gt;
+  &amp;lt;/component&amp;gt;
+&amp;lt;/project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后需要修改相应的构建配置。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于maven构建的项目，需要修改&lt;code&gt;pom.xml&lt;/code&gt;中的&lt;code&gt;&amp;lt;artifactId&amp;gt;&lt;/code&gt;和&lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt;（后者决定了IDEA的Maven面板和生成文档时显示的名字）。&lt;/li&gt;
+&lt;li&gt;对于gradle构建的项目，需要修改&lt;code&gt;settings.gradle或settings.gradle.kts&lt;/code&gt;中的&lt;code&gt;rootProject.name&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;对于其他方式构建的项目，需要修改相应的配置文件参数和&lt;code&gt;文件-&amp;gt;项目结构-&amp;gt;工件&lt;/code&gt;的相关信息。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;至此，项目的重命名就基本完成了。项目此刻应该可以正常被运行和构建。&lt;/p&gt;
+&lt;p&gt;如果你 未经IDEA的重命名功能，手动重命名了包名，则需继续参考以下文章来进行修改。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://samera2022.github.io/posts/Experiences/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/&quot;&gt;IDEA手动修改包名的相应措施&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;常见错误&lt;/h1&gt;
+&lt;p&gt;当你看到IDEA提示&lt;code&gt;Git Repositories Found: The directory [旧路径] is registered as a Git root, but no Git repository was found there.&lt;/code&gt;时，这表明你需要更新IDEA中的Git映射。&lt;/p&gt;
+&lt;p&gt;具体地，你需要在&lt;code&gt;文件-&amp;gt;设置-&amp;gt;版本控制-&amp;gt;目录映射&lt;/code&gt;中点击-删除旧路径，并点击+添加新路径。建议启用下方的&lt;code&gt;启用自动映射检测&lt;/code&gt;，这会节省一些功夫。&lt;/p&gt;
+</content:encoded></item><item><title>IDEA手动修改包名的相应措施</title><link>https://samera2022.github.io/posts/java/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</link><guid isPermaLink="true">https://samera2022.github.io/posts/java/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</guid><description>IDEA手动修改包名的相应措施</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要讨论 未经IDEA的重命名功能 情况下，手动修改包名所需要修改的构建文件的位置。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于maven构建的项目，需要修改&lt;code&gt;pom.xml&lt;/code&gt;中的&lt;code&gt;&amp;lt;groupId&amp;gt;&lt;/code&gt;和下列代码段（如有）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;plugin&amp;gt;
+    &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;maven-jar-plugin&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;3.2.0&amp;lt;/version&amp;gt;
+    &amp;lt;configuration&amp;gt;
+        &amp;lt;archive&amp;gt;
+            &amp;lt;manifest&amp;gt;
+                &amp;lt;mainClass&amp;gt;com.oldname.Main&amp;lt;/mainClass&amp;gt; 
+                &amp;lt;mainClass&amp;gt;com.newname.Main&amp;lt;/mainClass&amp;gt; 
+                &amp;lt;addDefaultImplementationEntries&amp;gt;true&amp;lt;/addDefaultImplementationEntries&amp;gt;
+            &amp;lt;/manifest&amp;gt;
+        &amp;lt;/archive&amp;gt;
+    &amp;lt;/configuration&amp;gt;
+&amp;lt;/plugin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;对于gradle构建的项目，需要修改&lt;code&gt;build.gradle&lt;/code&gt;中的&lt;code&gt;group&lt;/code&gt;和下列代码段（如有）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;application {
+    mainClass = &apos;com.oldname.Main&apos; 
+    mainClass = &apos;com.newname.Main&apos; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你手动配置了jar任务，则需修改下列代码段&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jar {
+    manifest {
+        attributes(
+            &apos;Main-Class&apos;: &apos;com.oldname.Main&apos; 
+            &apos;Main-Class&apos;: &apos;com.newname.Main&apos; 
+        )
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;对于其他方式构建的项目，需要修改&lt;code&gt;MANIFEST.MF&lt;/code&gt;中的&lt;code&gt;Main-Class&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded></item><item><title>AdvancedClipboard-0.0.1 Release</title><link>https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</link><guid isPermaLink="true">https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</guid><description>AdvancedClipboard Updates</description><pubDate>Thu, 15 Jan 2026 07:30:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-15 15:30] 0.0.1 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.0.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
