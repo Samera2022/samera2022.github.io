@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>IDEA完整修改项目名称的方法</title><link>https://samera2022.github.io/posts/java/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</link><guid isPermaLink="true">https://samera2022.github.io/posts/java/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</guid><description>在IntelliJ IDEA中完整修改项目名称的方法</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;h1&gt;修改流程&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>AdvancedClipboard-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</guid><description>AdvancedClipboard Updates</description><pubDate>Fri, 16 Jan 2026 16:05:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-01-17 00:05] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Added]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;添加鼠标左键托盘图标呼出UI界面的功能。&lt;/li&gt;
+&lt;li&gt;实现回车确认UI选中项的功能。&lt;/li&gt;
+&lt;li&gt;托盘右键菜单添加“更新日志”条目。&lt;/li&gt;
+&lt;li&gt;托盘右键菜单添加“关于作者”条目。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>DictionaryViewer-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/dictionaryviewer/dictionaryviewer-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/dictionaryviewer/dictionaryviewer-020-release/</guid><description>DictionaryViewer Updates</description><pubDate>Fri, 16 Jan 2026 13:48:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/DictionaryViewer&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-01-16 21:48] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/DictionaryViewer/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Added]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;重构了 IH 和 UDL 窗体，提取了通用的 BaseDictionaryFrame 父类，统一了 UI 风格和逻辑。&lt;/li&gt;
+&lt;li&gt;实现了表格列的排序功能，支持点击表头进行降序/升序切换。&lt;/li&gt;
+&lt;li&gt;优化了文件打开逻辑，增加了对 .dat 文件类型的检查。&lt;/li&gt;
+&lt;li&gt;调整了窗体默认尺寸，优化了布局。&lt;/li&gt;
+&lt;li&gt;新增了“导出”功能，支持将词库导出为 CSV、TXT 和 JSON 格式。&lt;/li&gt;
+&lt;li&gt;新增了“另存为”功能，支持将当前词库文件另存到其他位置。&lt;/li&gt;
+&lt;li&gt;新增了“关闭”功能，支持关闭当前打开的词库。&lt;/li&gt;
+&lt;li&gt;新增了多语言支持（国际化），支持动态切换语言（zh_cn, en_us, ru_ru, jp_ja, fr_fr, es_es），并实现了界面文本的即时刷新。&lt;/li&gt;
+&lt;li&gt;新增了“其他”菜单，包含“关于作者”和“更新日志”对话框。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;[Changed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;删除了最开始的词典修改支持。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>IDEA完整修改项目名称的方法</title><link>https://samera2022.github.io/posts/experiences/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/idea%E5%AE%8C%E6%95%B4%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E7%9A%84%E6%96%B9%E6%B3%95/</guid><description>在IntelliJ IDEA中完整修改项目名称的方法</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;h1&gt;修改流程&lt;/h1&gt;
 &lt;p&gt;首先你需要在&lt;code&gt;文件-&amp;gt;项目结构-&amp;gt;项目&lt;/code&gt;条目下，修改右侧的&lt;code&gt;名称&lt;/code&gt;和&lt;code&gt;编译器输出&lt;/code&gt;为新的名字。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;res/20260116-01.png&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;若需要修改模块名称，则需要在&lt;code&gt;文件-&amp;gt;项目结构&lt;/code&gt;的&lt;code&gt;项目设置-&amp;gt;模块&lt;/code&gt;条目下，修改相应的信息。&lt;/p&gt;
@@ -32,7 +63,7 @@
 &lt;h1&gt;常见错误&lt;/h1&gt;
 &lt;p&gt;当你看到IDEA提示&lt;code&gt;Git Repositories Found: The directory [旧路径] is registered as a Git root, but no Git repository was found there.&lt;/code&gt;时，这表明你需要更新IDEA中的Git映射。&lt;/p&gt;
 &lt;p&gt;具体地，你需要在&lt;code&gt;文件-&amp;gt;设置-&amp;gt;版本控制-&amp;gt;目录映射&lt;/code&gt;中点击-删除旧路径，并点击+添加新路径。建议启用下方的&lt;code&gt;启用自动映射检测&lt;/code&gt;，这会节省一些功夫。&lt;/p&gt;
-</content:encoded></item><item><title>IDEA手动修改包名的相应措施</title><link>https://samera2022.github.io/posts/java/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</link><guid isPermaLink="true">https://samera2022.github.io/posts/java/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</guid><description>IDEA手动修改包名的相应措施</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要讨论 未经IDEA的重命名功能 情况下，手动修改包名所需要修改的构建文件的位置。&lt;/p&gt;
+</content:encoded></item><item><title>IDEA手动修改包名的相应措施</title><link>https://samera2022.github.io/posts/experiences/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/idea%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E5%8C%85%E5%90%8D%E7%9A%84%E7%9B%B8%E5%BA%94%E6%8E%AA%E6%96%BD/</guid><description>IDEA手动修改包名的相应措施</description><pubDate>Fri, 16 Jan 2026 08:18:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要讨论 未经IDEA的重命名功能 情况下，手动修改包名所需要修改的构建文件的位置。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;对于maven构建的项目，需要修改&lt;code&gt;pom.xml&lt;/code&gt;中的&lt;code&gt;&amp;lt;groupId&amp;gt;&lt;/code&gt;和下列代码段（如有）&lt;/li&gt;
 &lt;/ol&gt;
@@ -72,7 +103,20 @@
 &lt;ol&gt;
 &lt;li&gt;对于其他方式构建的项目，需要修改&lt;code&gt;MANIFEST.MF&lt;/code&gt;中的&lt;code&gt;Main-Class&lt;/code&gt;。&lt;/li&gt;
 &lt;/ol&gt;
-</content:encoded></item><item><title>AdvancedClipboard-0.0.1 Release</title><link>https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</link><guid isPermaLink="true">https://samera2022.github.io/posts/advancedclipboard/advancedclipboard-001/</guid><description>AdvancedClipboard Updates</description><pubDate>Thu, 15 Jan 2026 07:30:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>DictionaryViewer-0.1.0 Release</title><link>https://samera2022.github.io/posts/projects/dictionaryviewer/dictionaryviewer-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/dictionaryviewer/dictionaryviewer-010-release/</guid><description>DictionaryViewer Updates</description><pubDate>Thu, 15 Jan 2026 15:53:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/DictionaryViewer&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-01-15 23:53] 0.1.0 &lt;a href=&quot;https://www.github.com/Samera2022/DictionaryViewer/releases/tag/0.1.0&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Added]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;实现了对微软拼音输入法二进制文件的解析逻辑&lt;/li&gt;
+&lt;li&gt;创建了基础的 Swing 窗体 (&lt;code&gt;IHMainFrame&lt;/code&gt;, &lt;code&gt;UDLMainFrame&lt;/code&gt;) 以可视化二进制数据。&lt;/li&gt;
+&lt;li&gt;实现了对词条的实时关键词过滤功能。&lt;/li&gt;
+&lt;li&gt;添加了从 Windows &lt;code&gt;%APPDATA%&lt;/code&gt; 目录自动定位并加载词典文件的逻辑。&lt;/li&gt;
+&lt;li&gt;数据显示支持: IH显示“词语”和“词频” ; UDL显示“词条”和“类型”（用户定义/系统学习）。&lt;/li&gt;
+&lt;li&gt;添加初步的词典修改支持。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>AdvancedClipboard-0.0.1 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-001/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-001/</guid><description>AdvancedClipboard Updates</description><pubDate>Thu, 15 Jan 2026 07:30:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-15 15:30] 0.0.1 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.0.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -83,7 +127,7 @@
 &lt;li&gt;实现全局热键 (Ctrl+Up/Down) 弹出历史窗口。&lt;/li&gt;
 &lt;li&gt;实现从历史窗口选择并恢复到剪贴板的功能。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-2.0.1 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-201-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-201-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 14 Jan 2026 12:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-2.0.1 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-201-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-201-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 14 Jan 2026 12:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-14 20:42] 2.0.1 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/2.0.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -97,7 +141,7 @@
 &lt;ul&gt;
 &lt;li&gt;“堆叠棋子”被发现具有很多潜在的问题，但目前尚无法被解决。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-2.0.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-200-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-200-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 14 Jan 2026 06:10:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-2.0.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-200-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-200-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 14 Jan 2026 06:10:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-14 14:10] 2.0.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/2.0.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -112,7 +156,7 @@
 &lt;li&gt;修改了相关玩法的注册名，这使得无法同1.X.X版本的带有玩法的联机进行兼容（1.3.0版本除外）。
 注：玩法注册名的修改是从1.3.0开始的，这使得1.3.0无法同前面版本进行带有玩法的联机兼容。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.3.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-130-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-130-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Mon, 12 Jan 2026 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.3.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-130-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-130-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Mon, 12 Jan 2026 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-13 00:51] 1.3.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.3.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -126,7 +170,7 @@
 &lt;ul&gt;
 &lt;li&gt;修复联机与本地环境下鼠标左键对于双方“堆叠棋子”的行为。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.2.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-120-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-120-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Sat, 10 Jan 2026 11:25:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.2.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-120-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-120-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Sat, 10 Jan 2026 11:25:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-10 19:25] 1.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.2.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -158,7 +202,7 @@
 &lt;li&gt;修复/缓解了规则通知过程中异常被吞掉或阻塞的问题（现在会记录关键错误并对超时 listener 进行取消）。&lt;/li&gt;
 &lt;li&gt;修复联机设置同步与撤销相关的问题，主机端现在会发送设置快照/差分并避免回环。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.2.0-26m01c Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-120-26m01c-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-120-26m01c-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Sat, 10 Jan 2026 07:11:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.2.0-26m01c Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-120-26m01c-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-120-26m01c-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Sat, 10 Jan 2026 07:11:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-10 15:11] 1.2.0-26m01c &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.2.0-26m01c&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -177,7 +221,7 @@
 &lt;li&gt;修复残局导入导出功能，现在可以正确保存和恢复堆叠棋子的状态。&lt;/li&gt;
 &lt;li&gt;修复点击对方堆叠棋子时的交互，现在会显示堆叠信息对话框。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.1.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Fri, 09 Jan 2026 13:26:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.1.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Fri, 09 Jan 2026 13:26:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-09 21:26] 1.1.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.1.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -202,7 +246,7 @@
 &lt;ul&gt;
 &lt;li&gt;“堆叠棋子”目前仍然存在一些bug，并未完成。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.1.0-26m01b Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-26m01b-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-26m01b-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Fri, 09 Jan 2026 09:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.1.0-26m01b Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-26m01b-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-26m01b-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Fri, 09 Jan 2026 09:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-09 17:42] 1.1.0-26m01b &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.1.0-26m01b&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -224,7 +268,7 @@
 &lt;li&gt;局域网的持方功能目前仍然存在一些问题，不建议本地主机选择持黑方。&lt;/li&gt;
 &lt;li&gt;“堆叠棋子”目前仍然存在一些bug，并未完成。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.1.0-26m01a Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-26m01a-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-110-26m01a-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 07 Jan 2026 11:33:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.1.0-26m01a Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-26m01a-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-110-26m01a-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 07 Jan 2026 11:33:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-07 19:33] 1.1.0-26m01a &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.1.0-26m01a&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -239,7 +283,7 @@
 &lt;li&gt;局域网的持方功能存在一点问题，不建议本地主机选择持黑方。&lt;/li&gt;
 &lt;li&gt;“左右连通”功能目前和其他玩法可能存在不适配。放心，这不会造成崩溃，只是有些其他玩法的棋子无法做到左右连通的效果。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-1.0.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-100-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-100-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 07 Jan 2026 07:37:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-1.0.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-100-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-100-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Wed, 07 Jan 2026 07:37:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-07 15:37] 1.0.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/1.0.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -249,7 +293,7 @@
 &lt;li&gt;添加了局域网对战功能！你现在可以邀请不同玩家来一起玩象棋了！&lt;/li&gt;
 &lt;li&gt;添加“玩法”功能，你可以打破传统中国象棋中的一些规则，体验更加独特的中国象棋了！&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-0.2.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-020-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Tue, 06 Jan 2026 16:18:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-020-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Tue, 06 Jan 2026 16:18:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-07 00:18] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -257,7 +301,7 @@
 &lt;ul&gt;
 &lt;li&gt;美化了象棋棋盘和整体UI布局。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>UnusualChineseChess-0.1.0 Release</title><link>https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/unusualchinesechess/unusualchinesechess-010-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Tue, 06 Jan 2026 15:54:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>UnusualChineseChess-0.1.0 Release</title><link>https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/unusualchinesechess/unusualchinesechess-010-release/</guid><description>UnusualChineseChess Updates</description><pubDate>Tue, 06 Jan 2026 15:54:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/UnusualChineseChess&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-06 23:54] 0.1.0 &lt;a href=&quot;https://www.github.com/Samera2022/UnusualChineseChess/releases/tag/0.1.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -265,7 +309,41 @@
 &lt;ul&gt;
 &lt;li&gt;支持进行基本的象棋游玩。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros Readme</title><link>https://samera2022.github.io/posts/mousemacros/mousemacrosreadme/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacrosreadme/</guid><description>MouseMacros Readme</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>About MouseMacros</title><link>https://samera2022.github.io/posts/projects/mousemacros/aboutmousemacros/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/aboutmousemacros/</guid><description>About MouseMacros</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;你好，这里是&lt;code&gt;Projects/MouseMacros&lt;/code&gt;。欢迎收听&lt;code&gt;About MouseMacros&lt;/code&gt;，我是主持人Samera2022。今天我们就来聊一聊&lt;code&gt;MouseMacros&lt;/code&gt;的一些简单介绍，以及我为什么要开发&lt;code&gt;MouseMacros&lt;/code&gt;这个项目。&lt;/p&gt;
+&lt;h1&gt;Why &lt;code&gt;MouseMacros&lt;/code&gt; is a better choice?&lt;/h1&gt;
+&lt;p&gt;如果你打开github搜索&lt;code&gt;mouse-recorder&lt;/code&gt;,&lt;code&gt;auto-clicker&lt;/code&gt;,&lt;code&gt;mouse-macro&lt;/code&gt;等词条，或者打开google搜索&lt;code&gt;Mouse Macros&lt;/code&gt;的话，你很可能会见到雪花般的鼠标宏项目。但是，让我们变得实际一点，这里面的很多项目其实并不适合用户使用。
+:::note
+首先我想向下文提到的开源作者们致敬，尽管他们的项目可能存在一些问题，但是他们践行了宝贵的开源精神！此外，需要注意的是，我对他们项目的看法也可能并不正确。如果您有别的见解，欢迎来联系我，我们可以进行更加深入的讨论。
+:::
+:::note
+抱歉，我可能会引用别人的仓库。如果您是仓库的作者，并且不希望您的仓库出现在这里，请联系我，我会立刻撤下。
+:::
+不妨让我们简单地举出一些例子：&lt;/p&gt;
+&lt;p&gt;↓该项目不具有Releases，其初衷并非服务用户，这只是自己的开发备份。
+::github{repo=&quot;jborza/mouse-macros&quot;}
+↓该项目具有Releases，但是相关功能和GUI均比较简陋。
+::github{repo=&quot;n43e120/MouseMacro&quot;}
+↓该项目具有Releases和较为美观的GUI，但是相关功能较少。
+::github{repo=&quot;guinhx/ActionRecorder&quot;}
+↓该项目具有Releases，美观的GUI与（和前者相比）比较多的功能，但是文件包过大。
+::github{repo=&quot;p6laris/SnapClicker&quot;}
+:::note
+就最后一个项目而言，它的总体功能数比&lt;code&gt;MouseMacros&lt;/code&gt;要少很多，但是其文件包大小基本为&lt;code&gt;MouseMacros&lt;/code&gt;的两倍。这是我评价其文件包过大的依据。
+:::
+这些事情不止发生在这些项目，甚至可以说，你看到的很多项目（包括github以外的，有些甚至还有可能是付费的）很可能都有以上的弊端。而&lt;code&gt;MouseMacros&lt;/code&gt;则在&lt;code&gt;功能多-臃肿&lt;/code&gt;中取得了一个恰当的平衡。首先&lt;code&gt;MouseMacros&lt;/code&gt;是免费的开源项目，其诞生的初衷就是为了服务用户，让用户以一种Straight-forward的方式快捷地享受鼠标宏所带来的便利。因此，常用的功能，我选择直接放在&lt;code&gt;MainFrame&lt;/code&gt;中。对于需求简单的用户直接点击“开始”和“结束”就可以了。&lt;/p&gt;
+&lt;p&gt;而对于要求略高的用户，他们可以选择在&lt;code&gt;SettingsDialog&lt;/code&gt;和&lt;code&gt;MacroSettingsDialog&lt;/code&gt;中进行更进一步的个性化设置，我也将一些比较常用的功能内置在了这两个设置窗体中。而对于一些“窗体大小”、“关闭方式”、“历史保存地址”等并不那么直接，但又切实显著地影响到使用体验的功能，我选择直接放在cache.json中，由程序自动配置，进而降低用户的信息熵与决策成本。&lt;/p&gt;
+&lt;p&gt;制作一个鼠标宏是快速的，但是制作一个&lt;code&gt;好用的&lt;/code&gt;鼠标宏却并非轻松。制作一个&lt;code&gt;用户友好&lt;/code&gt;的鼠标宏则需要更加多的时间投入和精力投入以进行打磨。&lt;/p&gt;
+&lt;h1&gt;Why I chose to develop &lt;code&gt;MouseMacros&lt;/code&gt;?&lt;/h1&gt;
+&lt;p&gt;这在其他地方没有提到，但我是一个P社&lt;code&gt;Paradox&lt;/code&gt;玩家。具体地说，我主要游玩群星&lt;code&gt;Stellaris&lt;/code&gt;，并且偏向于其中的一个神奇的流派——智能机械格式塔扩张流派——或者更简单地说，塔械爆铺流。我在里面需要手动操作上百个球，这并非夸张。在我的一个千星存档中，我甚至需要直接操作230个殖民地！这听起来很吓人，实际上也确实是的。不过这么多殖民地也为我带来了巨大的资源收益。言归正传，我对于每种资源都有特定的产出专精模式。用另一种话说，这两百多个殖民地其实共用了相同的几个建筑的模板。而我想要建设这些殖民地，这意味着我需要整整操作230次。当我在漫长的游戏时间中真的完成了这一项工作，我觉得这是非常令人疲劳的。因此我寻找是否有这样一种方便轻松的方式，能够替代我执行相同的动作。&lt;/p&gt;
+&lt;p&gt;第一时间，我想到了&lt;code&gt;宏鼠标&lt;/code&gt;。这是一种昂贵的鼠标，在生产时就预置了&lt;code&gt;鼠标宏&lt;/code&gt;的功能。我不想额外花费金钱，因此我选择去互联网寻找功能相似的软件。不幸的是，我在简体中文互联网上寻找到的软件大多具有广告，或者需要付费（不是买断制，是定期订阅）。我又在除简体中文互联网以外的地方寻找，发现情况稍微好些，至少它们的GUI看起来更加现代化，但是仍然存在高昂买断价格的问题。而对于那些免费的软件，他们的功能过于简单，不足以满足我的需求。同时，他们简陋的发布网页和非常简陋GUI界面（注：现代化的GUI是针对昂贵的买断软件而言的），以及他们所在的不知名的小网站，使我害怕我的电脑感染恶意软件。&lt;/p&gt;
+&lt;p&gt;究其根本，最关键的问题在于&lt;code&gt;免费的软件各个方面都过于简陋以至于我不敢贸然使用&lt;/code&gt;而&lt;code&gt;看起来不错的软件价格高昂&lt;/code&gt;。更进一步地，当时我在github上并没有发现很多功能相似的仓库，即便有，也几乎没有给出能直接使用的Releases。（后来被证实，这是因为那些仓库用了诸如&lt;code&gt;auto-clicker&lt;/code&gt;等其他的标签和名字，以至于我完全没有检索到。）然而，我认为制作一个鼠标宏在技术上是比较清晰的。因此我对于这个现象感到困惑，所以决定尝试自己开发一款&lt;code&gt;MouseMacros&lt;/code&gt;的软件，想看看这到底有多困难。事实证明，这相对地是比较轻松的一个工作。好吧，至少和我修改这个基于Astro的网页相比，这个还是较为轻松的。最开始我只是想着自己使用，也没有怎么考虑用户交互的事情。后来考虑到我也从开源社区中下载了很多软件，同时维护这个项目可以使我收获经验，所以我决定顺手将开发的成果贡献回开源社区。这也是我在推出1.0.0后仍然积极维护并推出了很多Releases的原因。&lt;/p&gt;
+&lt;h1&gt;End&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;MouseMacros&lt;/code&gt;花费了我很多的心血，如果这确实帮到您的话，还请您不要吝啬手中的Star，为我点亮那颗星吧。
+::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;hr /&gt;
+</content:encoded></item><item><title>MouseMacros Readme</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacrosreadme/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacrosreadme/</guid><description>MouseMacros Readme</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;h1&gt;MouseMacros&lt;/h1&gt;
 &lt;h2&gt;&amp;lt;p align=&quot;center&quot;&amp;gt;
 &amp;lt;img src=&quot;https://raw.githubusercontent.com/Samera2022/MouseMacros/main/docs/images/MouseMacrosIcon.png&quot; alt=&quot;MouseMacros Logo&quot; width=&quot;120&quot;&amp;gt;
@@ -437,41 +515,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;/ul&gt;
 &lt;h3&gt;License&lt;/h3&gt;
 &lt;p&gt;This project is licensed under the GNU General Public License v3.0 License - see the &lt;code&gt;LICENSE&lt;/code&gt; file for details.&lt;/p&gt;
-</content:encoded></item><item><title>About MouseMacros</title><link>https://samera2022.github.io/posts/mousemacros/aboutmousemacros/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/aboutmousemacros/</guid><description>About MouseMacros</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;你好，这里是&lt;code&gt;Projects/MouseMacros&lt;/code&gt;。欢迎收听&lt;code&gt;About MouseMacros&lt;/code&gt;，我是主持人Samera2022。今天我们就来聊一聊&lt;code&gt;MouseMacros&lt;/code&gt;的一些简单介绍，以及我为什么要开发&lt;code&gt;MouseMacros&lt;/code&gt;这个项目。&lt;/p&gt;
-&lt;h1&gt;Why &lt;code&gt;MouseMacros&lt;/code&gt; is a better choice?&lt;/h1&gt;
-&lt;p&gt;如果你打开github搜索&lt;code&gt;mouse-recorder&lt;/code&gt;,&lt;code&gt;auto-clicker&lt;/code&gt;,&lt;code&gt;mouse-macro&lt;/code&gt;等词条，或者打开google搜索&lt;code&gt;Mouse Macros&lt;/code&gt;的话，你很可能会见到雪花般的鼠标宏项目。但是，让我们变得实际一点，这里面的很多项目其实并不适合用户使用。
-:::note
-首先我想向下文提到的开源作者们致敬，尽管他们的项目可能存在一些问题，但是他们践行了宝贵的开源精神！此外，需要注意的是，我对他们项目的看法也可能并不正确。如果您有别的见解，欢迎来联系我，我们可以进行更加深入的讨论。
-:::
-:::note
-抱歉，我可能会引用别人的仓库。如果您是仓库的作者，并且不希望您的仓库出现在这里，请联系我，我会立刻撤下。
-:::
-不妨让我们简单地举出一些例子：&lt;/p&gt;
-&lt;p&gt;↓该项目不具有Releases，其初衷并非服务用户，这只是自己的开发备份。
-::github{repo=&quot;jborza/mouse-macros&quot;}
-↓该项目具有Releases，但是相关功能和GUI均比较简陋。
-::github{repo=&quot;n43e120/MouseMacro&quot;}
-↓该项目具有Releases和较为美观的GUI，但是相关功能较少。
-::github{repo=&quot;guinhx/ActionRecorder&quot;}
-↓该项目具有Releases，美观的GUI与（和前者相比）比较多的功能，但是文件包过大。
-::github{repo=&quot;p6laris/SnapClicker&quot;}
-:::note
-就最后一个项目而言，它的总体功能数比&lt;code&gt;MouseMacros&lt;/code&gt;要少很多，但是其文件包大小基本为&lt;code&gt;MouseMacros&lt;/code&gt;的两倍。这是我评价其文件包过大的依据。
-:::
-这些事情不止发生在这些项目，甚至可以说，你看到的很多项目（包括github以外的，有些甚至还有可能是付费的）很可能都有以上的弊端。而&lt;code&gt;MouseMacros&lt;/code&gt;则在&lt;code&gt;功能多-臃肿&lt;/code&gt;中取得了一个恰当的平衡。首先&lt;code&gt;MouseMacros&lt;/code&gt;是免费的开源项目，其诞生的初衷就是为了服务用户，让用户以一种Straight-forward的方式快捷地享受鼠标宏所带来的便利。因此，常用的功能，我选择直接放在&lt;code&gt;MainFrame&lt;/code&gt;中。对于需求简单的用户直接点击“开始”和“结束”就可以了。&lt;/p&gt;
-&lt;p&gt;而对于要求略高的用户，他们可以选择在&lt;code&gt;SettingsDialog&lt;/code&gt;和&lt;code&gt;MacroSettingsDialog&lt;/code&gt;中进行更进一步的个性化设置，我也将一些比较常用的功能内置在了这两个设置窗体中。而对于一些“窗体大小”、“关闭方式”、“历史保存地址”等并不那么直接，但又切实显著地影响到使用体验的功能，我选择直接放在cache.json中，由程序自动配置，进而降低用户的信息熵与决策成本。&lt;/p&gt;
-&lt;p&gt;制作一个鼠标宏是快速的，但是制作一个&lt;code&gt;好用的&lt;/code&gt;鼠标宏却并非轻松。制作一个&lt;code&gt;用户友好&lt;/code&gt;的鼠标宏则需要更加多的时间投入和精力投入以进行打磨。&lt;/p&gt;
-&lt;h1&gt;Why I chose to develop &lt;code&gt;MouseMacros&lt;/code&gt;?&lt;/h1&gt;
-&lt;p&gt;这在其他地方没有提到，但我是一个P社&lt;code&gt;Paradox&lt;/code&gt;玩家。具体地说，我主要游玩群星&lt;code&gt;Stellaris&lt;/code&gt;，并且偏向于其中的一个神奇的流派——智能机械格式塔扩张流派——或者更简单地说，塔械爆铺流。我在里面需要手动操作上百个球，这并非夸张。在我的一个千星存档中，我甚至需要直接操作230个殖民地！这听起来很吓人，实际上也确实是的。不过这么多殖民地也为我带来了巨大的资源收益。言归正传，我对于每种资源都有特定的产出专精模式。用另一种话说，这两百多个殖民地其实共用了相同的几个建筑的模板。而我想要建设这些殖民地，这意味着我需要整整操作230次。当我在漫长的游戏时间中真的完成了这一项工作，我觉得这是非常令人疲劳的。因此我寻找是否有这样一种方便轻松的方式，能够替代我执行相同的动作。&lt;/p&gt;
-&lt;p&gt;第一时间，我想到了&lt;code&gt;宏鼠标&lt;/code&gt;。这是一种昂贵的鼠标，在生产时就预置了&lt;code&gt;鼠标宏&lt;/code&gt;的功能。我不想额外花费金钱，因此我选择去互联网寻找功能相似的软件。不幸的是，我在简体中文互联网上寻找到的软件大多具有广告，或者需要付费（不是买断制，是定期订阅）。我又在除简体中文互联网以外的地方寻找，发现情况稍微好些，至少它们的GUI看起来更加现代化，但是仍然存在高昂买断价格的问题。而对于那些免费的软件，他们的功能过于简单，不足以满足我的需求。同时，他们简陋的发布网页和非常简陋GUI界面（注：现代化的GUI是针对昂贵的买断软件而言的），以及他们所在的不知名的小网站，使我害怕我的电脑感染恶意软件。&lt;/p&gt;
-&lt;p&gt;究其根本，最关键的问题在于&lt;code&gt;免费的软件各个方面都过于简陋以至于我不敢贸然使用&lt;/code&gt;而&lt;code&gt;看起来不错的软件价格高昂&lt;/code&gt;。更进一步地，当时我在github上并没有发现很多功能相似的仓库，即便有，也几乎没有给出能直接使用的Releases。（后来被证实，这是因为那些仓库用了诸如&lt;code&gt;auto-clicker&lt;/code&gt;等其他的标签和名字，以至于我完全没有检索到。）然而，我认为制作一个鼠标宏在技术上是比较清晰的。因此我对于这个现象感到困惑，所以决定尝试自己开发一款&lt;code&gt;MouseMacros&lt;/code&gt;的软件，想看看这到底有多困难。事实证明，这相对地是比较轻松的一个工作。好吧，至少和我修改这个基于Astro的网页相比，这个还是较为轻松的。最开始我只是想着自己使用，也没有怎么考虑用户交互的事情。后来考虑到我也从开源社区中下载了很多软件，同时维护这个项目可以使我收获经验，所以我决定顺手将开发的成果贡献回开源社区。这也是我在推出1.0.0后仍然积极维护并推出了很多Releases的原因。&lt;/p&gt;
-&lt;h1&gt;End&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;MouseMacros&lt;/code&gt;花费了我很多的心血，如果这确实帮到您的话，还请您不要吝啬手中的Star，为我点亮那颗星吧。
-::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
-&lt;hr /&gt;
-</content:encoded></item><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.1 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-121-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-121-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 04 Jan 2026 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -480,7 +524,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;li&gt;修正了ExitDialog的退出逻辑，使得不选单选框直接点结束时会直接销毁ExitDialog窗体。&lt;/li&gt;
 &lt;li&gt;修正打包逻辑，1.2.0的打包结果实际上是1.2.0-26m01a的结果）））&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.2.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-120-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-120-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 02 Jan 2026 11:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-120-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-120-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 02 Jan 2026 11:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-02 19:03] 1.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -496,7 +540,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;li&gt;修改exe的文件名会导致无法找到启动文件……因此不建议修改发布时的程序名。&lt;/li&gt;
 &lt;li&gt;修改了SettingsDialog的主界面，使其更加有条理。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.2.0-26m01a Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-120-26m01a-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-120-26m01a-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 09:15:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.0-26m01a Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-120-26m01a-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-120-26m01a-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 09:15:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 17:15] 1.2.0-26m01a &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.0-26m01a&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -509,7 +553,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;li&gt;修正了打包逻辑，在该版本之前打包的exe应当全部改名为MouseMacros.exe才能正常运行。&lt;/li&gt;
 &lt;li&gt;修改exe的文件名会导致无法找到启动文件……因此不建议修改发布时的程序名。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.1.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-110-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-110-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 04:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.1.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-110-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-110-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 01 Jan 2026 04:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 12:52] 1.1.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.1.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -522,7 +566,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;ul&gt;
 &lt;li&gt;修复了1.0.4中的Tooltip长文本显示相关逻辑，使之更加准确地生效。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.4 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-104-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-104-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.4 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-104-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-104-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-01 00:00] 1.0.4 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.4&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -535,7 +579,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;ul&gt;
 &lt;li&gt;修改了CacheManager的逻辑，使之和ConfigManager保持一致。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.3 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-103-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-103-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.3 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-103-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-103-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 31 Dec 2025 07:45:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-31 15:45] 1.0.3 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.3&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -554,7 +598,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;ul&gt;
 &lt;li&gt;修正了Abort Operation的效果，使之可以在循环执行中正确地生效。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.2 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-102-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-102-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 28 Dec 2025 08:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.2 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-102-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-102-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 28 Dec 2025 08:52:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-28 16:52] 1.0.2 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.2&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -567,7 +611,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;ul&gt;
 &lt;li&gt;1.0.0中不小心删除了Macro Settings的保存设置按钮，这次重新添加了进去。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-101-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-101-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 27 Dec 2025 15:16:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.1 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-101-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-101-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 27 Dec 2025 15:16:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-12-27 23:16] 1.0.1 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.1&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -602,7 +646,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;li&gt;源代码大概其实只有1MB左右的大小，但是带上精简的运行环境就需要34.2MB了……&lt;/li&gt;
 &lt;li&gt;有人可能会说，为什么1.0.0的软件包要2.84MB，而这一次的只要1.05MB了呢？是不是压缩水平提升了？啊其实不是啊，是因为我之前不小心把项目的根目录放进源代码目录里面了……在我编写EVB和Jpackage打包的时候才发现这一点，然后才改过来。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-1.0.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-100-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-100-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 09 Jul 2025 13:31:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.0.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-100-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-100-release/</guid><description>MouseMacros Updates</description><pubDate>Wed, 09 Jul 2025 13:31:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-09 21:31] 1.0.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.0.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
@@ -619,7 +663,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;li&gt;在创建settings.custom_hotkey界面后，不点击任何对话框直接按键盘，将会直接改动start_record的按键设置。&lt;/li&gt;
 &lt;li&gt;JFileChooser的界面无法应用暗色模式……要重写这个类实在太费劲了。&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-0.1.0 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-010-release/</guid><description>MouseMacros Updates</description><pubDate>Tue, 08 Jul 2025 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.1.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-010-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-010-release/</guid><description>MouseMacros Updates</description><pubDate>Tue, 08 Jul 2025 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-08 15:08] 0.1.0
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.1.0&quot;&gt;Click here to Release&lt;/a&gt;
@@ -632,7 +676,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;ul&gt;
 &lt;li&gt;重构项目整体结构，降低代码耦合度&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>MouseMacros-0.0.2 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-002-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-002-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 06 Jul 2025 14:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.0.2 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-002-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-002-release/</guid><description>MouseMacros Updates</description><pubDate>Sun, 06 Jul 2025 14:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-06 22:51] 0.0.2
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.0.2&quot;&gt;Click here to Release&lt;/a&gt;
@@ -653,7 +697,7 @@ In this case, you will need to adjust the frame to the appropriate size.&lt;/li&
 &lt;p&gt;目前已添加以下可配置项：
 (boolean)跟随系统设置，(boolean)启用深色模式，(String)切换语言，(String)默认鼠标宏存储地址，&lt;a href=&quot;Map%3CString,String%3E&quot;&gt;未实装，不可用&lt;/a&gt;按键映射表，
 注意：&quot;跟随系统设置&quot;与(&quot;启用深色模式&quot;, &quot;切换语言&quot;)存在上位关系。如果选择了&quot;跟随系统设置&quot;，那么后二者就不再接受用户更改，直接读取系统的相应设置。&lt;/p&gt;
-</content:encoded></item><item><title>MouseMacros-0.0.1 Release</title><link>https://samera2022.github.io/posts/mousemacros/mousemacros-001-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/mousemacros/mousemacros-001-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 05 Jul 2025 12:20:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-0.0.1 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-001-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-001-release/</guid><description>MouseMacros Updates</description><pubDate>Sat, 05 Jul 2025 12:20:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2025-07-05 20:20] 0.0.1
 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/0.0.1&quot;&gt;Click here to Release&lt;/a&gt;
