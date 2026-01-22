@@ -82,6 +82,7 @@
 &lt;p&gt;我们可以得到在n舍n+1入的情况下，偏移量为&lt;code&gt;Δ=1-0.1(n+1)&lt;/code&gt;. 由此我们可以快速设计n舍n+1入算法: &lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(a==0?0.0:(0.9-0.1n)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;出于计算机精度误差，我们可以变为如下形式: &lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(1e-9)+(a==0?0.0:(0.9-0.1n)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;特别地，针对四舍五入的情况，可以得到&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(1e-9)+(a==0?0.0:(0.5)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;更进一步地，如果能确定数据均为正数或负数，可直接略去三目运算符。&lt;/p&gt;
 &lt;h1&gt;优势和劣势&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;该方法在通常情况下会比&lt;code&gt;round()&lt;/code&gt;函数更快，但由于该语句中三目运算符产生的分支，如果输入的数据中大量出现正负交替的现象，则会由于CPU分支预测器的失效导致严重的性能抖动。&lt;/li&gt;
