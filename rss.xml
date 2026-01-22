@@ -91,6 +91,628 @@
 &lt;li&gt;该方法在通常情况下会比&lt;code&gt;round()&lt;/code&gt;函数更快，但由于该语句中三目运算符产生的分支，如果输入的数据中大量出现正负交替的现象，则会由于CPU分支预测器的失效导致严重的性能抖动。&lt;/li&gt;
 &lt;li&gt;可能存在溢出风险，这需要开发者进行额外的注意（尽管&lt;code&gt;round()&lt;/code&gt;函数也会出现溢出就是了）。&lt;/li&gt;
 &lt;/ol&gt;
+</content:encoded></item><item><title>L1-011~L1-015的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-011l1-015/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-011l1-015/</guid><description>GPLT的笔记</description><pubDate>Thu, 22 Jan 2026 05:11:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-011l1-015/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-011&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(string&amp;amp; A, string&amp;amp; B);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string A;
+    getline(cin,A);
+    string B;
+    getline(cin,B);
+    solve(A,B);
+    return 0;
+}
+
+void solve(string&amp;amp; A, string&amp;amp; B) {
+    const int len = static_cast&amp;lt;int&amp;gt;(B.length());
+    for (int i = 0; i &amp;lt;= len; i++)
+        A.erase(remove(A.begin(),A.end(),B[i-1]), A.end());
+    cout&amp;lt;&amp;lt;A;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在Java中，我们可以直接通过&lt;code&gt;replace(CharSequence target, &quot;&quot;)&lt;/code&gt;来快速地删除字符串中全体的某种字符，然而在C++中实现这种操作略微复杂一些。在此我们需要先介绍两个方法：&lt;code&gt;string.erase()&lt;/code&gt;和&lt;code&gt;remove()&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;关于&lt;code&gt;string.erase(iterator first, iterator last)&lt;/code&gt;：该方法会移除从&lt;code&gt;first&lt;/code&gt;到&lt;code&gt;last&lt;/code&gt;的所有字符。&lt;/li&gt;
+&lt;li&gt;关于&lt;code&gt;remove(iterator first, iterator last, char target)&lt;/code&gt;：该方法会将从&lt;code&gt;first&lt;/code&gt;到&lt;code&gt;last&lt;/code&gt;的所有非&lt;code&gt;target_char&lt;/code&gt;字符向前移动并返回正确新结尾的迭代器，从整体上来看就是把所有的&lt;code&gt;target_char&lt;/code&gt;后移了。&lt;/li&gt;
+&lt;li&gt;尽管C++中没有原生的直接移除字符串中某字符的方法，不过有替换字符串中全体某字符为另外一个字符的方法：对于&lt;code&gt;string s&lt;/code&gt;而言，可用&lt;code&gt;replace(s.begin(), s.end(), (char) old_char, (char) new_char)&lt;/code&gt;。由于&lt;code&gt;new_char&lt;/code&gt;必须是一个&lt;code&gt;char&lt;/code&gt;类型，导致不能写&lt;code&gt;&apos;&apos;&lt;/code&gt;进去……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-012&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int n;
+    cin&amp;gt;&amp;gt;n;
+    cout&amp;lt;&amp;lt;&quot;2^&quot;&amp;lt;&amp;lt;n&amp;lt;&amp;lt;&quot; = &quot;&amp;lt;&amp;lt;pow(2,n);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;cmath&amp;gt;&lt;/code&gt;包含在&lt;code&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/code&gt;中，因此在&lt;code&gt;using namespace std&lt;/code&gt;时可以直接使用&lt;code&gt;pow(2, n)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-013&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(int N);
+int factorial(int n);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    solve(N);
+    return 0;
+}
+
+void solve(const int N) {
+    int res = 0;
+    for (int i = 1; i &amp;lt;= N; i++) res += factorial(i);
+    cout&amp;lt;&amp;lt;res;
+}
+
+int factorial(const int n) {
+    if (n==0) return 1;
+    int res = 1;
+    for (int i = 1; i &amp;lt;= n; i++) res *= i;
+    return res;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-014&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout&amp;lt;&amp;lt;&quot;This is a simple problem.&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-015&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(int N, const string&amp;amp; delimiter);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    string delimiter;
+    cin&amp;gt;&amp;gt;delimiter;
+    solve(N,delimiter);
+    return 0;
+}
+
+void solve(const int N, const string&amp;amp; delimiter) {
+    const int row = static_cast&amp;lt;int&amp;gt;(round(static_cast&amp;lt;double&amp;gt;(N)/2));
+    for (int i = 1; i &amp;lt;= row; i++) {
+        for (int j = 1; j &amp;lt;= N; j++) cout&amp;lt;&amp;lt;delimiter;
+        cout&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;C++中四舍五入使用的是&lt;code&gt;round(double)&lt;/code&gt;方法。特别地，该方法返回的仍然为&lt;code&gt;double&lt;/code&gt;类型，需要进一步手动转换。&lt;/li&gt;
+&lt;li&gt;由于C++的浮点转整数为&lt;code&gt;去尾&lt;/code&gt;转换，你也可以借助这个性质来快速转换：考虑&lt;code&gt;double a;&lt;/code&gt;，对于正数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.5)&lt;/code&gt;，对于负数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(-0.5))&lt;/code&gt;，对于0而言，为了保持统一性，我们需要使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.0f)&lt;/code&gt;。因此综合地，你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;( a + ( a == 0 ? 0.0f : ( 0.5 + 1e-9 ) * ( a &amp;gt; 0 ? 1 : -1)))&lt;/code&gt;来进行快速四舍五入。类似地，你可以处理五舍六入等情况。关于偏移截断的内容，详见&lt;a href=&quot;https://samera2022.github.io/posts/Experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/&quot;&gt;这篇文章&lt;/a&gt;或&lt;a href=&quot;https://zhuanlan.zhihu.com/p/1997742572173555685&quot;&gt;这篇文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果你希望返回其他整数类型，可以采用&lt;code&gt;lround(doble)&lt;/code&gt;（返回&lt;code&gt;long&lt;/code&gt;）和&lt;code&gt;llround(double)&lt;/code&gt;（返回&lt;code&gt;long long&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;特别地，C++并不原生支持四舍五入到N位小数，如果你需要这样的操作，需要先乘以eN倍，取整后再除以eN还原回来。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-006~L1-010的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-006l1-010/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-006l1-010/</guid><description>GPLT的笔记</description><pubDate>Thu, 22 Jan 2026 03:04:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-006l1-010/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-006&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//Spec A 2/20 Point
+
+void solve(int N);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    solve(N);
+    return 0;
+}
+
+void solve(const int N) {
+    //Spec Tip Start
+    int crtMax = 1;//连续因数的个数的最大值
+    int crt = N;//连续因数最小值，当其为质数时即为其本身
+    //Spec Tip End
+    unordered_map&amp;lt;int,int&amp;gt; map;
+    for (int i = 2; i&amp;lt;=sqrt(N); i++) {
+        if (int n = N; n%i==0) {
+            int delta = 0;
+            bool valid = n%(i+delta)==0;
+            while (valid) {
+                n/=i+delta;
+                valid = n%(i+delta+1)==0;
+                if (valid) delta++;
+                else break;
+            }
+            //Spec Tip Start
+            //delta+1代表此时的连续因数长度，此时有更长连续因数长度时，对crt进行同步
+            if (delta+1&amp;gt;crtMax) {
+                crtMax = delta+1;
+                crt = i;
+            }
+            if (crt==N) crt = i;//需要最小因子序列，因此需要考虑其可分解为两数相乘时，连续因数最小值改为最小因数
+            //Spec Tip End
+        }
+    }
+    cout&amp;lt;&amp;lt;crtMax&amp;lt;&amp;lt;&quot;\n&quot;;
+    for (int i = 0; i &amp;lt; crtMax; i++) {
+        cout&amp;lt;&amp;lt;crt+i;
+        if (i!=crtMax-1) cout&amp;lt;&amp;lt;&quot;*&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的，这题主要是算法上稍微绕了一下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-007&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const string&amp;amp; s);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string s;
+    cin&amp;gt;&amp;gt;s;
+    solve(s);
+    return 0;
+}
+
+void solve(const string&amp;amp; s) {
+    string result;
+    int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    for (int i = 0; i&amp;lt;len; i++) {
+        switch (s[i]) {
+            case &apos;-&apos;:
+                result.append(&quot;fu&quot;);
+                break;
+            case &apos;1&apos;:
+                result.append(&quot;yi&quot;);
+                break;
+            case &apos;2&apos;:
+                result.append(&quot;er&quot;);
+                break;
+            case &apos;3&apos;:
+                result.append(&quot;san&quot;);
+                break;
+            case &apos;4&apos;:
+                result.append(&quot;si&quot;);
+                break;
+            case &apos;5&apos;:
+                result.append(&quot;wu&quot;);
+                break;
+            case &apos;6&apos;:
+                result.append(&quot;liu&quot;);
+                break;
+            case &apos;7&apos;:
+                result.append(&quot;qi&quot;);
+                break;
+            case &apos;8&apos;:
+                result.append(&quot;ba&quot;);
+                break;
+            case &apos;9&apos;:
+                result.append(&quot;jiu&quot;);
+                break;
+            case &apos;0&apos;:
+                result.append(&quot;ling&quot;);
+                break;
+            default:
+                break;
+        }
+        if (i!=len-1) result.append(&quot; &quot;);
+    }
+    cout&amp;lt;&amp;lt;result;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;此处用到了C++风格的强制转型&lt;code&gt;static_cast&amp;lt;int&amp;gt;()&lt;/code&gt;，Java中的写法&lt;code&gt;(int)&lt;/code&gt;也能用，但是那被称为C风格的强制转型。&lt;/li&gt;
+&lt;li&gt;C++中的&lt;code&gt;string&lt;/code&gt;可以像Java的&lt;code&gt;StringBuilder&lt;/code&gt;一样使用&lt;code&gt;append&lt;/code&gt;方法。更进一步地，C++的字符串可以直接编辑原处，而Java的字符串由于其不可变导致只能编辑副本，这使得C++的字符串更轻一些。&lt;/li&gt;
+&lt;li&gt;也许有人会说为啥我写这么长的&lt;code&gt;switch-case&lt;/code&gt;都不考虑直接单独处理符号再写个数组来处理0~9，究其根本， 我只能说我想试试C++中的&lt;code&gt;switch-case&lt;/code&gt;和Java中是否一致））&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-008&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//Spec A 2/10 Point
+
+void solve(int A, int B);
+void handle(int num);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int A;
+    cin&amp;gt;&amp;gt;A;
+    int B;
+    cin&amp;gt;&amp;gt;B;
+    solve(A,B);
+    return 0;
+}
+
+void solve(const int A, const int B) {
+    const int total = B - A + 1;
+    const int time = total / 5;
+    for (int i = 1; i &amp;lt;= time; i++) {
+        for (int j = 1; j&amp;lt;=5; j++) handle(A+5*(i-1)+(j-1));
+        cout&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    //Spec Tip Start
+    if (const int rest = total % 5; rest!=0) {
+        for (int j = rest - 1; j &amp;gt;= 0; j--) handle(B-j);
+        cout&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    //Spec Tip End
+    cout&amp;lt;&amp;lt;&quot;Sum = &quot;&amp;lt;&amp;lt;((A+B)*total/2);
+}
+
+void handle(const int num) {
+    string s = to_string(num);
+    const int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    const int lLen = 5 - len;
+    for (int i = 1; i &amp;lt;= lLen; i++) cout&amp;lt;&amp;lt;&quot; &quot;;
+    cout&amp;lt;&amp;lt;s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;此处的&lt;code&gt;solve&lt;/code&gt;方法直接采用了值传递。我们可以发现，值传递时，方法参数的&lt;code&gt;const&lt;/code&gt;与否不妨碍其声明中无需写&lt;code&gt;const&lt;/code&gt;。声明中的引用传递的&lt;code&gt;const&lt;/code&gt;主要是为了确保方法不会修改原来的值，而值传递的情况下修改后和原来也无所谓，所以声明中不能再写&lt;code&gt;const&lt;/code&gt;修饰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-009&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//Spec A 11/20 Point
+
+pair&amp;lt;ll, ll&amp;gt; split(const string&amp;amp; s, char delimiter);
+ll gcd(ll a, ll b);
+void simplify(ll&amp;amp; a, ll&amp;amp; b);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    ll curtNum = 0;
+    ll curtDen = 1;
+    for (ll i = 1; i &amp;lt;= N; i++) {
+        string content;
+        cin&amp;gt;&amp;gt;content;
+        const auto [Num, Den] = split(content,&apos;/&apos;);
+        curtNum = curtNum*Den+curtDen*Num;
+        curtDen *= Den;
+        simplify(curtNum, curtDen);
+    }
+    const ll res = curtNum/curtDen;
+    ll resNum = curtNum%curtDen;
+    simplify(resNum,curtDen);
+    if (res==0&amp;amp;&amp;amp;resNum!=0) cout&amp;lt;&amp;lt;resNum&amp;lt;&amp;lt;&quot;/&quot;&amp;lt;&amp;lt;curtDen;
+    if (res!=0&amp;amp;&amp;amp;resNum==0) cout&amp;lt;&amp;lt;res;
+    if (res!=0&amp;amp;&amp;amp;resNum!=0) cout&amp;lt;&amp;lt;res&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;resNum&amp;lt;&amp;lt;&quot;/&quot;&amp;lt;&amp;lt;curtDen;
+    if (res==0&amp;amp;&amp;amp;resNum==0) cout&amp;lt;&amp;lt;0;
+    return 0;
+}
+
+pair&amp;lt;ll,ll&amp;gt; split(const string&amp;amp; s, const char delimiter) {
+    pair&amp;lt;ll,ll&amp;gt; tokens;
+    if (s.find(string(1,delimiter))!=string::npos) {
+        string token;
+        stringstream ss(s);
+        getline(ss,token, delimiter);
+        tokens.first = stoll(token);
+        getline(ss, token, delimiter);
+        tokens.second = stoll(token);
+    } else {
+        tokens.first = stoll(s);
+        tokens.second = 1;
+    }
+    return tokens;
+}
+
+ll gcd(ll a, ll b) {
+    while (b != 0) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
+
+void simplify(ll&amp;amp; a, ll&amp;amp; b) {
+    const ll multiplier = gcd(a,b);
+    a /= multiplier;
+    b /= multiplier;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我原来写的是先乘出完整的分母，再算出完整的分子，最后直接约分得到结果，但是这题有个小分值的测试点会超&lt;code&gt;long long&lt;/code&gt;的范围，导致只能逐步约分了。&lt;/li&gt;
+&lt;li&gt;也许有人会说为什么我要连着写四个&lt;code&gt;if&lt;/code&gt;而不用&lt;code&gt;if else-if else&lt;/code&gt;，再或者在每个if的结构体中直接&lt;code&gt;return 0;&lt;/code&gt;。究其根本，我只能说这是对称美）））言归正传，这确实会损失少量性能，不过我还是觉得这很美观））&lt;/li&gt;
+&lt;li&gt;本题中可能出现负数，在实际操作中求最大公约数(&lt;code&gt;gcd&lt;/code&gt;)是可以正常处理负数的，但是返回的结果可能需要进一步的操作。因而我直接采用了绝对值计算，这会保险一些。&lt;/li&gt;
+&lt;li&gt;另记：有人可能会采用递归写法的&lt;code&gt;gcd&lt;/code&gt;，需要补充的是，在递归深度达到1e5或1e6时，递归可能导致栈溢出(&lt;code&gt;Stack Overflow&lt;/code&gt;)，而循环则不会出现这种问题。此外，递归涉及调用、压栈、弹栈、参数传递等CPU操作，这也使得其常数时间通常比循环要大。&lt;/li&gt;
+&lt;li&gt;C++中没有现成的&lt;code&gt;split&lt;/code&gt;方法，需要你手动进行实现……因此，我们需要清楚&lt;code&gt;getline()&lt;/code&gt;的具体作用：首先需要指出的是，这是&lt;code&gt;getline()&lt;/code&gt;函数的其中一个作用，另外一个作用等到下一次见到它的时候再说。该函数有三个参数，此处我们填入的是&lt;code&gt;(stringstream, string, char)&lt;/code&gt;。&lt;code&gt;getline&lt;/code&gt;首先会清空&lt;code&gt;string&lt;/code&gt;中原有的内容，而后从&lt;code&gt;stringstream&lt;/code&gt;中逐个读取字符，一直读取到&lt;code&gt;char&lt;/code&gt;出现时停止读取，此时会将读取到的&lt;code&gt;char&lt;/code&gt;之前的字符串存入你提供的&lt;code&gt;string&lt;/code&gt;中。如果不填入&lt;code&gt;char&lt;/code&gt;，则其会默认读到行末换行（不包含换行符）。由于内容会被存入&lt;code&gt;string&lt;/code&gt;，这使得你只能传入左值(&lt;code&gt;L-Value&lt;/code&gt;)进去。在这种情况下，&lt;code&gt;getline&lt;/code&gt;起到的实际上是字符分割的作用。&lt;/li&gt;
+&lt;li&gt;另记：左值(&lt;code&gt;L-Value&lt;/code&gt;)是一个正常的变量，你可以通过变量名来访问它。右值(&lt;code&gt;R-Value&lt;/code&gt;)是一个临时变量，你无法通过变量名来访问它（因为它不存在变量名）。比方说，&lt;code&gt;to_string(num)&lt;/code&gt;是一个匿名返回值，你无法用一个变量名来访问它；&lt;code&gt;&quot;42&quot;&lt;/code&gt;是一个字面量，你也无法用一个变量名来访问它。这些变量在所在行结束后就会被销毁，因而被算作右值(&lt;code&gt;R-Value&lt;/code&gt;)。简单地说，你可以通过“是否有一个变量名”来快速判断左右值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-010&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int A,B,C = 0;
+    cin&amp;gt;&amp;gt;A;
+    cin&amp;gt;&amp;gt;B;
+    cin&amp;gt;&amp;gt;C;
+    vector v = {A,B,C};
+    sort(v.begin(), v.end());
+    for (int i = 1; i &amp;lt;= 3; i++) {
+        cout&amp;lt;&amp;lt;v[i-1];
+        if (i!=3) cout&amp;lt;&amp;lt;&quot;-&amp;gt;&quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;一个比大小的题目，可以用&lt;code&gt;if-else&lt;/code&gt;来判断得到排序结果。这里我懒了一下，直接用数组排序了。&lt;/li&gt;
+&lt;li&gt;C++的&lt;code&gt;vector&lt;/code&gt;和Java的&lt;code&gt;ArrayList&lt;/code&gt;性质相似，但是在查询元素位置的时候，如果你使用&lt;code&gt;vector.at(i)&lt;/code&gt;，其会因为越界检查而比&lt;code&gt;vector[i]&lt;/code&gt;要更慢。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-001~L1-005的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-001l1-005/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-001l1-005/</guid><description>GPLT的笔记</description><pubDate>Wed, 21 Jan 2026 15:40:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-001l1-005/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-001&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include&lt;/code&gt;属于&lt;code&gt;预处理语句&lt;/code&gt;，在编译期会对这些语句进行复制操作。即，将目标文件的内容原封不动地剪切到本文件的这一行。第一句为导入&lt;code&gt;bits/stdc++.h&lt;/code&gt;这个头文件，该头文件包含大量常用的&lt;code&gt;#include&lt;/code&gt;语句，因此又被称为“万用头”。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;using namespace&lt;/code&gt;是&lt;code&gt;使用命名空间&lt;/code&gt;，在C++中这是为了解决命名冲突而诞生的，在Java中该操作类似于&lt;code&gt;static import&lt;/code&gt;的效果。未使用&lt;code&gt;std&lt;/code&gt;命名空间时，所有试图调用&lt;code&gt;std&lt;/code&gt;的操作都需要通过&lt;code&gt;std::xxx&lt;/code&gt;来实现，而使用后则可直接操作。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;typedef&lt;/code&gt;是起别名，在此例中是将&lt;code&gt;long long&lt;/code&gt;全部改名为ll，这使得你的输入更加方便。&lt;/li&gt;
+&lt;li&gt;另记：C++中int的范围和Java中int的范围一致；&lt;code&gt;long long&lt;/code&gt;的范围和Java中&lt;code&gt;long&lt;/code&gt;的范围一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ios::sync_with_stdio(false);&lt;/code&gt;是关闭C++输入输出流（如&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;cout&lt;/code&gt;）和C标准库的输入输出函数（如&lt;code&gt;scanf&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;）的同步状态，这会加快输入输出速度，代价是不能再混合使用&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;scanf&lt;/code&gt; 以及 &lt;code&gt;cout&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;，因为他们执行的顺序是不同步的。在这种情况下，建议只使用cin和cout。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cin.tie(nullptr)&lt;/code&gt;会取消&lt;code&gt;cin&lt;/code&gt;与&lt;code&gt;cout&lt;/code&gt;的绑定，进而使用&lt;code&gt;cin&lt;/code&gt;时不再会强制刷新&lt;code&gt;cout&lt;/code&gt;的缓冲区，进而加快输入输出速度。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cout.tie(nullptr)&lt;/code&gt;其实没有什么用，写上这一句大多数出于心理安慰，或者避免极少数情况下&lt;code&gt;cout&lt;/code&gt;被意外绑定到其他输出流。&lt;/li&gt;
+&lt;li&gt;另记：有人认为&lt;code&gt;nullptr&lt;/code&gt;空指针是AI才会写的形式，进而推荐直接写0进去。我对此持保留意见，后面的代码仍然会沿用&lt;code&gt;nullptr&lt;/code&gt;的写法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
+    return 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;用于&lt;code&gt;cout&lt;/code&gt;的&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;是一个新的符号，可以认为将右侧的内容推送到左端去，同理用于&lt;code&gt;cin&lt;/code&gt;的&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;是将左侧的内容推送到右端去。二者属于&lt;code&gt;流插入运算符&lt;/code&gt;，是通过重载位左/右移运算符实现的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;return 0&lt;/code&gt;中的0是退出状态码，也就是你在IDE下方控制台在最后经常看到的“&lt;code&gt;进程已结束，退出代码为 0&lt;/code&gt;”的那个0。在&lt;code&gt;main&lt;/code&gt;函数中其实可以省略，因为省略之后编译器会默认采用&lt;code&gt;return 0&lt;/code&gt;。对于在线评测系统而言，通常要求返回值必须为0，这导致你在&lt;code&gt;main&lt;/code&gt;中写不写返回其实没有影响。&lt;/li&gt;
+&lt;li&gt;另记：“补全&lt;code&gt;return 0&lt;/code&gt;”的操作编译器只会在&lt;code&gt;main&lt;/code&gt;函数，即你的入口函数(&lt;code&gt;int main&lt;/code&gt;)进行。对于其他的非&lt;code&gt;void&lt;/code&gt;的函数，你仍然需要手动写出所有的返回语句。
+:::info
+这份代码基本是以后所有代码的模板。即，之后的代码基本都会以这样的形式给出。
+:::&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-002&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(int N, char style);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin &amp;gt;&amp;gt; N;
+    char style;
+    cin&amp;gt;&amp;gt;style;
+    solve(N, style);
+    return 0;
+}
+
+void solve(const int N, const char style) {
+    const int time = static_cast&amp;lt;int&amp;gt;(pow(((N + 1) / 2), 0.5));
+    const int rest = N - (2 * time * time - 1);
+    const int max = 2 * time - 1;
+    for (int i = 1; i &amp;lt;= time; i++) {
+        for (int k = 0; k &amp;lt; i - 1; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
+        for (int j = 1; j &amp;lt;= max - 2 * (i - 1); j++) cout &amp;lt;&amp;lt; style;
+        cout &amp;lt;&amp;lt; &quot;\n&quot;;
+    }
+    for (int i = 2; i &amp;lt;= time; i++) {
+        for (int k = 0; k &amp;lt; time - i; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
+        for (int j = 1; j &amp;lt;= 2 * i - 1; j++) cout &amp;lt;&amp;lt; style;
+        cout &amp;lt;&amp;lt; &quot;\n&quot;;
+    }
+    cout &amp;lt;&amp;lt; rest;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;C++相较于Java有一点比较独特，如果调用的方法写在下方的话，则需要在在上方先写一个声明以供链接。因此也有不少人选择将&lt;code&gt;solve&lt;/code&gt;方法写在&lt;code&gt;main&lt;/code&gt;函数的上面。&lt;/li&gt;
+&lt;li&gt;C++对于只有单语句的循环也可以省略大括号，这一点在Java中是没有的。&lt;/li&gt;
+&lt;li&gt;我对于所有的常量都加&lt;code&gt;const&lt;/code&gt;修饰了，这可能会对C++比较熟练的人造成疑惑。这其实只是我为了不想看见编译器中的黄色弱警告干的）））我知道这种写法比较抽象，可能类似于IDEA中把每一个提示警告的全局的变量都上了一个&lt;code&gt;final&lt;/code&gt;修饰一样生草，我也知道可以通过修改编译器显示警告的方案来取消显示这些警告，但是我还是觉得这么写会好一些）））&lt;/li&gt;
+&lt;li&gt;有的人换行可能会采用&lt;code&gt;endl&lt;/code&gt;，不过我还是沿用Java的&lt;code&gt;&quot;\n&quot;&lt;/code&gt;。前者会刷新输出缓冲区而后者不会，因此后者的效率也会更高一些。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-003&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const string&amp;amp; s);
+
+int cnt[10];
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string s;
+    cin &amp;gt;&amp;gt; s;
+    solve(s);
+    return 0;
+}
+
+void solve(const string&amp;amp; s) {
+    int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    for (int i = 0; i &amp;lt; len; i++) {
+        cnt[s.at(i)-&apos;0&apos;]++;
+    }
+    for (int i = 0; i &amp;lt; 10; i++) {
+        if (cnt[i]!=0) cout&amp;lt;&amp;lt;i&amp;lt;&amp;lt;&quot;:&quot;&amp;lt;&amp;lt;cnt[i]&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int cnt[10]&lt;/code&gt;是C++数组的写法。在开启编译器优化时，读取和写入操作&lt;code&gt;vector&lt;/code&gt;(C++的列表)能做到和它一样快。&lt;/li&gt;
+&lt;li&gt;另记：C++中的数组在局部可变长度，即，你可以在局部声明一个&lt;code&gt;int N&lt;/code&gt;填入&lt;code&gt;int cnt[]&lt;/code&gt;中，ze&lt;code&gt;cnt&lt;/code&gt;长度会随&lt;code&gt;N&lt;/code&gt;的变化而改变。特别地，在全局你只能声明确定长度的数组。&lt;/li&gt;
+&lt;li&gt;这里用到了引用&lt;code&gt;&amp;amp;&lt;/code&gt;，Java中的参数传递只有&lt;code&gt;值传递&lt;/code&gt;，而C++中可以做到&lt;code&gt;引用传递&lt;/code&gt;。在方法的参数列表中，在变量名旁边加&lt;code&gt;&amp;amp;&lt;/code&gt;即认为是传递引用。特别地，如果传递的是引用，则需要在最上方声明时同样改为引用传递。&lt;/li&gt;
+&lt;li&gt;指针的大小为8字节，因此在&lt;code&gt;可以选择&lt;/code&gt;值/引用传递时，对于基础类型（除&lt;code&gt;long double&lt;/code&gt;之外），传入参数时需要使用值传递；对于引用类型，传入参数时需要使用引用传递。如果你的方法本身就需要修改原来变量的值，请继续使用引用传递。如果你的方法本身就希望修改值，但不希望修改原来变量，请继续使用值传递。&lt;/li&gt;
+&lt;li&gt;另记：常用的基础类型：&lt;code&gt;bool&lt;/code&gt; &lt;code&gt;char&lt;/code&gt; &lt;code&gt;short&lt;/code&gt; &lt;code&gt;int&lt;/code&gt; &lt;code&gt;long&lt;/code&gt;（←不建议使用） &lt;code&gt;long long&lt;/code&gt; &lt;code&gt;float&lt;/code&gt;（←不建议使用） &lt;code&gt;double&lt;/code&gt; &lt;code&gt;long double&lt;/code&gt;。除了&lt;code&gt;long double&lt;/code&gt;，其他所有的基础类型大小都小于等于8字节。&lt;/li&gt;
+&lt;li&gt;另记：特别地，&lt;code&gt;long&lt;/code&gt;在Windows中为4字节，在Linux中为8字节，因此请不要使用&lt;code&gt;long&lt;/code&gt;，改用&lt;code&gt;long long&lt;/code&gt;（全平台均为8字节）更加稳妥。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s.at(i)-&apos;0&apos;&lt;/code&gt;是C++中&lt;code&gt;char&lt;/code&gt;转&lt;code&gt;int&lt;/code&gt;的方式。不要采用&lt;code&gt;stoi(to_string(s.at(i)))&lt;/code&gt;！因为C++中的&lt;code&gt;char&lt;/code&gt;类型本身即可作为&lt;code&gt;int&lt;/code&gt;，这会输出它们的ASCII码。这使得后者输出的即为ASCII，而前者通过减去基准的&apos;0&apos;获得的相对偏移量才是数字本身。&lt;/li&gt;
+&lt;li&gt;另记：特别地，Java中的char为2字节（UTF-16），而C++中的char为1字节（Unicode），其本质为8位整数，因而C++中的&lt;code&gt;char&lt;/code&gt;类型才可以本身即可作为&lt;code&gt;int&lt;/code&gt;输出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-004&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(int F);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int F;
+    cin&amp;gt;&amp;gt;F;
+    solve(F);
+    return 0;
+}
+
+void solve(const int F) {
+    cout&amp;lt;&amp;lt;&quot;Celsius = &quot;&amp;lt;&amp;lt;5*(F-32)/9;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-005&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int total;
+    cin&amp;gt;&amp;gt;total;
+    string arr[total+1];//开大一位，方便后面查询
+    for (int i = 0; i &amp;lt; total; i++) {
+        string s;
+        cin&amp;gt;&amp;gt;s;
+        int seat1;
+        cin&amp;gt;&amp;gt;seat1;
+        int seat2;
+        cin&amp;gt;&amp;gt;seat2;
+        arr[seat1] = s + &quot; &quot; + to_string(seat2);
+    }
+    int ask_total;
+    cin&amp;gt;&amp;gt;ask_total;
+    for (int i = 0; i &amp;lt; ask_total; i++) {
+        int j;
+        cin&amp;gt;&amp;gt;j;
+        cout&amp;lt;&amp;lt;arr[j]&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记录的，此处&lt;code&gt;string[]&lt;/code&gt;开大一位是因为后面出现了越界，而在这里多开一位是修改量最小的方法。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>AdvancedClipboard-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</guid><description>AdvancedClipboard Updates</description><pubDate>Fri, 16 Jan 2026 16:05:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-17 00:05] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
