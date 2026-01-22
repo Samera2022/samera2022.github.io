@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>基于偏移截断法的n舍n+1入的简单数学分析</title><link>https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</guid><description>讨论C++环境下的偏移截断法</description><pubDate>Thu, 22 Jan 2026 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要分析C++环境下的偏移截断法。当然，核心的逻辑对于其他语言也适用，本文仅以C++举例。C++的&lt;code&gt;强制转型&lt;/code&gt;取整为&lt;code&gt;去尾转型&lt;/code&gt;，即抛弃所有小数位数。基于此，我们可以讨论基于偏移的截断。&lt;/p&gt;
+&lt;p&gt;本文尽力做到通俗且严谨，如有疏漏还望大佬轻喷，不吝赐教！&lt;/p&gt;
 &lt;h1&gt;简单解答&lt;/h1&gt;
 &lt;h2&gt;法1. 四舍五入的情况（采用实数的规范小数表示证明）&lt;/h2&gt;
 &lt;p&gt;特殊地，我们先考虑四舍五入的情况。&lt;/p&gt;
@@ -14,7 +15,7 @@
 &lt;p&gt;我们可研究不等式两边的单调性，发现 $$1-\left( 0.5+10^{-n} \right) $$单调递增, $$1-\left( 0.5-10^{-n} \right) $$单调递减。&lt;/p&gt;
 &lt;p&gt;考察两个式子的极限，发现 $$\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] =\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$&lt;/p&gt;
 &lt;p&gt;由于 $$1-\left( 0.5+10^{-n} \right) \leq\Delta &amp;lt;1-\left( 0.5-10^{-n} \right) $$ 对 $$\forall n\in \mathbb{N}^* $$ 成立，则取 $$ n \rightarrow \infty $$, 有 $$0.5=\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] \leq \Delta \leq \lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$, 则 $$\Delta=0.5 $$.&lt;/p&gt;
-&lt;h4&gt;法1.3: 不等式+闭区间套定理&lt;/h4&gt;
+&lt;h4&gt;法1.3: 不等式+闭区间套定理（可能有点怪怪的）&lt;/h4&gt;
 &lt;p&gt;由于小于等于号的定义, 即&lt;code&gt;a≤b为a&amp;lt;b或a=b&lt;/code&gt;，我们可得 $$1-\left( 0.5+10^{-n} \right) \leq\Delta \leq 1-\left( 0.5-10^{-n} \right) $$&lt;/p&gt;
 &lt;p&gt;进而我们可以发现 $$\Delta \in \left[ 1-\left( 0.5+10^{-n} \right) ,1-\left( 0.5-10^{-n} \right) \right] $$.&lt;/p&gt;
 &lt;p&gt;记 $$a_n=1-\left( 0.5+10^{-n} \right) , b_n=1-\left( 0.5-10^{-n} \right) $$, 则 $$\left{ \left[ a_n,b_n \right] \right} $$ 满足下列条件:&lt;/p&gt;
