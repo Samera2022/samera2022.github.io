@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>基于偏移截断法的n舍n+1入简单数学分析</title><link>https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</guid><description>讨论C++环境下的偏移截断法</description><pubDate>Thu, 22 Jan 2026 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要分析C++环境下的偏移截断法。当然，核心的逻辑对于其他语言也适用，本文仅以C++举例。C++的&lt;code&gt;强制转型&lt;/code&gt;取整为&lt;code&gt;去尾转型&lt;/code&gt;，即抛弃所有小数位数。基于此，我们可以讨论基于偏移的截断。&lt;/p&gt;
 &lt;p&gt;本文尽力做到通俗且严谨，如有疏漏还望大佬轻喷，不吝赐教！&lt;/p&gt;
-&lt;h1&gt;简单解答&lt;/h1&gt;
+&lt;h1&gt;一、简单解答&lt;/h1&gt;
 &lt;h2&gt;法1. 四舍五入的情况（采用实数的规范小数表示证明）&lt;/h2&gt;
 &lt;p&gt;特殊地，我们先考虑四舍五入的情况。&lt;/p&gt;
 &lt;h3&gt;(1) 考虑正数情况&lt;/h3&gt;
@@ -50,7 +50,7 @@
 &lt;p&gt;由于 $$\forall \varepsilon &amp;gt;0, \text{均有}0.9-0.1n-\varepsilon \leq \Delta \leq 0.9-0.1n+\varepsilon $$, 则对不等式两端同取 $$\varepsilon\rightarrow 0 $$ 的极限，则有 $$\lim_{\varepsilon \rightarrow 0^+} \left( 0.9-0.1n-\varepsilon \right) \leq \Delta \leq \lim_{\varepsilon \rightarrow 0^+} \left( 0.9-0.1n+\varepsilon \right) $$. 进而有 $$\Delta=0.9-0.1n $$&lt;/p&gt;
 &lt;h3&gt;(2) 考虑负数情况&lt;/h3&gt;
 &lt;p&gt;考虑 $$\forall \varepsilon&amp;gt;0  $$, 对于负数&lt;code&gt;-A-0.1(n+1)+ε&lt;/code&gt;和&lt;code&gt;-B-0.1(n+1)-ε&lt;/code&gt;我们期望得到&lt;code&gt;-A&lt;/code&gt;和&lt;code&gt;-(B+1)&lt;/code&gt;。直接取&lt;code&gt;C=-(-A-0.1(n+1)+ε)=A+0.1(n+1)-ε&lt;/code&gt;, &lt;code&gt;D=-(-B-0.1(n+1)-ε)=B+0.1(n+1)+ε&lt;/code&gt;。则注意到在情况(1)中，我们可得&lt;code&gt;C&lt;/code&gt;和&lt;code&gt;D&lt;/code&gt;在&lt;code&gt;Δ=0.9-0.1n&lt;/code&gt;时有结果分别为&lt;code&gt;A&lt;/code&gt;与&lt;code&gt;B+1&lt;/code&gt;。则直接全体取反，可得&lt;code&gt;Δ=-(0.9-0.1n)&lt;/code&gt;时，满足n舍n+1入的要求。&lt;/p&gt;
-&lt;h1&gt;复杂解答&lt;/h1&gt;
+&lt;h1&gt;二、复杂解答&lt;/h1&gt;
 &lt;h2&gt;定义&lt;/h2&gt;
 &lt;p&gt;在详细的讨论开始前，我们先进行如下定义：&lt;/p&gt;
 &lt;ol&gt;
