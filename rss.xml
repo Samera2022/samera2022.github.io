@@ -1,4 +1,195 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>AdvancedClipboard-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</guid><description>AdvancedClipboard Updates</description><pubDate>Fri, 16 Jan 2026 16:05:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-001~L1-005的题解</title><link>https://samera2022.github.io/posts/solutions/gplt/l1-001l1-005/</link><guid isPermaLink="true">https://samera2022.github.io/posts/solutions/gplt/l1-001l1-005/</guid><description>GPLT的题解</description><pubDate>Wed, 21 Jan 2026 15:40:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTSolutions&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-001&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#include&lt;/code&gt;属于&lt;code&gt;预处理语句&lt;/code&gt;，在编译期会对这些语句进行复制操作。即，将目标文件的内容原封不动地剪切到本文件的这一行。第一句为导入&lt;code&gt;bits/stdc++.h&lt;/code&gt;这个头文件，该头文件包含大量常用的&lt;code&gt;#include&lt;/code&gt;语句，因此又被称为“万用头”。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;using namespace&lt;/code&gt;是&lt;code&gt;使用命名空间&lt;/code&gt;，在C++中这是为了解决命名冲突而诞生的，在Java中该操作类似于&lt;code&gt;static import&lt;/code&gt;的效果。未使用&lt;code&gt;std&lt;/code&gt;命名空间时，所有试图调用&lt;code&gt;std&lt;/code&gt;的操作都需要通过&lt;code&gt;std::xxx&lt;/code&gt;来实现，而使用后则可直接操作。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;typedef&lt;/code&gt;是起别名，在此例中是将&lt;code&gt;long long&lt;/code&gt;全部改名为ll，这使得你的输入更加方便。&lt;/li&gt;
+&lt;li&gt;另记：C++中int的范围和Java中int的范围一致；&lt;code&gt;long long&lt;/code&gt;的范围和Java中&lt;code&gt;long&lt;/code&gt;的范围一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ios::sync_with_stdio(false);&lt;/code&gt;是关闭C++输入输出流（如&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;cout&lt;/code&gt;）和C标准库的输入输出函数（如&lt;code&gt;scanf&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;）的同步状态，这会加快输入输出速度，代价是不能再混合使用&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;scanf&lt;/code&gt; 以及 &lt;code&gt;cout&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;，因为他们执行的顺序是不同步的。在这种情况下，建议只使用cin和cout。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cin.tie(nullptr)&lt;/code&gt;会取消&lt;code&gt;cin&lt;/code&gt;与&lt;code&gt;cout&lt;/code&gt;的绑定，进而使用&lt;code&gt;cin&lt;/code&gt;时不再会强制刷新&lt;code&gt;cout&lt;/code&gt;的缓冲区，进而加快输入输出速度。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cout.tie(nullptr)&lt;/code&gt;其实没有什么用，写上这一句大多数出于心理安慰，或者避免极少数情况下&lt;code&gt;cout&lt;/code&gt;被意外绑定到其他输出流。&lt;/li&gt;
+&lt;li&gt;另记：有人认为&lt;code&gt;nullptr&lt;/code&gt;空指针是AI才会写的形式，进而推荐直接写0进去。我对此持保留意见，后面的代码仍然会沿用&lt;code&gt;nullptr&lt;/code&gt;的写法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
+    return 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;用于&lt;code&gt;cout&lt;/code&gt;的&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;是一个新的符号，可以认为将右侧的内容推送到左端去，同理用于&lt;code&gt;cin&lt;/code&gt;的&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;是将左侧的内容推送到右端去。二者属于&lt;code&gt;流插入运算符&lt;/code&gt;，是通过重载位左/右移运算符实现的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;return 0&lt;/code&gt;中的0是退出状态码，也就是你在IDE下方控制台在最后经常看到的“&lt;code&gt;进程已结束，退出代码为 0&lt;/code&gt;”的那个0。在&lt;code&gt;main&lt;/code&gt;函数中其实可以省略，因为省略之后编译器会默认采用&lt;code&gt;return 0&lt;/code&gt;。对于在线评测系统而言，通常要求返回值必须为0，这导致你在&lt;code&gt;main&lt;/code&gt;中写不写返回其实没有影响。&lt;/li&gt;
+&lt;li&gt;另记：“补全return 0”的操作编译器只会在&lt;code&gt;main&lt;/code&gt;函数，即你的入口函数(&lt;code&gt;int main&lt;/code&gt;)进行。对于其他的非&lt;code&gt;void&lt;/code&gt;的函数，你仍然需要手动写出所有的返回语句。
+:::info
+这份代码基本是以后所有代码的模板。即，之后的代码基本都会以这样的形式给出。
+:::&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-002&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const int &amp;amp;N, const char &amp;amp;style);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin &amp;gt;&amp;gt; N;
+    char style;
+    cin&amp;gt;&amp;gt;style;
+    solve(N, style);
+    return 0;
+}
+
+void solve(const int &amp;amp;N, const char &amp;amp;style) {
+    const int time = static_cast&amp;lt;int&amp;gt;(pow(((N + 1) / 2), 0.5));
+    const int rest = N - (2 * time * time - 1);
+    const int max = 2 * time - 1;
+    for (int i = 1; i &amp;lt;= time; i++) {
+        for (int k = 0; k &amp;lt; i - 1; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
+        for (int j = 1; j &amp;lt;= max - 2 * (i - 1); j++) cout &amp;lt;&amp;lt; style;
+        cout &amp;lt;&amp;lt; &quot;\n&quot;;
+    }
+    for (int i = 2; i &amp;lt;= time; i++) {
+        for (int k = 0; k &amp;lt; time - i; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
+        for (int j = 1; j &amp;lt;= 2 * i - 1; j++) cout &amp;lt;&amp;lt; style;
+        cout &amp;lt;&amp;lt; &quot;\n&quot;;
+    }
+    cout &amp;lt;&amp;lt; rest;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;C++相较于Java有一点比较独特，如果调用的方法写在下方的话，则需要在在上方先写一个声明以供链接。因此也有不少人选择将&lt;code&gt;solve&lt;/code&gt;方法写在&lt;code&gt;main&lt;/code&gt;函数的上面。&lt;/li&gt;
+&lt;li&gt;这里用到了引用&lt;code&gt;&amp;amp;&lt;/code&gt;，Java中的参数传递只有&lt;code&gt;值传递&lt;/code&gt;，而C++中可以做到&lt;code&gt;引用传递&lt;/code&gt;。在方法的参数列表中，在变量名旁边加&lt;code&gt;&amp;amp;&lt;/code&gt;即认为是传递引用。特别地，如果传递的是引用，则需要在最上方声明时同样改为引用传递。&lt;/li&gt;
+&lt;li&gt;C++对于只有单语句的循环也可以省略大括号，这一点在Java中是没有的。&lt;/li&gt;
+&lt;li&gt;我对于所有的常量都加&lt;code&gt;const&lt;/code&gt;修饰了，这可能会对C++比较熟练的人造成疑惑。这其实只是我为了不想看见编译器中的黄色弱警告干的）））我知道这种写法比较抽象，可能类似于IDEA中把每一个提示警告的全局的变量都上了一个&lt;code&gt;final&lt;/code&gt;修饰一样生草，我也知道可以通过修改编译器显示警告的方案来取消显示这些警告，但是我还是觉得这么写会好一些）））&lt;/li&gt;
+&lt;li&gt;有的人换行可能会采用&lt;code&gt;endl&lt;/code&gt;，不过我还是沿用Java的&lt;code&gt;&quot;\n&quot;&lt;/code&gt;。前者会刷新输出缓冲区而后者不会，因此后者的效率也会更高一些。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-003&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const string&amp;amp; s);
+
+int cnt[10];
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string s;
+    cin &amp;gt;&amp;gt; s;
+    solve(s);
+    return 0;
+}
+
+void solve(const string&amp;amp; s) {
+    int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    for (int i = 0; i &amp;lt; len; i++) {
+        cnt[s.at(i)-&apos;0&apos;]++;
+    }
+    for (int i = 0; i &amp;lt; 10; i++) {
+        if (cnt[i]!=0) cout&amp;lt;&amp;lt;i&amp;lt;&amp;lt;&quot;:&quot;&amp;lt;&amp;lt;cnt[i]&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int cnt[10]&lt;/code&gt;是C++数组的写法。在开启编译器优化时，读取和写入操作&lt;code&gt;vector&lt;/code&gt;(C++的列表)能做到和它一样快。特别地，如果你使用&lt;code&gt;vector.at(i)&lt;/code&gt;，其会因为越界检查而比&lt;code&gt;vector[i]&lt;/code&gt;要更慢。&lt;/li&gt;
+&lt;li&gt;另记：C++中的数组在局部可变长度，即，你可以在局部声明一个&lt;code&gt;int N&lt;/code&gt;填入&lt;code&gt;int cnt[]&lt;/code&gt;中，ze&lt;code&gt;cnt&lt;/code&gt;长度会随&lt;code&gt;N&lt;/code&gt;的变化而改变。特别地，在全局你只能声明确定长度的数组。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s.at(i)-&apos;0&apos;&lt;/code&gt;是C++中&lt;code&gt;char&lt;/code&gt;转&lt;code&gt;int&lt;/code&gt;的方式。特别地，C++中的&lt;code&gt;char&lt;/code&gt;类型本身即可作为&lt;code&gt;int&lt;/code&gt;，这会输出它们的ASCII码，因此通过减去基准的&apos;0&apos;即可获得相对偏移量，即为它们本身的数字。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-004&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const int &amp;amp;F);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int F;
+    cin&amp;gt;&amp;gt;F;
+    solve(F);
+    return 0;
+}
+
+void solve(const int &amp;amp;F) {
+    cout&amp;lt;&amp;lt;&quot;Celsius = &quot;&amp;lt;&amp;lt;5*(F-32)/9;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-005&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int total;
+    cin&amp;gt;&amp;gt;total;
+    string arr[total+1];//开大一位，方便后面查询
+    for (int i = 0; i &amp;lt; total; i++) {
+        string s;
+        cin&amp;gt;&amp;gt;s;
+        int seat1;
+        cin&amp;gt;&amp;gt;seat1;
+        int seat2;
+        cin&amp;gt;&amp;gt;seat2;
+        arr[seat1] = s + &quot; &quot; + to_string(seat2);
+    }
+    int ask_total;
+    cin&amp;gt;&amp;gt;ask_total;
+    for (int i = 0; i &amp;lt; ask_total; i++) {
+        int j;
+        cin&amp;gt;&amp;gt;j;
+        cout&amp;lt;&amp;lt;arr[j]&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记录的，此处&lt;code&gt;string[]&lt;/code&gt;开大一位是因为后面出现了越界，而在这里多开一位是修改量最小的方法。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>AdvancedClipboard-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</guid><description>AdvancedClipboard Updates</description><pubDate>Fri, 16 Jan 2026 16:05:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-17 00:05] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
