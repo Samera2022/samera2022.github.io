@@ -14,6 +14,13 @@
     "content": "IDEA手动修改包名的相应措施"
   },
   {
+    "id": "/posts/Experiences/基于偏移截断法的n舍n1入的简单数学分析/",
+    "url": "/posts/Experiences/基于偏移截断法的n舍n1入的简单数学分析/",
+    "title": "基于偏移截断法的n舍n+1入的简单数学分析 - Samera2022",
+    "description": "讨论C++环境下的偏移截断法",
+    "content": "基于偏移截断法的n舍n+1入的简单数学分析"
+  },
+  {
     "id": "/posts/Projects/AdvancedClipboard/advancedclipboard-001/",
     "url": "/posts/Projects/AdvancedClipboard/advancedclipboard-001/",
     "title": "AdvancedClipboard-0.0.1 Release - Samera2022",
@@ -215,12 +222,5 @@
     "title": "UnusualChineseChess-2.0.1 Release - Samera2022",
     "description": "UnusualChineseChess Updates",
     "content": "UnusualChineseChess-2.0.1 Release"
-  },
-  {
-    "id": "/posts/Solutions/GPLT/l1-001l1-005/",
-    "url": "/posts/Solutions/GPLT/l1-001l1-005/",
-    "title": "L1-001~L1-005的题解 - Samera2022",
-    "description": "GPLT的题解",
-    "content": "L1-001~L1-005的题解"
   }
 ]

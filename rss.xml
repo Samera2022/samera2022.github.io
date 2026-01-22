@@ -1,194 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-001~L1-005的题解</title><link>https://samera2022.github.io/posts/solutions/gplt/l1-001l1-005/</link><guid isPermaLink="true">https://samera2022.github.io/posts/solutions/gplt/l1-001l1-005/</guid><description>GPLT的题解</description><pubDate>Wed, 21 Jan 2026 15:40:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTSolutions&quot;}&lt;/p&gt;
-&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Solutions/GPLT/l1-001l1-005/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
-&lt;h1&gt;L1-001&lt;/h1&gt;
-&lt;h2&gt;代码部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;笔记部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#include&lt;/code&gt;属于&lt;code&gt;预处理语句&lt;/code&gt;，在编译期会对这些语句进行复制操作。即，将目标文件的内容原封不动地剪切到本文件的这一行。第一句为导入&lt;code&gt;bits/stdc++.h&lt;/code&gt;这个头文件，该头文件包含大量常用的&lt;code&gt;#include&lt;/code&gt;语句，因此又被称为“万用头”。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;using namespace&lt;/code&gt;是&lt;code&gt;使用命名空间&lt;/code&gt;，在C++中这是为了解决命名冲突而诞生的，在Java中该操作类似于&lt;code&gt;static import&lt;/code&gt;的效果。未使用&lt;code&gt;std&lt;/code&gt;命名空间时，所有试图调用&lt;code&gt;std&lt;/code&gt;的操作都需要通过&lt;code&gt;std::xxx&lt;/code&gt;来实现，而使用后则可直接操作。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;typedef&lt;/code&gt;是起别名，在此例中是将&lt;code&gt;long long&lt;/code&gt;全部改名为ll，这使得你的输入更加方便。&lt;/li&gt;
-&lt;li&gt;另记：C++中int的范围和Java中int的范围一致；&lt;code&gt;long long&lt;/code&gt;的范围和Java中&lt;code&gt;long&lt;/code&gt;的范围一致。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ios::sync_with_stdio(false);&lt;/code&gt;是关闭C++输入输出流（如&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;cout&lt;/code&gt;）和C标准库的输入输出函数（如&lt;code&gt;scanf&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;）的同步状态，这会加快输入输出速度，代价是不能再混合使用&lt;code&gt;cin&lt;/code&gt;和&lt;code&gt;scanf&lt;/code&gt; 以及 &lt;code&gt;cout&lt;/code&gt;和&lt;code&gt;printf&lt;/code&gt;，因为他们执行的顺序是不同步的。在这种情况下，建议只使用cin和cout。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cin.tie(nullptr)&lt;/code&gt;会取消&lt;code&gt;cin&lt;/code&gt;与&lt;code&gt;cout&lt;/code&gt;的绑定，进而使用&lt;code&gt;cin&lt;/code&gt;时不再会强制刷新&lt;code&gt;cout&lt;/code&gt;的缓冲区，进而加快输入输出速度。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cout.tie(nullptr)&lt;/code&gt;其实没有什么用，写上这一句大多数出于心理安慰，或者避免极少数情况下&lt;code&gt;cout&lt;/code&gt;被意外绑定到其他输出流。&lt;/li&gt;
-&lt;li&gt;另记：有人认为&lt;code&gt;nullptr&lt;/code&gt;空指针是AI才会写的形式，进而推荐直接写0进去。我对此持保留意见，后面的代码仍然会沿用&lt;code&gt;nullptr&lt;/code&gt;的写法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;    cout &amp;lt;&amp;lt; &quot;Hello World!&quot;;
-    return 0;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;用于&lt;code&gt;cout&lt;/code&gt;的&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;是一个新的符号，可以认为将右侧的内容推送到左端去，同理用于&lt;code&gt;cin&lt;/code&gt;的&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;是将左侧的内容推送到右端去。二者属于&lt;code&gt;流插入运算符&lt;/code&gt;，是通过重载位左/右移运算符实现的。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;return 0&lt;/code&gt;中的0是退出状态码，也就是你在IDE下方控制台在最后经常看到的“&lt;code&gt;进程已结束，退出代码为 0&lt;/code&gt;”的那个0。在&lt;code&gt;main&lt;/code&gt;函数中其实可以省略，因为省略之后编译器会默认采用&lt;code&gt;return 0&lt;/code&gt;。对于在线评测系统而言，通常要求返回值必须为0，这导致你在&lt;code&gt;main&lt;/code&gt;中写不写返回其实没有影响。&lt;/li&gt;
-&lt;li&gt;另记：“补全return 0”的操作编译器只会在&lt;code&gt;main&lt;/code&gt;函数，即你的入口函数(&lt;code&gt;int main&lt;/code&gt;)进行。对于其他的非&lt;code&gt;void&lt;/code&gt;的函数，你仍然需要手动写出所有的返回语句。
-:::info
-这份代码基本是以后所有代码的模板。即，之后的代码基本都会以这样的形式给出。
-:::&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;L1-002&lt;/h1&gt;
-&lt;h2&gt;代码部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-
-void solve(const int &amp;amp;N, const char &amp;amp;style);
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    int N;
-    cin &amp;gt;&amp;gt; N;
-    char style;
-    cin&amp;gt;&amp;gt;style;
-    solve(N, style);
-    return 0;
-}
-
-void solve(const int &amp;amp;N, const char &amp;amp;style) {
-    const int time = static_cast&amp;lt;int&amp;gt;(pow(((N + 1) / 2), 0.5));
-    const int rest = N - (2 * time * time - 1);
-    const int max = 2 * time - 1;
-    for (int i = 1; i &amp;lt;= time; i++) {
-        for (int k = 0; k &amp;lt; i - 1; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
-        for (int j = 1; j &amp;lt;= max - 2 * (i - 1); j++) cout &amp;lt;&amp;lt; style;
-        cout &amp;lt;&amp;lt; &quot;\n&quot;;
-    }
-    for (int i = 2; i &amp;lt;= time; i++) {
-        for (int k = 0; k &amp;lt; time - i; k++) cout &amp;lt;&amp;lt; &quot; &quot;;
-        for (int j = 1; j &amp;lt;= 2 * i - 1; j++) cout &amp;lt;&amp;lt; style;
-        cout &amp;lt;&amp;lt; &quot;\n&quot;;
-    }
-    cout &amp;lt;&amp;lt; rest;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;笔记部分&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;C++相较于Java有一点比较独特，如果调用的方法写在下方的话，则需要在在上方先写一个声明以供链接。因此也有不少人选择将&lt;code&gt;solve&lt;/code&gt;方法写在&lt;code&gt;main&lt;/code&gt;函数的上面。&lt;/li&gt;
-&lt;li&gt;这里用到了引用&lt;code&gt;&amp;amp;&lt;/code&gt;，Java中的参数传递只有&lt;code&gt;值传递&lt;/code&gt;，而C++中可以做到&lt;code&gt;引用传递&lt;/code&gt;。在方法的参数列表中，在变量名旁边加&lt;code&gt;&amp;amp;&lt;/code&gt;即认为是传递引用。特别地，如果传递的是引用，则需要在最上方声明时同样改为引用传递。&lt;/li&gt;
-&lt;li&gt;C++对于只有单语句的循环也可以省略大括号，这一点在Java中是没有的。&lt;/li&gt;
-&lt;li&gt;我对于所有的常量都加&lt;code&gt;const&lt;/code&gt;修饰了，这可能会对C++比较熟练的人造成疑惑。这其实只是我为了不想看见编译器中的黄色弱警告干的）））我知道这种写法比较抽象，可能类似于IDEA中把每一个提示警告的全局的变量都上了一个&lt;code&gt;final&lt;/code&gt;修饰一样生草，我也知道可以通过修改编译器显示警告的方案来取消显示这些警告，但是我还是觉得这么写会好一些）））&lt;/li&gt;
-&lt;li&gt;有的人换行可能会采用&lt;code&gt;endl&lt;/code&gt;，不过我还是沿用Java的&lt;code&gt;&quot;\n&quot;&lt;/code&gt;。前者会刷新输出缓冲区而后者不会，因此后者的效率也会更高一些。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;L1-003&lt;/h1&gt;
-&lt;h2&gt;代码部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-
-void solve(const string&amp;amp; s);
-
-int cnt[10];
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    string s;
-    cin &amp;gt;&amp;gt; s;
-    solve(s);
-    return 0;
-}
-
-void solve(const string&amp;amp; s) {
-    int len = static_cast&amp;lt;int&amp;gt;(s.length());
-    for (int i = 0; i &amp;lt; len; i++) {
-        cnt[s.at(i)-&apos;0&apos;]++;
-    }
-    for (int i = 0; i &amp;lt; 10; i++) {
-        if (cnt[i]!=0) cout&amp;lt;&amp;lt;i&amp;lt;&amp;lt;&quot;:&quot;&amp;lt;&amp;lt;cnt[i]&amp;lt;&amp;lt;&quot;\n&quot;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;笔记部分&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;int cnt[10]&lt;/code&gt;是C++数组的写法。在开启编译器优化时，读取和写入操作&lt;code&gt;vector&lt;/code&gt;(C++的列表)能做到和它一样快。特别地，如果你使用&lt;code&gt;vector.at(i)&lt;/code&gt;，其会因为越界检查而比&lt;code&gt;vector[i]&lt;/code&gt;要更慢。&lt;/li&gt;
-&lt;li&gt;另记：C++中的数组在局部可变长度，即，你可以在局部声明一个&lt;code&gt;int N&lt;/code&gt;填入&lt;code&gt;int cnt[]&lt;/code&gt;中，ze&lt;code&gt;cnt&lt;/code&gt;长度会随&lt;code&gt;N&lt;/code&gt;的变化而改变。特别地，在全局你只能声明确定长度的数组。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;s.at(i)-&apos;0&apos;&lt;/code&gt;是C++中&lt;code&gt;char&lt;/code&gt;转&lt;code&gt;int&lt;/code&gt;的方式。特别地，C++中的&lt;code&gt;char&lt;/code&gt;类型本身即可作为&lt;code&gt;int&lt;/code&gt;，这会输出它们的ASCII码，因此通过减去基准的&apos;0&apos;即可获得相对偏移量，即为它们本身的数字。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;L1-004&lt;/h1&gt;
-&lt;h2&gt;代码部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-
-void solve(const int &amp;amp;F);
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    int F;
-    cin&amp;gt;&amp;gt;F;
-    solve(F);
-    return 0;
-}
-
-void solve(const int &amp;amp;F) {
-    cout&amp;lt;&amp;lt;&quot;Celsius = &quot;&amp;lt;&amp;lt;5*(F-32)/9;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;笔记部分&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;没有什么好记的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;L1-005&lt;/h1&gt;
-&lt;h2&gt;代码部分&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-typedef long long ll;
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    int total;
-    cin&amp;gt;&amp;gt;total;
-    string arr[total+1];//开大一位，方便后面查询
-    for (int i = 0; i &amp;lt; total; i++) {
-        string s;
-        cin&amp;gt;&amp;gt;s;
-        int seat1;
-        cin&amp;gt;&amp;gt;seat1;
-        int seat2;
-        cin&amp;gt;&amp;gt;seat2;
-        arr[seat1] = s + &quot; &quot; + to_string(seat2);
-    }
-    int ask_total;
-    cin&amp;gt;&amp;gt;ask_total;
-    for (int i = 0; i &amp;lt; ask_total; i++) {
-        int j;
-        cin&amp;gt;&amp;gt;j;
-        cout&amp;lt;&amp;lt;arr[j]&amp;lt;&amp;lt;&quot;\n&quot;;
-    }
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;笔记部分&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;没有什么好记录的，此处&lt;code&gt;string[]&lt;/code&gt;开大一位是因为后面出现了越界，而在这里多开一位是修改量最小的方法。&lt;/li&gt;
-&lt;/ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>基于偏移截断法的n舍n+1入的简单数学分析</title><link>https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</guid><description>讨论C++环境下的偏移截断法</description><pubDate>Thu, 22 Jan 2026 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要分析C++环境下的偏移截断法。当然，核心的逻辑对于其他语言也适用，本文仅以C++举例。C++的&lt;code&gt;强制转型&lt;/code&gt;取整为&lt;code&gt;去尾转型&lt;/code&gt;，即抛弃所有小数位数。基于此，我们可以讨论基于偏移的截断。&lt;/p&gt;
+&lt;h1&gt;简单解答&lt;/h1&gt;
+&lt;h2&gt;法1. 四舍五入的情况（采用实数的规范小数表示证明）&lt;/h2&gt;
+&lt;p&gt;特殊地，我们先考虑四舍五入的情况。&lt;/p&gt;
+&lt;h3&gt;(1) 考虑正数情况&lt;/h3&gt;
+&lt;p&gt;对于正数&lt;code&gt;A.49&lt;/code&gt;和&lt;code&gt;B.51&lt;/code&gt;我们期望得到&lt;code&gt;A&lt;/code&gt;和&lt;code&gt;(B+1)&lt;/code&gt;。为得到我们的期望，我们需要至多能给&lt;code&gt;A&lt;/code&gt;加&lt;code&gt;0.51&lt;/code&gt;，至少要给&lt;code&gt;B&lt;/code&gt;加&lt;code&gt;0.49&lt;/code&gt;。即，我们至多能给&lt;code&gt;A&lt;/code&gt;加&lt;code&gt;(1-0.49)&lt;/code&gt;，至少要给&lt;code&gt;B&lt;/code&gt;加&lt;code&gt;(1-0.51)&lt;/code&gt;。我们需要加入的偏移量&lt;code&gt;Δ&lt;/code&gt;应满足&lt;code&gt;(1-0.51)&amp;lt;Δ&amp;lt;(1-0.49)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;我们考虑 $$\forall n\in \mathbb{N}^* $$, $$A.50-10^{-n}&amp;lt;A.50 $$取整为 $$A $$, $$B.50+10^{-n}&amp;gt;B.50 $$取整为 $$B+1 $$. 在这种条件下，我们的Δ应满足 $$1-\left( 0.5+10^{-n} \right) \leq\Delta &amp;lt;1-\left( 0.5-10^{-n} \right) $$.&lt;/p&gt;
+&lt;p&gt;至此我们可以选择三种方法:&lt;/p&gt;
+&lt;h4&gt;法1.1: 极限的保不等式性质（等价于夹逼定理）&lt;/h4&gt;
+&lt;p&gt;由极限的保不等式性质，对左右两侧不等式分别求极限，可得 $$\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] \leq \Delta $$, $$ \Delta \leq \lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] $$.&lt;/p&gt;
+&lt;p&gt;考察两个式子的极限，发现 $$\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] =\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$&lt;/p&gt;
+&lt;p&gt;则有 $$\Delta=0.5 $$.&lt;/p&gt;
+&lt;h4&gt;法1.2: 单调性&lt;/h4&gt;
+&lt;p&gt;我们可研究不等式两边的单调性，发现 $$1-\left( 0.5+10^{-n} \right) $$单调递增, $$1-\left( 0.5-10^{-n} \right) $$单调递减。&lt;/p&gt;
+&lt;p&gt;考察两个式子的极限，发现 $$\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] =\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$&lt;/p&gt;
+&lt;p&gt;由于 $$1-\left( 0.5+10^{-n} \right) \leq\Delta &amp;lt;1-\left( 0.5-10^{-n} \right) $$ 对 $$\forall n\in \mathbb{N}^* $$ 成立，则取 $$ n \rightarrow \infty $$, 有 $$0.5=\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] \leq \Delta \leq \lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$, 则 $$\Delta=0.5 $$.&lt;/p&gt;
+&lt;h4&gt;法1.3: 不等式+闭区间套定理&lt;/h4&gt;
+&lt;p&gt;由于小于等于号的定义, 即&lt;code&gt;a≤b为a&amp;lt;b或a=b&lt;/code&gt;，我们可得 $$1-\left( 0.5+10^{-n} \right) \leq\Delta \leq 1-\left( 0.5-10^{-n} \right) $$&lt;/p&gt;
+&lt;p&gt;进而我们可以发现 $$\Delta \in \left[ 1-\left( 0.5+10^{-n} \right) ,1-\left( 0.5-10^{-n} \right) \right] $$.&lt;/p&gt;
+&lt;p&gt;记 $$a_n=1-\left( 0.5+10^{-n} \right) , b_n=1-\left( 0.5-10^{-n} \right) $$, 则 $$\left{ \left[ a_n,b_n \right] \right} $$ 满足下列条件:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$$\forall n, \left[ a_{n+1},b_{n+1} \right] \subset \left[ a_n,b_n \right] $$&lt;/li&gt;
+&lt;li&gt;$$\lim_{n\rightarrow \infty} \left( b_n-a_n \right) =\lim_{n\rightarrow \infty} \left( 2\times 10^{-n} \right) =0$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可见 $$\left{ \left[ a_n,b_n \right] \right} _{n=1}^{\infty}$$ 是一个闭区间套.&lt;/p&gt;
+&lt;p&gt;由区间套定理, 存在唯一的实数 $$\xi $$, 使得 $$\xi \in \left[ a_n,b_n\right]$$&lt;/p&gt;
+&lt;p&gt;考察两个式子的极限，发现 $$\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5+10^{-n} \right) \right] =\lim_{n\rightarrow \infty} \left[ 1-\left( 0.5-10^{-n} \right) \right] =0.5$$&lt;/p&gt;
+&lt;p&gt;则有唯一实数 $$\xi=0.5 $$, 即 $$\Delta=0.5 $$.&lt;/p&gt;
+&lt;h3&gt;(2) 考虑负数情况&lt;/h3&gt;
+&lt;p&gt;对于负数&lt;code&gt;-A.49&lt;/code&gt;和&lt;code&gt;-B.51&lt;/code&gt;我们期望得到&lt;code&gt;-A&lt;/code&gt;和&lt;code&gt;-(B+1)&lt;/code&gt;。直接取&lt;code&gt;C=-(-A.49)=A.49&lt;/code&gt;, &lt;code&gt;D=-(-B.51)=B.51&lt;/code&gt;。则注意到在情况(1)中，我们可得C和D在&lt;code&gt;Δ=0.5&lt;/code&gt;时有结果分别为&lt;code&gt;A&lt;/code&gt;与&lt;code&gt;B+1&lt;/code&gt;。则直接全体取反，可得&lt;code&gt;Δ=-0.5&lt;/code&gt;时，满足四舍五入的要求。&lt;/p&gt;
+&lt;h2&gt;法2. 四舍五入的情况（采用ε语言证明）&lt;/h2&gt;
+&lt;p&gt;上文我们直观地感受了一下大概的情况，现在我们进行严谨的考虑。&lt;/p&gt;
+&lt;h3&gt;(1) 考虑正数情况&lt;/h3&gt;
+&lt;p&gt;我们考虑 $$\forall n\in \mathbb{N}^*, \varepsilon&amp;gt;0 $$, $$A.50-\varepsilon&amp;lt;A.50 $$取整为 $$A $$, $$B.50+\varepsilon&amp;gt;B.50 $$取整为 $$B+1 $$. 在这种条件下，我们的Δ应满足 $$1-\left( 0.5+\varepsilon \right) \leq\Delta &amp;lt;1-\left( 0.5-\varepsilon \right) $$, 即 $$0.5-\varepsilon \leq \Delta \leq 0.5+\varepsilon $$.&lt;/p&gt;
+&lt;p&gt;至此我们选择下列两种方法:&lt;/p&gt;
+&lt;h4&gt;法2.1: 极限的保不等式性质（等价于夹逼定理）&lt;/h4&gt;
+&lt;p&gt;由于 $$\forall \varepsilon &amp;gt;0, \text{均有}0.5-\varepsilon \leq \Delta &amp;lt;0.5+\varepsilon $$, 则对不等式两端同取 $$\varepsilon\rightarrow 0 $$ 的极限，则有 $$\lim_{\varepsilon \rightarrow 0^+} \left( 0.5-\varepsilon \right) \leq \Delta \leq \lim_{\varepsilon \rightarrow 0^+} \left( 0.5+\varepsilon \right) $$. 进而有 $$\Delta=0.5 $$&lt;/p&gt;
+&lt;h4&gt;法2.2: 不等式引理+反证法&lt;/h4&gt;
+&lt;p&gt;先考虑不等式的左侧: $$0.5-\varepsilon \leq \Delta $$.&lt;/p&gt;
+&lt;p&gt;根据引理 $$\text{若}\forall \varepsilon &amp;gt;0, \text{均有}a&amp;lt;b+\varepsilon , \text{则}a\le b$$, 有 $$0.5 \leq \Delta $$&lt;/p&gt;
+&lt;p&gt;考虑不等式的右侧:  $$\Delta \leq 0.5+\varepsilon$$. 考虑下列命题: $$\forall \varepsilon &amp;gt;0, \text{若}\Delta +\varepsilon &amp;lt;0.5, \text{则}\Delta \leq 0.5+\varepsilon $$&lt;/p&gt;
+&lt;p&gt;采用反证法: 假设 $$\Delta &amp;gt;0.5+\varepsilon $$, 则 $$\Delta +\varepsilon &amp;gt;0.5+2\varepsilon $$, 与题设 $$\Delta +\varepsilon &amp;lt;0.5$$ 矛盾！故有 $$\Delta \leq 0.5+\varepsilon $$ 成立! 再根据上述引理, 可得 $$\Delta \leq 0.5 $$, 故 $$\Delta=0.5 $$.&lt;/p&gt;
+&lt;h3&gt;(2) 考虑负数情况&lt;/h3&gt;
+&lt;p&gt;考虑 $$\forall \varepsilon&amp;gt;0  $$, 对于负数&lt;code&gt;-A-0.5+ε&lt;/code&gt;和&lt;code&gt;-B-0.5-ε&lt;/code&gt;我们期望得到&lt;code&gt;-A&lt;/code&gt;和&lt;code&gt;-(B+1)&lt;/code&gt;。直接取&lt;code&gt;C=-[-A-0.5+ε]=A+0.5-ε&lt;/code&gt;, &lt;code&gt;D=-(-B-0.5-ε)=B+0.5+ε&lt;/code&gt;。则注意到在情况(1)中，我们可得C和D在&lt;code&gt;Δ=0.5&lt;/code&gt;时有结果分别为A与B+1。则直接全体取反，可得&lt;code&gt;Δ=-0.5&lt;/code&gt;时，满足四舍五入的要求。&lt;/p&gt;
+&lt;h2&gt;n舍n+1入的情况&lt;/h2&gt;
+&lt;p&gt;上文中我们对四舍五入的情况给出了5种证明方法，此处我们仅使用&lt;code&gt;ε语言证明+极限的保不等式性质（等价于夹逼定理）&lt;/code&gt;证明，其他方法同理。&lt;/p&gt;
+&lt;h3&gt;(1) 考虑正数情况&lt;/h3&gt;
+&lt;p&gt;我们考虑 $$\forall n\in \mathbb{N}^*, \varepsilon&amp;gt;0 $$, $$A+0.1(n+1)-\varepsilon&amp;lt;A+0.1(n+1) $$取整为 $$A $$, $$B+0.1(n+1)+\varepsilon&amp;gt;B+0.1(n+1) $$取整为 $$B+1 $$. 在这种条件下，我们的Δ应满足 $$1-\left( 0.1(n+1)+\varepsilon \right) \leq\Delta &amp;lt;1-\left( 0.1(n+1)-\varepsilon \right) $$, 即 $$0.9-0.1n-\varepsilon \leq \Delta \leq 0.9-0.1n+\varepsilon $$.&lt;/p&gt;
+&lt;p&gt;由于 $$\forall \varepsilon &amp;gt;0, \text{均有}0.9-0.1n-\varepsilon \leq \Delta \leq 0.9-0.1n+\varepsilon $$, 则对不等式两端同取 $$\varepsilon\rightarrow 0 $$ 的极限，则有 $$\lim_{\varepsilon \rightarrow 0^+} \left( 0.9-0.1n-\varepsilon \right) \leq \Delta \leq \lim_{\varepsilon \rightarrow 0^+} \left( 0.9-0.1n+\varepsilon \right) $$. 进而有 $$\Delta=0.9-0.1n $$&lt;/p&gt;
+&lt;h3&gt;(2) 考虑负数情况&lt;/h3&gt;
+&lt;p&gt;考虑 $$\forall \varepsilon&amp;gt;0  $$, 对于负数&lt;code&gt;-A-0.1(n+1)+ε&lt;/code&gt;和&lt;code&gt;-B-0.1(n+1)-ε&lt;/code&gt;我们期望得到&lt;code&gt;-A&lt;/code&gt;和&lt;code&gt;-(B+1)&lt;/code&gt;。直接取&lt;code&gt;C=-[-A-0.1(n+1)+ε]=A+0.1(n+1)-ε&lt;/code&gt;, &lt;code&gt;D=-(-B-0.1(n+1)-ε)=B+0.1(n+1)+ε&lt;/code&gt;。则注意到在情况(1)中，我们可得&lt;code&gt;C&lt;/code&gt;和&lt;code&gt;D&lt;/code&gt;在&lt;code&gt;Δ=0.9-0.1n&lt;/code&gt;时有结果分别为&lt;code&gt;A&lt;/code&gt;与&lt;code&gt;B+1&lt;/code&gt;。则直接全体取反，可得&lt;code&gt;Δ=-(0.9-0.1n)&lt;/code&gt;时，满足n舍n+1入的要求。&lt;/p&gt;
+&lt;h1&gt;复杂解答&lt;/h1&gt;
+&lt;h2&gt;定义&lt;/h2&gt;
+&lt;p&gt;在详细的讨论开始前，我们先进行如下定义：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义截断算子: $$Tr\left( x \right) =sgn \left( x \right) \cdot \lfloor \left| x \right| \rfloor $$. 该算子的物理意义为：抹除实数x的小数部分，仅保留整数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义取整准则: 考虑实数 $$X\in \mathbb{R} $$, 其整数部分为 $$I $$, 小数部分为 $$f\in \left[ 0,1 \right) $$. 即满足 $$\left| X \right|=I+f $$. 定义&quot;n舍n+1入&quot;的进位阈值为 $$T\in \left[ 0,1 \right) $$. 则我们期望的取整函数 $$R\left( X,T \right) $$应满足下列条件:&lt;/p&gt;
+&lt;p&gt;$$R\left( X,T \right) = \left{ \begin{array}{c} Isgn \left( X \right) , f&amp;lt;T\ \left( I+1 \right) sgn \left( X \right) , f\ge T\ \end{array} \right. $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义偏移量: 考虑偏移量 $$\Delta $$, 使得 $$Tr\left( X + \Delta \right) =R\left ( X,T \right)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;解答&lt;/h2&gt;
+&lt;p&gt;为找到偏移量 $$\Delta $$, 进行下列操作:&lt;/p&gt;
+&lt;h3&gt;(1) 考虑正数域&lt;/h3&gt;
+&lt;p&gt;由于在正数域下，可得: $$\lfloor I + f + \Delta \rfloor = \left{ \begin{array}{c} I, f &amp;lt; T \ I + 1, f \ge T \end{array} \right. $$&lt;/p&gt;
+&lt;p&gt;又由底函数性质 $$\lfloor I + \alpha \rfloor = I + \lfloor \alpha \rfloor$$, 可得: $$\lfloor f + \Delta \rfloor = \left{ \begin{array}{c} 0, f + \Delta &amp;lt; 1 \ 1, f + \Delta \ge 1 \end{array} \right. $$&lt;/p&gt;
+&lt;p&gt;欲使阈值点 $$f = T$$ 恰好成为进位临界点，则应有: $$ \begin{cases} T + \Delta \ge 1 \implies \Delta \ge 1 - T \ \lim_{\epsilon \to 0} (T - \epsilon) + \Delta &amp;lt; 1 \implies \Delta \leq 1 - T \end{cases} $$&lt;/p&gt;
+&lt;p&gt;即得 $$1-T\le \Delta \leq 1-T $$, 则有唯一解为: $$\Delta = 1 - T $$&lt;/p&gt;
+&lt;h3&gt;(2) 考虑负数域&lt;/h3&gt;
+&lt;p&gt;考虑负数 $$-N=-I-f&amp;lt;0 $$, 其中 $$N, I, f&amp;gt;0 $$.&lt;/p&gt;
+&lt;p&gt;由于在复数域下，可得: $$\lfloor -I-f+\Delta \rfloor =\left{ \begin{array}{c} -I,f&amp;lt;T\ -I-1,f\ge T\ \end{array} \right. $$&lt;/p&gt;
+&lt;p&gt;即有 $$\lfloor I+f-\Delta \rfloor =\left{ \begin{array}{c} I,f&amp;lt;T\ I+1,f\ge T\ \end{array} \right. $$&lt;/p&gt;
+&lt;p&gt;令 $$ \Delta_0 = - \Delta $$, 则有 $$\lfloor I+f+\Delta_0 \rfloor =\left{ \begin{array}{c} I,f&amp;lt;T\ I+1,f\ge T\ \end{array} \right. $$&lt;/p&gt;
+&lt;p&gt;则由情况(1)，可得 $$\Delta_0 = 1 - T $$, 进而有: $$\Delta =-\left( 1-T \right) $$&lt;/p&gt;
+&lt;h1&gt;结论&lt;/h1&gt;
+&lt;p&gt;我们可以得到在n舍n+1入的情况下，偏移量Δ=1-0.1(n+1). 由此我们可以快速设计n舍n+1入算法: &lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(a==0?0.0:(0.9-0.1n)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;. 出于计算机精度误差，我们可以变为如下形式: &lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(1e-9)+(a==0?0.0:(0.9-0.1n)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;. 特别地，针对四舍五入的情况，可以得到&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(1e-9)+(a==0?0.0:(0.5)*(a&amp;gt;0?1:(-1))))&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;优势和劣势&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;该方法在通常情况下会比&lt;code&gt;round()&lt;/code&gt;函数更快，但由于该语句中三目运算符产生的分支，如果输入的数据中大量出现正负交替的现象，则会由于CPU分支预测器的失效导致严重的性能抖动。&lt;/li&gt;
+&lt;li&gt;可能存在溢出风险，这需要开发者进行额外的注意（尽管&lt;code&gt;round()&lt;/code&gt;函数也会出现溢出就是了）。&lt;/li&gt;
+&lt;/ol&gt;
 </content:encoded></item><item><title>AdvancedClipboard-0.2.0 Release</title><link>https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/advancedclipboard/advancedclipboard-020-release/</guid><description>AdvancedClipboard Updates</description><pubDate>Fri, 16 Jan 2026 16:05:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/AdvancedClipboard&quot;}&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
 &lt;p&gt;[2026-01-17 00:05] 0.2.0 &lt;a href=&quot;https://www.github.com/Samera2022/AdvancedClipboard/releases/tag/0.2.0&quot;&gt;Click here to Release&lt;/a&gt;
