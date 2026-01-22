@@ -1,4 +1,235 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>基于偏移截断法的n舍n+1入简单数学分析</title><link>https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</guid><description>讨论C++环境下的偏移截断法</description><pubDate>Thu, 22 Jan 2026 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要分析C++环境下的偏移截断法。当然，核心的逻辑对于其他语言也适用，本文仅以C++举例。C++的&lt;code&gt;强制转型&lt;/code&gt;取整为&lt;code&gt;去尾转型&lt;/code&gt;，即抛弃所有小数位数。基于此，我们可以讨论基于偏移的截断。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-016~L1-020的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</guid><description>GPLT的笔记</description><pubDate>Thu, 22 Jan 2026 13:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-016l1-020/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-016&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//spec A
+
+void solve(const string s[], int size);
+
+int weight[] = {7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2};
+char validate[] = &quot;10X98765432&quot;;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    string s[N];
+    for (int i = 1; i &amp;lt;= N; i++) {
+        string content;
+        cin&amp;gt;&amp;gt;content;
+        s[i-1] = content;
+    }
+    solve(s, N);
+    return 0;
+}
+
+void solve(const string s[], const int size) {
+    int errors = 0;
+    vector&amp;lt;string_view&amp;gt; vsv;
+    for (int i = 1; i &amp;lt;= size; i++) {
+        const string &amp;amp;content = s[i-1];
+        int temp = 0;
+        bool isDigit = true;
+        for (int j = 1; j &amp;lt;= 17; j++) {
+            if (isdigit(content[j-1]))  temp += (content[j-1]-&apos;0&apos;) * weight[j-1];
+            else {
+                isDigit = false;
+                break;
+            }
+        }
+        if (validate[temp%11]!=content[17] || !isDigit) {
+            errors++;
+            vsv.push_back(content);
+        }
+    }
+    if (vsv.empty()) cout&amp;lt;&amp;lt;&quot;All passed&quot;;
+    else for (const string_view sv : vsv) cout&amp;lt;&amp;lt;sv&amp;lt;&amp;lt;&quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;string s[]&lt;/code&gt;仅在其定义域中能够获取其大小。获取大小的方式有如下两种：①&lt;code&gt;sizeof(s)/sizeof(s[0])&lt;/code&gt;通过整个数组占用的字节数除以单个元素占用的字节数; ②&lt;code&gt;begin(s)-end(s)&lt;/code&gt;通过指针相减来计算元素个数。说实在话，这两种不如直接使用定义&lt;code&gt;string s[]&lt;/code&gt;长度的变量了。&lt;/li&gt;
+&lt;li&gt;需要注意的是: ①&lt;code&gt;s-&amp;gt;length();&lt;/code&gt;和&lt;code&gt;s-&amp;gt;size();&lt;/code&gt;获取的不是&lt;code&gt;s[]&lt;/code&gt;的大小，而是&lt;code&gt;s[0]&lt;/code&gt;的长度; ②将数组&lt;code&gt;s[]&lt;/code&gt;作为参数传入函数后，其会发生&lt;code&gt;指针退化&lt;/code&gt;，即&lt;code&gt;数组丢失了其长度信息和数组类型属性，隐式地转换成指向其第一个元素的指针&lt;/code&gt;。这导致无法在传入的函数中正确获取其长度。&lt;/li&gt;
+&lt;li&gt;向&lt;code&gt;vector&lt;/code&gt;中压入数据使用的是&lt;code&gt;vector.push_back()&lt;/code&gt;，这会将新的元素放在队尾。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;string_view&lt;/code&gt;是保存&lt;code&gt;string&lt;/code&gt;的引用的一个容器，&lt;code&gt;cout&lt;/code&gt;方法有对其的兼容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    for (int i = 1; i &amp;lt;= N; i++) {
+        string content;
+        cin&amp;gt;&amp;gt;content;
+        s[i-1] = content;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;针对这一段循环输入，有以下几种简洁的替代方案:&lt;/li&gt;
+&lt;li&gt;①（定长数组或vector）&lt;code&gt;for (string&amp;amp; content : s) cin &amp;gt;&amp;gt; content;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;②（定长数组或vector）&lt;code&gt;copy_n(istream_iterator&amp;lt;string&amp;gt;(cin), N, (定长数组) s | (vector) s.begin());&lt;/code&gt; 需要补充的是: &lt;code&gt;(定长数组) s&lt;/code&gt;这里的&lt;code&gt;s&lt;/code&gt;是以&lt;code&gt;指向首元素的指针（迭代器）&lt;/code&gt;传入的。&lt;/li&gt;
+&lt;li&gt;③（vector）&lt;code&gt;vector&amp;lt;string&amp;gt; s{istream_iterator&amp;lt;string&amp;gt;(cin), istream_iterator&amp;lt;string&amp;gt;()};&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;④（vector）重载位右移运算符&lt;code&gt;istream&amp;amp; operator&amp;gt;&amp;gt;(istream&amp;amp; is, vector&amp;lt;T&amp;gt;&amp;amp; v) { for (auto&amp;amp; x : v) is &amp;gt;&amp;gt; x; return is;}&lt;/code&gt;而后&lt;code&gt;vector&amp;lt;string&amp;gt; s(N); cin &amp;gt;&amp;gt; s;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-017&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(string&amp;amp; content);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string content;
+    cin&amp;gt;&amp;gt;content;
+    solve(content);
+    return 0;
+}
+
+void solve(string&amp;amp; content) {
+    bool isNegative = false;
+    if (!isdigit(content[0])) {
+        content.erase(remove(content.begin(),content.end(),&apos;-&apos;),content.end());
+        isNegative = true;
+    }
+    int cnt = 0;
+    const int len = static_cast&amp;lt;int&amp;gt;(content.length());
+    const bool isEven = (content[len-1]-&apos;0&apos;)%2==0;
+    for (int i = 1; i &amp;lt;= len; i++) if (content[i-1]==&apos;2&apos;) cnt++;
+    double res = static_cast&amp;lt;double&amp;gt;(cnt)/len;
+    if (isNegative) res *= 1.5;
+    if (isEven) res *= 2;
+    res *= 100;
+    printf(&quot;%.2f%%&quot;, res);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;printf()&lt;/code&gt;是格式化输出，前面的&lt;code&gt;%.2f&lt;/code&gt;指的是以两位小数输出，后面的&lt;code&gt;%%&lt;/code&gt;指的是输出一个%符号。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;printf()&lt;/code&gt;支持以下几种格式说明符: &lt;code&gt;%d&lt;/code&gt;(有符号十进制整数) &lt;code&gt;%f&lt;/code&gt;(浮点数) &lt;code&gt;%s&lt;/code&gt;(字符串) &lt;code&gt;%c&lt;/code&gt;(字符) &lt;code&gt;%x&lt;/code&gt;(无符号十六进制整数)。&lt;/li&gt;
+&lt;li&gt;类似的格式说明符也可以用于输入&lt;code&gt;scanf()&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;C++17中检测&lt;code&gt;string&lt;/code&gt;中是否含有某字符需要通过&lt;code&gt;string.find()&lt;/code&gt;来完成。具体地，应为&lt;code&gt;s.find()!=string::npo&lt;/code&gt;，表示找到的位置不是&lt;code&gt;npos&lt;/code&gt;，即该位置存在。可以通过该方法来查询&lt;code&gt;string&lt;/code&gt;中是否出现了负号来判断是否为负数。当然，在本段代码中采用的是&lt;code&gt;isdigit(content[0])&lt;/code&gt;来判断是否有负号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-018&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const string&amp;amp; content);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string time;
+    cin&amp;gt;&amp;gt;time;
+    solve(time);
+    return 0;
+}
+
+void solve(const string&amp;amp; content) {
+    const string a = content.substr(0,2);
+    const string b = content.substr(3,2);
+    const int h = stoi(a);
+    if (h&amp;lt;12||(h==12&amp;amp;&amp;amp;b==&quot;00&quot;)) cout&amp;lt;&amp;lt;&quot;Only &quot;&amp;lt;&amp;lt;content&amp;lt;&amp;lt;&quot;.  Too early to Dang.&quot;;
+    else {
+        const int time = stoi(a)-12+(b==&quot;00&quot;?0:1);
+        for (int i = 1; i &amp;lt;= time; i++) cout&amp;lt;&amp;lt;&quot;Dang&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;stoi()&lt;/code&gt;只能用于&lt;code&gt;string&lt;/code&gt;转&lt;code&gt;int&lt;/code&gt;的情况。&lt;/li&gt;
+&lt;li&gt;【便于记忆】索引是位于字符串中的&lt;code&gt;char&lt;/code&gt;之间的。比方说，以&lt;code&gt;string s = &quot;time&quot;&lt;/code&gt;为例，其索引为&lt;code&gt;0t 1i 2m 3e&lt;/code&gt;。其中，&lt;code&gt;从0开始长度为2&lt;/code&gt;即代表&lt;code&gt;0 1 2&lt;/code&gt;中的&lt;code&gt;char&lt;/code&gt;，即为&lt;code&gt;ti&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-019&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int AMax, BMax, time;
+    cin&amp;gt;&amp;gt;AMax&amp;gt;&amp;gt;BMax&amp;gt;&amp;gt;time;
+    int curtA = 0, curtB = 0;
+    for (int i = 1; i &amp;lt;= time; i++) {
+        int num[4];
+        cin &amp;gt;&amp;gt; num[0] &amp;gt;&amp;gt; num[1] &amp;gt;&amp;gt; num[2] &amp;gt;&amp;gt; num[3];
+        const int sum = num[0] + num[2];
+        if (num[1]==sum&amp;amp;&amp;amp;num[3]!=sum) curtA++;
+        if (num[1]!=sum&amp;amp;&amp;amp;num[3]==sum) curtB++;
+        bool isADefeated = curtA == AMax + 1;
+        if (isADefeated || curtB == BMax + 1) {
+            cout&amp;lt;&amp;lt;(isADefeated?&quot;A&quot;:&quot;B&quot;)&amp;lt;&amp;lt;&quot;\n&quot;&amp;lt;&amp;lt;(isADefeated?curtB:curtA);
+            return 0;
+        }
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这里出现了连续定义的两种形式: ①未初始化的定义&lt;code&gt;int AMax, BMax, time;&lt;/code&gt;，此处三个值均未被初始化; ②初始化的定义&lt;code&gt;int curtA = 0, curt B = 0;&lt;/code&gt;，此处两个值均被初始化为0。&lt;/li&gt;
+&lt;li&gt;特别地，考虑以下的情况: ①&lt;code&gt;int&amp;amp; a,b;&lt;/code&gt;这种情况应为&lt;code&gt;int &amp;amp;a; int b;&lt;/code&gt;; ②&lt;code&gt;int a,b = 1;&lt;/code&gt;这种情况应为`int a; int b = 1;。&lt;/li&gt;
+&lt;li&gt;为处理上一条中的②，我们可以采用C++的链式赋值，即你可以这么操作&lt;code&gt;a=b=1&lt;/code&gt;。具体地，在链式赋值中，编译器首先会从最右端开始分组。计算&lt;code&gt;(b=1)&lt;/code&gt;后返回&lt;code&gt;b&lt;/code&gt;的引用，进而让&lt;code&gt;a= (b=1)&lt;/code&gt;，使得&lt;code&gt;a=1&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cin&lt;/code&gt;可连续赋值，如&lt;code&gt;cin &amp;gt;&amp;gt; num[0] &amp;gt;&amp;gt; num[1] &amp;gt;&amp;gt; num[2] &amp;gt;&amp;gt; num[3];&lt;/code&gt;所示。不过这一点在&lt;code&gt;cout&lt;/code&gt;中其实已经用到过了，如之前的&lt;code&gt;cout&amp;lt;&amp;lt;&quot;Only &quot;&amp;lt;&amp;lt;content&amp;lt;&amp;lt;&quot;.  Too early to Dang.&quot;&lt;/code&gt;就是连续传入给&lt;code&gt;cout&lt;/code&gt;的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-020&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    set&amp;lt;string&amp;gt; s;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        int K;
+        cin&amp;gt;&amp;gt;K;
+        for (int j = 1; j &amp;lt;= K; j++) {
+            string temp;
+            cin&amp;gt;&amp;gt;temp;
+            if (K&amp;gt;1)
+                s.insert(temp);
+        }
+    }
+    int M;
+    cin&amp;gt;&amp;gt;M;
+    set&amp;lt;string&amp;gt; res;
+    bool isFirst = false;
+    for (int i = 1; i &amp;lt;= M; i++) {
+        string M1;
+        cin&amp;gt;&amp;gt;M1;
+        if ((s.count(M1)==0)&amp;amp;&amp;amp;res.count(M1)==0) {
+            if (isFirst)
+                cout&amp;lt;&amp;lt;&quot; &quot;;
+            isFirst = true;
+            cout&amp;lt;&amp;lt;M1;
+            res.insert(M1);
+        }
+    }
+    if (res.empty()) cout&amp;lt;&amp;lt;&quot;No one is handsome&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;C++中的&lt;code&gt;set&lt;/code&gt;也要求不能出现重复元素，但&lt;code&gt;multiset&lt;/code&gt;可以出现重复元素。将元素加入&lt;code&gt;set&lt;/code&gt;的方法为&lt;code&gt;set.insert()&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;C++17中没有直接检测&lt;code&gt;set&lt;/code&gt;中是否存在某元素的方法，只能通过&lt;code&gt;set.count()&lt;/code&gt;检查元素出现的次数来曲线救国。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>基于偏移截断法的n舍n+1入简单数学分析</title><link>https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</link><guid isPermaLink="true">https://samera2022.github.io/posts/experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</guid><description>讨论C++环境下的偏移截断法</description><pubDate>Thu, 22 Jan 2026 07:08:00 GMT</pubDate><content:encoded>&lt;p&gt;本文主要分析C++环境下的偏移截断法。当然，核心的逻辑对于其他语言也适用，本文仅以C++举例。C++的&lt;code&gt;强制转型&lt;/code&gt;取整为&lt;code&gt;去尾转型&lt;/code&gt;，即抛弃所有小数位数。基于此，我们可以讨论基于偏移的截断。&lt;/p&gt;
 &lt;p&gt;本文尽力做到通俗且严谨，如有疏漏还望大佬轻喷，不吝赐教！&lt;/p&gt;
 &lt;h1&gt;一、简单解答&lt;/h1&gt;
 &lt;h2&gt;法1. 四舍五入的情况（采用实数的规范小数表示证明）&lt;/h2&gt;
@@ -232,7 +463,7 @@ void solve(const int N, const string&amp;amp; delimiter) {
 &lt;h2&gt;笔记部分&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;C++中四舍五入使用的是&lt;code&gt;round(double)&lt;/code&gt;方法。特别地，该方法返回的仍然为&lt;code&gt;double&lt;/code&gt;类型，需要进一步手动转换。&lt;/li&gt;
-&lt;li&gt;由于C++的浮点转整数为&lt;code&gt;去尾&lt;/code&gt;转换，你也可以借助这个性质来快速转换：考虑&lt;code&gt;double a;&lt;/code&gt;，对于正数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.5)&lt;/code&gt;，对于负数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(-0.5))&lt;/code&gt;，对于0而言，为了保持统一性，我们需要使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.0f)&lt;/code&gt;。因此综合地，你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;( a + ( a == 0 ? 0.0f : ( 0.5 + 1e-9 ) * ( a &amp;gt; 0 ? 1 : -1)))&lt;/code&gt;来进行快速四舍五入。类似地，你可以处理五舍六入等情况。关于偏移截断的内容，详见&lt;a href=&quot;https://samera2022.github.io/posts/Experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/&quot;&gt;这篇文章&lt;/a&gt;或&lt;a href=&quot;https://zhuanlan.zhihu.com/p/1997742572173555685&quot;&gt;这篇文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;由于C++的浮点转整数为&lt;code&gt;去尾&lt;/code&gt;转换，你也可以借助这个性质来快速转换：考虑&lt;code&gt;double a;&lt;/code&gt;，对于正数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.5)&lt;/code&gt;，对于负数你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+(-0.5))&lt;/code&gt;，对于0而言，为了保持统一性，我们需要使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;(a+0.0f)&lt;/code&gt;。因此综合地，你可以使用&lt;code&gt;static_cast&amp;lt;int&amp;gt;( a + ( a == 0 ? 0.0f : ( 0.5 + 1e-9 ) * ( a &amp;gt; 0 ? 1 : -1)))&lt;/code&gt;来进行快速四舍五入。类似地，你可以处理五舍六入等情况。关于偏移截断的内容，详见&lt;a href=&quot;https://samera2022.github.io/posts/Experiences/%E5%9F%BA%E4%BA%8E%E5%81%8F%E7%A7%BB%E6%88%AA%E6%96%AD%E6%B3%95%E7%9A%84n%E8%88%8Dn1%E5%85%A5%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/&quot;&gt;这篇文章&lt;/a&gt;或&lt;a href=&quot;https://zhuanlan.zhihu.com/p/1997742572173555685&quot;&gt;这篇文章&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;如果你希望返回其他整数类型，可以采用&lt;code&gt;lround(doble)&lt;/code&gt;（返回&lt;code&gt;long&lt;/code&gt;）和&lt;code&gt;llround(double)&lt;/code&gt;（返回&lt;code&gt;long long&lt;/code&gt;）。&lt;/li&gt;
 &lt;li&gt;特别地，C++并不原生支持四舍五入到N位小数，如果你需要这样的操作，需要先乘以eN倍，取整后再除以eN还原回来。&lt;/li&gt;
 &lt;/ul&gt;
