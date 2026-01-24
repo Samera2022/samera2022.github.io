@@ -1201,7 +1201,6 @@ void solve(const int N) {
     int crtMax = 1;//连续因数的个数的最大值
     int crt = N;//连续因数最小值，当其为质数时即为其本身
     //Spec Tip End
-    unordered_map&amp;lt;int,int&amp;gt; map;
     for (int i = 2; i&amp;lt;=sqrt(N); i++) {
         if (int n = N; n%i==0) {
             int delta = 0;
