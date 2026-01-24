@@ -1,4 +1,712 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-016~L1-020的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</guid><description>GPLT的笔记</description><pubDate>Thu, 22 Jan 2026 13:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-036~L1-040的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</guid><description>GPLT的笔记</description><pubDate>Sat, 24 Jan 2026 01:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-036l1-040/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-036&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int A,B;
+    cin&amp;gt;&amp;gt;A&amp;gt;&amp;gt;B;
+    cout&amp;lt;&amp;lt;A*B;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-037&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//spec A 2/10
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
+
+void solve(int A, int B) {
+    cout&amp;lt;&amp;lt;A&amp;lt;&amp;lt;&quot;/&quot;&amp;lt;&amp;lt;(B&amp;gt;=0?to_string(B):(&quot;(&quot;+to_string(B)+&quot;)&quot;))&amp;lt;&amp;lt;&quot;=&quot;;
+    if (B==0) {
+        cout&amp;lt;&amp;lt;&quot;Error&quot;;
+        return;
+    }
+    const int multiplier = gcd(abs(A),abs(B));
+    A /= multiplier;
+    B /= multiplier;
+    cout&amp;lt;&amp;lt;fixed&amp;lt;&amp;lt;setprecision(2)&amp;lt;&amp;lt;static_cast&amp;lt;double&amp;gt;(A)/B;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int A, B;
+    cin&amp;gt;&amp;gt;A&amp;gt;&amp;gt;B;
+    solve(A,B);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cout&lt;/code&gt;也可以进行格式输出。本段代码所示的为保留两位小数输出，写法为&lt;code&gt;cout&amp;lt;&amp;lt;fixed&amp;lt;&amp;lt;setprecision(2)&amp;lt;&amp;lt;...&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;除此之外地，它支持填充字符（&lt;code&gt;123-&amp;gt;*****123&lt;/code&gt;），写法为&lt;code&gt;cout&amp;lt;&amp;lt;setw(int)&amp;lt;&amp;lt;setfill(char)&amp;lt;&amp;lt;...&lt;/code&gt;; 进制转换（&lt;code&gt;255-&amp;gt;0xff&lt;/code&gt;），写法为&lt;code&gt;cout&amp;lt;&amp;lt;showbase&amp;lt;&amp;lt;hex&amp;lt;&amp;lt;...&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;特别地，&lt;code&gt;setw(n)&lt;/code&gt;仅对下次输出有效，其他操作符都是全局生效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-038&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout&amp;lt;&amp;lt;&quot;Hello World\nHello New World&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-039&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void complete(const int N, string&amp;amp; s) {
+    const int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    const int time = N - len % N;
+    for (int i = 1; i &amp;lt;= time; i++) s.append(&quot; &quot;);
+}
+
+void solve(const int N, string&amp;amp; s) {
+    const int len = static_cast&amp;lt;int&amp;gt;(s.length());
+    const int col = ((len%N==0) ? 0 : 1 ) + len / N;
+    complete(N,s);
+    for (int i = 1; i &amp;lt;= N; i++)
+        for (int j = col - 1; j &amp;gt;= 0; j--)
+            cout&amp;lt;&amp;lt;s[j * N + i - 1]&amp;lt;&amp;lt;((j==0)?&quot;\n&quot;:&quot;&quot;);
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    string s;
+    cin&amp;gt;&amp;gt;N;
+    cin.ignore();
+    getline(cin,s);
+    solve(N,s);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本题需要找一下规律，发现第一行均为&lt;code&gt;len%N==1&lt;/code&gt;，第二行均为&lt;code&gt;len%N==2&lt;/code&gt;，以此类推，在补空格使得字符串能被N整除之后，根据先前的规律反推即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-040&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin &amp;gt;&amp;gt; N;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        char gender;
+        double height;
+        cin &amp;gt;&amp;gt; gender &amp;gt;&amp;gt; height;
+        cout&amp;lt;&amp;lt;fixed&amp;lt;&amp;lt;setprecision(2)&amp;lt;&amp;lt;(gender==&apos;M&apos;?height/1.09:height*1.09)&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-031~L1-035的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-031l1-035/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-031l1-035/</guid><description>GPLT的笔记</description><pubDate>Sat, 24 Jan 2026 01:25:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-031l1-035/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-031&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//spec A 9/10
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        int H;
+        cin&amp;gt;&amp;gt;H;
+        int W;
+        cin&amp;gt;&amp;gt;W;
+        const double sW = (H-100) * 0.9 * 2;
+        const double delta = abs(W-sW);
+        if (delta&amp;lt;0.1*sW) cout&amp;lt;&amp;lt;&quot;You are wan mei!\n&quot;;
+        else if (sW&amp;gt;=W) cout&amp;lt;&amp;lt;&quot;You are tai shou le!\n&quot;;
+        else if (sW&amp;lt;=W) cout&amp;lt;&amp;lt;&quot;You are tai pang le!\n&quot;;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;采用&lt;code&gt;if else-if&lt;/code&gt;的写法能够更加准确地进行判断。如果在&lt;code&gt;else-if&lt;/code&gt;中仍然采用&lt;code&gt;1.1*sW&amp;lt;=W&lt;/code&gt;和&lt;code&gt;0.9*sW&amp;gt;=W&lt;/code&gt;的写法，很容易因为精度误差而发生错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-032&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    char delimiter;
+    cin&amp;gt;&amp;gt;N&amp;gt;&amp;gt;delimiter;
+    string content;
+    cin.ignore();
+    getline(cin,content);
+    if (const int len = static_cast&amp;lt;int&amp;gt;(content.length()); N&amp;gt;=len) {
+        for (int i = 1; i &amp;lt;= N-len; i++) cout&amp;lt;&amp;lt;string(1,delimiter);
+        cout&amp;lt;&amp;lt;content;
+    } else cout&amp;lt;&amp;lt;content.substr(len-N,N);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;此处是&lt;code&gt;getline()&lt;/code&gt;的第二种用法，即读取输入的整行内容到给定的字符串中。有的时候输入的数据中含有空格，却仍然要求读取整行时便会使用这种写法。特别地，由于&lt;code&gt;cin&lt;/code&gt;读掉内容之后仍然会留下换行符或者空格，因此如果和&lt;code&gt;cin&lt;/code&gt;连用，需要再次使用&lt;code&gt;cin.ignore()&lt;/code&gt;或&lt;code&gt;ws(cin)&lt;/code&gt;忽略这些空白字符。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-033&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void complete(string&amp;amp; y);
+int getTimes(const string &amp;amp;y);
+void add(string&amp;amp; y);
+
+set&amp;lt;char&amp;gt; temp;
+int times;
+int len;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string y;
+    int n;
+    cin&amp;gt;&amp;gt;y&amp;gt;&amp;gt;n;
+    complete(y);
+    while (getTimes(y)!=n) add(y);
+    cout&amp;lt;&amp;lt;times&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;y;
+    return 0;
+}
+
+void complete(string&amp;amp; y) {
+    len = static_cast&amp;lt;int&amp;gt;(y.length());
+    for (int i = 1; i &amp;lt;= 4-len; i++) y.insert(0,&quot;0&quot;);
+}
+
+int getTimes(const string&amp;amp; y) {
+    len = static_cast&amp;lt;int&amp;gt;(y.length());
+    for (int i = 1; i &amp;lt;= len; i++) temp.insert(y[i-1]);
+    const int time = static_cast&amp;lt;int&amp;gt;(temp.size());
+    temp.clear();
+    return time;
+}
+
+void add(string&amp;amp; y) {
+    times++;
+    int time = stoi(y);
+    time++;
+    y = to_string(time);
+    complete(y);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这种方法看起来比较臃肿，但是我暂时也没想到更好的方法））&lt;/li&gt;
+&lt;li&gt;C++中在&lt;code&gt;string&lt;/code&gt;的末端添加内容一般使用&lt;code&gt;string.append()&lt;/code&gt;方法，而在前端添加内容则需要使用&lt;code&gt;string.insert(0,content)&lt;/code&gt;方法。特别地，&lt;code&gt;insert()&lt;/code&gt;方法本身是用来在某位置插入某内容的，在此处因为目标在开头所以填入索引为0。&lt;/li&gt;
+&lt;li&gt;清空&lt;code&gt;set&lt;/code&gt;中所有元素的方法为&lt;code&gt;set.clear()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-034&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+map&amp;lt;int,int&amp;gt; tagMap;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int times;
+    cin&amp;gt;&amp;gt;times;
+    for (int i = 1; i &amp;lt;= times; i++) {
+        int time;
+        cin&amp;gt;&amp;gt;time;
+        for (int j = 1; j &amp;lt;= time; j++) {
+            int tag;
+            cin&amp;gt;&amp;gt;tag;
+            tagMap[tag]++;
+        }
+    }
+    int keyM = 0;
+    int valM = 0;
+    for (auto const&amp;amp; [key, val]: tagMap) {
+        if (val&amp;gt;valM) {
+            keyM = key;
+            valM = val;
+        } else if (val==valM) {
+            if (key&amp;gt;keyM) {
+                keyM = key;
+                valM = val;
+            }
+        }
+    }
+    cout&amp;lt;&amp;lt;keyM&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;valM;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本段代码中使用的是&lt;code&gt;结构化绑定&lt;/code&gt;遍历，这种遍历要求类型必须为&lt;code&gt;auto&lt;/code&gt;。该写法等价于&lt;code&gt;for (const auto&amp;amp; kv : tagMap) { auto key = kv.first, val = kv.second; }&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-035&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int time = 0;
+    string i2;
+    string i14;
+    for (;;) {
+        string input;
+        cin&amp;gt;&amp;gt;input;
+        if (input==&quot;.&quot;) break;
+        time++;
+        if (time==2) i2 = input;
+        if (time==14) i14 = input;
+    }
+    if (i2.empty()) cout&amp;lt;&amp;lt;&quot;Momo... No one is for you ...&quot;;
+    else if (i14.empty()) cout&amp;lt;&amp;lt;i2&amp;lt;&amp;lt;&quot; is the only one for you...&quot;;
+    else cout&amp;lt;&amp;lt;i2&amp;lt;&amp;lt;&quot; and &quot;&amp;lt;&amp;lt;i14&amp;lt;&amp;lt;&quot; are inviting you to dinner...&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-026~L1-030的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-026l1-030/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-026l1-030/</guid><description>GPLT的笔记</description><pubDate>Sat, 24 Jan 2026 00:51:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-026l1-030/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-026&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout&amp;lt;&amp;lt;&quot;I\n \nL\no\nv\ne\n \nG\nP\nL\nT&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-027&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+void solve(const string&amp;amp; tel);
+
+int num[10];
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string tel;
+    cin&amp;gt;&amp;gt;tel;
+    solve(tel);
+    return 0;
+}
+
+void solve(const string&amp;amp; tel) {
+    vector&amp;lt;int&amp;gt; used;
+    vector&amp;lt;int&amp;gt; index;
+    const int len1 = static_cast&amp;lt;int&amp;gt;(tel.length());
+    for (int i = 1; i &amp;lt;= len1; i++) num[tel[i-1]-&apos;0&apos;]++;
+    for (int i = 10; i &amp;gt;= 1; i--) if (num[i-1]!=0) used.push_back(i-1);
+    cout&amp;lt;&amp;lt;&quot;int[] arr = new int[]{&quot;;
+    const int len2 = static_cast&amp;lt;int&amp;gt;(used.size());
+    for (int i = 1; i &amp;lt;= len2; i++) cout &amp;lt;&amp;lt; used[i-1] &amp;lt;&amp;lt; (i == len2 ? &quot;&quot; : &quot;,&quot;);
+    cout&amp;lt;&amp;lt;&quot;};\n&quot;;
+    for (int i = 1; i &amp;lt;= len1; i++) if (auto it = find(used.begin(), used.end(), tel[i-1] - &apos;0&apos;); it != used.end()) index.push_back(static_cast&amp;lt;int&amp;gt;(distance(used.begin(),it)));
+    cout&amp;lt;&amp;lt;&quot;int[] index = new int[]{&quot;;
+    const int len3 = static_cast&amp;lt;int&amp;gt;(index.size());
+    for (int i = 1; i &amp;lt;= len3; i++) cout &amp;lt;&amp;lt; index[i-1] &amp;lt;&amp;lt; (i == len3 ? &quot;&quot; : &quot;,&quot;);
+    cout&amp;lt;&amp;lt;&quot;};\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;    for (int i = 1; i &amp;lt;= len1; i++) 
+        if (auto it = find(used.begin(), used.end(), tel[i-1] - &apos;0&apos;); it != used.end()) 
+            index.push_back(static_cast&amp;lt;int&amp;gt;(distance(used.begin(),it)));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;C++数组中查询某元素的索引写法比较独特，要通过&lt;code&gt;iterator&lt;/code&gt;来实现。&lt;code&gt;if (auto it = find(used.begin(), used.end(), tel[i-1] - &apos;0&apos;); it != used.end())&lt;/code&gt;这一句是指从&lt;code&gt;vector&lt;/code&gt;的开始到结束，查找并返回&lt;code&gt;tel[i-1]-&apos;0&apos;&apos;&lt;/code&gt;的位置，且当该位置不为最后时，执行如下操作。 而后通过&lt;code&gt;distance&lt;/code&gt;计算当前迭代器所指的位置和最开始的位置的距离。&lt;/li&gt;
+&lt;li&gt;一般地，针对普适的遍历，我们只需要: &lt;code&gt;for (auto it = begin(s); it != end(s); it++)&lt;/code&gt;即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-028&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//spec A 4/10
+
+const string&amp;amp; isPrime(ll n);
+string YES = &quot;Yes&quot;;
+string NO = &quot;No&quot;;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        int num;
+        cin&amp;gt;&amp;gt;num;
+        cout&amp;lt;&amp;lt;isPrime(num)&amp;lt;&amp;lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+
+ll llPow(ll a, ll b, const ll mod) {
+    ll res = 1;
+    a %= mod;
+    while (b &amp;gt; 0) {
+        if (b % 2 == 1) res = static_cast&amp;lt;ll&amp;gt;(static_cast&amp;lt;__int128_t&amp;gt;(res) * a % mod);;
+        a = a * a % mod;
+        b /= 2;
+    }
+    return res;
+}
+
+bool mrTest(const ll n, const ll a) {
+    if (a % n == 0) return true;
+    ll d = n - 1;
+    while (d % 2 == 0) d /= 2;
+    ll x = llPow(a, d, n);
+    if (x == 1 || x == n - 1) return true;
+    while (d != n - 1) {
+        x = static_cast&amp;lt;ll&amp;gt;(static_cast&amp;lt;__int128_t&amp;gt;(x) * x % n);        d *= 2;
+        if (x == n - 1) return true;
+        if (x == 1) return false;
+    }
+    return false;
+}
+
+
+const string&amp;amp; isPrime(const ll n) {
+    if (n &amp;lt; 2) return NO;
+    if (n == 2 || n == 3) return YES;
+    if (n % 2 == 0) return NO;
+
+    static const vector&amp;lt;ll&amp;gt; bases = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
+
+    for (const ll a : bases) {
+        if (n == a) return YES;
+        if (!mrTest(n, a)) return NO;
+    }
+    return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本题如果用一般的埃氏筛法，可以拿到6分。剩下的4分需要使用更高效的质数算法：Miller-Rabin素数测试。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-029&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int H;
+    cin&amp;gt;&amp;gt;H;
+    printf(&quot;%.1f&quot;,(H-100)*0.9*2);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-030&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    string girls[N/2];
+    string boys[N/2];
+    string index;
+    int curtG = 1;
+    int curtB = 1;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        int gender;
+        cin&amp;gt;&amp;gt;gender;
+        string name;
+        cin&amp;gt;&amp;gt;name;
+        if (!gender) {
+            girls[curtG-1] = name;
+            curtG++;
+        } else {
+            boys[curtB-1] = name;
+            curtB++;
+        }
+        if (i&amp;lt;=N/2) index.append(to_string(gender));
+    }
+    curtG = 1;
+    curtB = 1;
+    for (int i = 1; i &amp;lt;= N/2; i++) {
+        if (const int gender = index[i-1]-&apos;0&apos;; !gender) {
+            cout&amp;lt;&amp;lt;girls[curtG-1]&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;boys[N/2-curtG]&amp;lt;&amp;lt;&quot;\n&quot;;
+            curtG++;
+        } else {
+            cout&amp;lt;&amp;lt;boys[curtB-1]&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;girls[N/2-curtB]&amp;lt;&amp;lt;&quot;\n&quot;;
+            curtB++;
+        }
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-021~L1-025的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-021l1-025/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-021l1-025/</guid><description>GPLT的笔记</description><pubDate>Fri, 23 Jan 2026 03:06:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+&lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-021l1-025/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
+&lt;h1&gt;L1-021&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout&amp;lt;&amp;lt;&quot;I&apos;m gonna WIN!\n&quot;;
+    cout&amp;lt;&amp;lt;&quot;I&apos;m gonna WIN!\n&quot;;
+    cout&amp;lt;&amp;lt;&quot;I&apos;m gonna WIN!\n&quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-022&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int N;
+    cin&amp;gt;&amp;gt;N;
+    int oddNum = 0;
+    for (int i = 1; i &amp;lt;= N; i++) {
+        int temp;
+        cin&amp;gt;&amp;gt;temp;
+        if (temp%2==1) oddNum++;
+    }
+    cout&amp;lt;&amp;lt;oddNum&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;N-oddNum;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-023&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int g, p ,l ,t;
+    g=p=l=t=0;
+    string input;
+    cin&amp;gt;&amp;gt;input;
+    const int len = static_cast&amp;lt;int&amp;gt;(input.length());
+    for (int i = 1; i &amp;lt;= len; i++) {
+        switch (input[i-1]) {
+            case &apos;g&apos;:
+            case &apos;G&apos;:
+                g++;
+                break;
+            case &apos;p&apos;:
+            case &apos;P&apos;:
+                p++;
+                break;
+            case &apos;l&apos;:
+            case &apos;L&apos;:
+                l++;
+                break;
+            case &apos;t&apos;:
+            case &apos;T&apos;:
+                t++;
+                break;
+            default:
+                break;
+        }
+    }
+    while (g!=0||p!=0||l!=0||t!=0) {
+        if (g!=0) {
+            cout&amp;lt;&amp;lt;&quot;G&quot;;
+            g--;
+        }
+        if (p!=0) {
+            cout&amp;lt;&amp;lt;&quot;P&quot;;
+            p--;
+        }
+        if (l!=0) {
+            cout&amp;lt;&amp;lt;&quot;L&quot;;
+            l--;
+        }
+        if (t!=0) {
+            cout&amp;lt;&amp;lt;&quot;T&quot;;
+            t--;
+        }
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-024&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int num[] = {3,4,5,6,7,1,2};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int D;
+    cin&amp;gt;&amp;gt;D;
+    cout&amp;lt;&amp;lt;num[D-1];
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有什么好记的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;L1-025&lt;/h1&gt;
+&lt;h2&gt;代码部分&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+//spec 1/15
+
+int formatString(const string &amp;amp;a);
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    string a,b,c;
+    cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c;
+    const int numA = formatString(a);
+    int numB;
+    if (c.empty()) numB = formatString(b);
+    else numB = -1;
+    cout&amp;lt;&amp;lt;(numA==-1?&quot;?&quot;:to_string(numA))&amp;lt;&amp;lt;&quot; + &quot;&amp;lt;&amp;lt;(numB==-1?&quot;?&quot;:to_string(numB))&amp;lt;&amp;lt;&quot; = &quot;&amp;lt;&amp;lt;((numA==-1||numB==-1)?&quot;?&quot;:to_string(numA+numB));
+    return 0;
+}
+
+int formatString(const string &amp;amp;a) {
+    if (const int aLen = static_cast&amp;lt;int&amp;gt;(a.length()); aLen==4&amp;amp;&amp;amp;a==&quot;1000&quot;) return 1000;
+    else if (aLen&amp;lt;4&amp;amp;&amp;amp;a!=&quot;0&quot;)
+        for (int i = 1; i &amp;lt;= aLen; i++) {
+            if (!isdigit(a[i-1])) return -1;
+        }
+    else return -1;
+    return stoi(a);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;笔记部分&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;【再次强调】C++中&lt;code&gt;char&lt;/code&gt;转&lt;code&gt;String&lt;/code&gt;不能使用&lt;code&gt;to_string(char)&lt;/code&gt;。如果已经确定&lt;code&gt;char&lt;/code&gt;为数字，则可用&lt;code&gt;char - &apos;0&apos;&lt;/code&gt;转为&lt;code&gt;int&lt;/code&gt;类型，而后使用&lt;code&gt;to_string(int)&lt;/code&gt;，即&lt;code&gt;to_string(char-&apos;0&apos;)&lt;/code&gt;。如果&lt;code&gt;char&lt;/code&gt;未被确定类型（数字也可以），则直接使用&lt;code&gt;string(1,char)&lt;/code&gt;即可。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-016~L1-020的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-016l1-020/</guid><description>GPLT的笔记</description><pubDate>Thu, 22 Jan 2026 13:03:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
 &lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-016l1-020/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
 &lt;h1&gt;L1-016&lt;/h1&gt;
 &lt;h2&gt;代码部分&lt;/h2&gt;
