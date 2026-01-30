@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>L1-036~L1-040的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</guid><description>GPLT的笔记</description><pubDate>Sat, 24 Jan 2026 01:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>MouseMacros-1.2.3 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-123-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-123-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 30 Jan 2026 08:33:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-01-30 16:33] 1.2.3 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.3&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Fixed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;修改并补全部分语言的语言文件。&lt;/li&gt;
+&lt;li&gt;微调ExitDialog的高度补全参数。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>L1-036~L1-040的笔记</title><link>https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/gplt/l1-036l1-040/</guid><description>GPLT的笔记</description><pubDate>Sat, 24 Jan 2026 01:42:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/GPLTNotes&quot;}&lt;/p&gt;
 &lt;p&gt;P.S. 这份笔记同步发布在我的博客上，建议在博客中查看以享受完整的MD Extended Features. 你可以点此&lt;a href=&quot;https://samera2022.github.io/posts/Notes/GPLT/l1-036l1-040/&quot;&gt;快速跳转&lt;/a&gt;到相应页面，我的博客地址为https://samera2022.github.io&lt;/p&gt;
 &lt;h1&gt;L1-036&lt;/h1&gt;
 &lt;h2&gt;代码部分&lt;/h2&gt;
@@ -1962,6 +1971,14 @@ int main() {
 &lt;ul&gt;
 &lt;li&gt;支持进行基本的象棋游玩。&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded></item><item><title>MouseMacros-1.2.2 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-122-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-122-release/</guid><description>MouseMacros Updates</description><pubDate>Mon, 05 Jan 2026 13:59:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-01-05 21:59] 1.2.2 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.2.2&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Fixed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;删除了AboutDialog中未被使用的tooltip。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>About MouseMacros</title><link>https://samera2022.github.io/posts/projects/mousemacros/aboutmousemacros/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/aboutmousemacros/</guid><description>About MouseMacros</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;你好，这里是&lt;code&gt;Projects/MouseMacros&lt;/code&gt;。欢迎收听&lt;code&gt;About MouseMacros&lt;/code&gt;，我是主持人Samera2022。今天我们就来聊一聊&lt;code&gt;MouseMacros&lt;/code&gt;的一些简单介绍，以及我为什么要开发&lt;code&gt;MouseMacros&lt;/code&gt;这个项目。&lt;/p&gt;
@@ -1998,15 +2015,11 @@ int main() {
 &lt;hr /&gt;
 </content:encoded></item><item><title>MouseMacros Readme</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacrosreadme/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacrosreadme/</guid><description>MouseMacros Readme</description><pubDate>Sun, 04 Jan 2026 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
 &lt;h1&gt;MouseMacros&lt;/h1&gt;
-&lt;h2&gt;&amp;lt;p align=&quot;center&quot;&amp;gt;
+&lt;p&gt;&amp;lt;p align=&quot;center&quot;&amp;gt;
 &amp;lt;img src=&quot;https://raw.githubusercontent.com/Samera2022/MouseMacros/main/docs/images/MouseMacrosIcon.png&quot; alt=&quot;MouseMacros Logo&quot; width=&quot;120&quot;&amp;gt;
 &amp;lt;b&amp;gt;A lightweight, cross-platform Java tool for recording and replaying mouse and keyboard macros.&amp;lt;/b&amp;gt;
-&amp;lt;br&amp;gt;&lt;/h2&gt;
-&lt;h2&gt;Java: 1.8+
-License: GPL-3.0
-release: v1.2.2
-pre-release: v1.2.2&lt;/h2&gt;
-&lt;p&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
+&amp;lt;br&amp;gt;
+&amp;lt;/p&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Preview&lt;/h2&gt;
 &lt;p&gt;&amp;lt;p align=&quot;center&quot;&amp;gt;
 &amp;lt;img src=&quot;https://raw.githubusercontent.com/Samera2022/MouseMacros/main/docs/images/MouseMacrosMainFrame.png&quot; width=&quot;400&quot; alt=&quot;Main Interface&quot;&amp;gt;
