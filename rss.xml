@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>MouseMacros Now Available on the Microsoft Store</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonmsstore/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonmsstore/</guid><description>A major milestone for MouseMacros - officially published to the Microsoft Store for a more secure and seamless experience.</description><pubDate>Tue, 03 Feb 2026 14:27:00 GMT</pubDate><content:encoded>&lt;p&gt;I’m excited to announce that &lt;strong&gt;MouseMacros&lt;/strong&gt; has expanded its &lt;strong&gt;distribution channels&lt;/strong&gt;. While the software remains a Windows-native tool, you can now get the Store Edition directly from the Microsoft Store, alongside our traditional standalone releases on GitHub and SourceForge.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>二叉搜索树DFS的三序遍历</title><link>https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</guid><description>对二叉搜索树DFS的一些简易理解方法</description><pubDate>Sat, 07 Feb 2026 04:27:00 GMT</pubDate><content:encoded>&lt;p&gt;二叉搜索树DFS共有三种遍历方式，分别为“前序遍历”、“中序遍历”与“后序遍历”。让我们先考虑以下一种简单的DFS算法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void order(TreeNode *root) {
+    if (root == nullptr)
+        return;
+    order(root-&amp;gt;left);
+    order(root-&amp;gt;right);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显然地，该代码会尝试&lt;code&gt;左侧优先&lt;/code&gt;遍历整个二叉树，具体模式如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;res/20260207-01.png&quot; alt=&quot;模式图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;让我们先给出这三种遍历方式的代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/* 前序遍历 */
+void preOrder(TreeNode *root) {
+    if (root == nullptr)
+        return;
+    // 访问优先级：根节点 -&amp;gt; 左子树 -&amp;gt; 右子树
+    vec.push_back(root-&amp;gt;val);
+    preOrder(root-&amp;gt;left);
+    preOrder(root-&amp;gt;right);
+}
+
+/* 中序遍历 */
+void inOrder(TreeNode *root) {
+    if (root == nullptr)
+        return;
+    // 访问优先级：左子树 -&amp;gt; 根节点 -&amp;gt; 右子树
+    inOrder(root-&amp;gt;left);
+    vec.push_back(root-&amp;gt;val);
+    inOrder(root-&amp;gt;right);
+}
+
+/* 后序遍历 */
+void postOrder(TreeNode *root) {
+    if (root == nullptr)
+        return;
+    // 访问优先级：左子树 -&amp;gt; 右子树 -&amp;gt; 根节点
+    postOrder(root-&amp;gt;left);
+    postOrder(root-&amp;gt;right);
+    vec.push_back(root-&amp;gt;val);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;观察发现三者在代码上较为相似，区别仅体现在将节点数据存入列表时的语句位置略有不同。这说明三者的节点遍历逻辑是完全一致的，仅仅在节点数据存入顺序上存在差异。&lt;/p&gt;
+&lt;p&gt;让我们进一步对节点存入顺序进行分析，不难发现以下事实：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历采用&lt;code&gt;数据优先&lt;/code&gt;的策略，因而到达每个节点后会直接存入对应数据。&lt;/li&gt;
+&lt;li&gt;中序遍历采用&lt;code&gt;左侧优先&lt;/code&gt;的策略，因而到达每个节点的左侧叶节点（1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;6）后才会开始存入数据。&lt;/li&gt;
+&lt;li&gt;后序遍历采用&lt;code&gt;遍历优先&lt;/code&gt;的策略，因而到达每个节点的叶节点后才会开始存入数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;三者在宏观上体现为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历存入数据顺序完全符合遍历顺序。&lt;/li&gt;
+&lt;li&gt;中序遍历存入数据顺序按左叶节点优先，遍历顺序为次存入数据。&lt;/li&gt;
+&lt;li&gt;后序遍历存入数据顺序按子节点优先，遍历顺序为次存入数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该二叉树DFS遍历顺序为：  1  -&amp;gt;  2  -&amp;gt;  4  -&amp;gt;  2  -&amp;gt;  5  -&amp;gt;  2  -&amp;gt;  1  -&amp;gt;  3  -&amp;gt;  6  -&amp;gt;  3  -&amp;gt;  7  -&amp;gt;  3  -&amp;gt;  1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历存入的顺序为：（1）-&amp;gt;（2）-&amp;gt;（4）-&amp;gt;  2  -&amp;gt;（5）-&amp;gt;  2  -&amp;gt;  1  -&amp;gt;（3）-&amp;gt;（6）-&amp;gt;  3  -&amp;gt;（7）-&amp;gt;  3  -&amp;gt;  1&lt;/li&gt;
+&lt;li&gt;中序遍历存入的顺序为：  1  -&amp;gt;  2  -&amp;gt;（4）-&amp;gt;（2）-&amp;gt;（5）-&amp;gt;  2  -&amp;gt;（1）-&amp;gt;（3）-&amp;gt;（6）-&amp;gt;  3  -&amp;gt;（7）-&amp;gt;  3  -&amp;gt;  1&lt;/li&gt;
+&lt;li&gt;后序遍历存入的顺序为：  1  -&amp;gt;  2  -&amp;gt;（4）-&amp;gt;  2  -&amp;gt;（5）-&amp;gt;（2）-&amp;gt;  1  -&amp;gt;  3  -&amp;gt;（6）-&amp;gt;  3  -&amp;gt;（7）-&amp;gt;（3）-&amp;gt;（1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将回溯纳入考虑，记为波浪号：
+该二叉树DFS遍历顺序为：  1  -&amp;gt;  2  -&amp;gt;  4  ~?  2  -&amp;gt;  5  ~?  2  ~?  1  -&amp;gt;  3  -&amp;gt;  6  ~?  3  -&amp;gt;  7  ~?  3  ~?  1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历存入的顺序为：（1）-&amp;gt;（2）-&amp;gt;（4）~?  2  -&amp;gt;（5）~?  2  ~?  1  -&amp;gt;（3）-&amp;gt;（6）~?  3  -&amp;gt;（7）~?  3  ~?  1&lt;/li&gt;
+&lt;li&gt;中序遍历存入的顺序为：  1  -&amp;gt;  2  -&amp;gt;（4）~?（2）-&amp;gt;（5）~?  2  ~?（1）-&amp;gt;（3）-&amp;gt;（6）~?  3  -&amp;gt;（7）~?  3  ~?  1&lt;/li&gt;
+&lt;li&gt;后序遍历存入的顺序为：  1  -&amp;gt;  2  -&amp;gt;（4）~?  2  -&amp;gt;（5）~?（2）~?  1  -&amp;gt;  3  -&amp;gt;（6）~?  3  -&amp;gt;（7）~?（3）~?（1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;观察发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历&lt;code&gt;遇到新元素会直接存入列表&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;中序排列在抵达该节点的左叶节点后&lt;code&gt;遇到新元素会直接存入列表&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;后序排列较为复杂，在抵达叶节点时直接存入，在左右子叶均抵达后回溯到达非叶节点时直接存入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进行统一表述，可以得到：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三者在抵达叶节点时均会直接存入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;面对新元素（未存入数据的节点）的策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前序遍历未抵达左侧全体叶节点、未抵达右侧全体叶节点时&lt;code&gt;遇到新元素会直接存入列表&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;中序排列已抵达左侧全体叶节点、未抵达右侧全体叶节点时&lt;code&gt;遇到新元素会直接存入列表&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;后序排列已抵达左侧全体叶节点、已抵达右侧全体叶节点时&lt;code&gt;遇到新元素会直接存入列表&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Find Us on AlternativeTo - Growing the MouseMacros Community</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonaltto/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonaltto/</guid><description>MouseMacros is now live on AlternativeTo! Help the community find a better, lightweight automation choice.</description><pubDate>Thu, 05 Feb 2026 13:40:00 GMT</pubDate><content:encoded>&lt;p&gt;Another exciting update for today: &lt;strong&gt;MouseMacros&lt;/strong&gt; is now officially listed on &lt;strong&gt;AlternativeTo&lt;/strong&gt;, the premier platform for crowdsourced software recommendations.&lt;/p&gt;
+&lt;p&gt;Check out our profile and help us grow:
+&lt;a href=&quot;https://alternativeto.net/software/mousemacros/about/&quot;&gt;MouseMacros on AlternativeTo&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Helping Others Discover a Better Choice&lt;/h3&gt;
+&lt;p&gt;AlternativeTo is where users go to find leaner, faster, and more private alternatives to mainstream software. By joining this platform, we are positioning MouseMacros as a viable, open-source alternative to heavy automation suites.&lt;/p&gt;
+&lt;p&gt;Our listing highlights our core strengths:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task Automation&lt;/strong&gt;: Focused on efficiency.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Privacy Focused&lt;/strong&gt;: 100% local, no telemetry.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lightweight &amp;amp; Portable&lt;/strong&gt;: Single executable (EVB-boxed) or MSI.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ad-Free&lt;/strong&gt;: Open source as it should be.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;How You Can Help&lt;/h3&gt;
+&lt;p&gt;If MouseMacros has helped you automate your workflow or save time in games like &lt;em&gt;Stellaris&lt;/em&gt;, please consider:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Liking&lt;/strong&gt; our page on AlternativeTo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Leaving a review&lt;/strong&gt; to share your experience with other users.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your feedback helps the project gain visibility and shows potential users that there is a trustworthy, lightweight option available for their automation needs.&lt;/p&gt;
+&lt;p&gt;Stay tuned for more updates, and as always, thank you for being part of this journey!&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros Awarded &quot;100% Clean&quot; Excellence by Softpedia</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonsoftpedia/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonsoftpedia/</guid><description>A major security milestone - MouseMacros is now officially listed and certified by Softpedia.</description><pubDate>Thu, 05 Feb 2026 02:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I am proud to announce that &lt;strong&gt;MouseMacros&lt;/strong&gt; has been officially reviewed and listed by &lt;strong&gt;Softpedia&lt;/strong&gt;, one of the world&apos;s largest and most respected software download hubs.&lt;/p&gt;
+&lt;p&gt;You can view our official Softpedia page here:
+&lt;a href=&quot;https://www.softpedia.com/get/System/OS-Enhancements/MouseMacros.shtml&quot;&gt;MouseMacros on Softpedia&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;A Badge of Trust&lt;/h3&gt;
+&lt;p&gt;Softpedia is known for its rigorous testing process. We are thrilled to share that MouseMacros has been granted the &lt;strong&gt;&quot;100% Free&quot; Softpedia Award&lt;/strong&gt;. This certification means that their technical team has tested our software and confirmed they are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free of Malware, Spyware, and Adware.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Safe to install&lt;/strong&gt; and run on any Windows environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a tool that interacts with system-level inputs, this third-party validation is invaluable. It serves as another layer of assurance alongside our recent &lt;strong&gt;Microsoft Security Intelligence&lt;/strong&gt; clearance.&lt;/p&gt;
+&lt;h3&gt;Why This Matters&lt;/h3&gt;
+&lt;p&gt;Being listed on Softpedia helps users discover MouseMacros in a trusted environment. Whether you prefer downloading via the &lt;strong&gt;Microsoft Store&lt;/strong&gt;, &lt;strong&gt;SourceForge&lt;/strong&gt;, or now &lt;strong&gt;Softpedia&lt;/strong&gt;, you can be certain that the code is transparent and the app is verified.&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros Now Available on the Microsoft Store</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonmsstore/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonmsstore/</guid><description>A major milestone for MouseMacros - officially published to the Microsoft Store for a more secure and seamless experience.</description><pubDate>Tue, 03 Feb 2026 14:27:00 GMT</pubDate><content:encoded>&lt;p&gt;I’m excited to announce that &lt;strong&gt;MouseMacros&lt;/strong&gt; has expanded its &lt;strong&gt;distribution channels&lt;/strong&gt;. While the software remains a Windows-native tool, you can now get the Store Edition directly from the Microsoft Store, alongside our traditional standalone releases on GitHub and SourceForge.&lt;/p&gt;
 &lt;p&gt;You can click &lt;a href=&quot;https://apps.microsoft.com/detail/9mx3kfbkmn1h&quot;&gt;here&lt;/a&gt; to install it directly.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;res/20260203-01.png&quot; alt=&quot;Pic&quot; /&gt;&lt;/p&gt;
 &lt;h1&gt;Why the Microsoft Store?&lt;/h1&gt;
