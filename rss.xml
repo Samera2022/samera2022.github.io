@@ -107,6 +107,16 @@ void postOrder(TreeNode *root) {
 &lt;p&gt;:::info
 本文中所用到的代码与图片出自Hello算法，地址为：https://www.hello-algo.com/chapter_tree/binary_tree_traversal/#1_1
 :::&lt;/p&gt;
+</content:encoded></item><item><title>MouseMacros-1.3.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-130-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-130-release/</guid><description>MouseMacros Updates</description><pubDate>Fri, 06 Feb 2026 13:20:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-02-06 21:20] 1.3.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/1.3.0&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Changed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;改为使用updates.json维护更新日志。&lt;/li&gt;
+&lt;li&gt;开始使用Github Action。&lt;/li&gt;
+&lt;li&gt;改用maven构建。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>Find Us on AlternativeTo - Growing the MouseMacros Community</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonaltto/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-availableonaltto/</guid><description>MouseMacros is now live on AlternativeTo! Help the community find a better, lightweight automation choice.</description><pubDate>Thu, 05 Feb 2026 13:40:00 GMT</pubDate><content:encoded>&lt;p&gt;Another exciting update for today: &lt;strong&gt;MouseMacros&lt;/strong&gt; is now officially listed on &lt;strong&gt;AlternativeTo&lt;/strong&gt;, the premier platform for crowdsourced software recommendations.&lt;/p&gt;
 &lt;p&gt;Check out our profile and help us grow:
 &lt;a href=&quot;https://alternativeto.net/software/mousemacros/about/&quot;&gt;MouseMacros on AlternativeTo&lt;/a&gt;&lt;/p&gt;
