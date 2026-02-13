@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>二叉搜索树DFS的三序遍历</title><link>https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</guid><description>对二叉搜索树DFS的一些简易理解方法</description><pubDate>Sat, 07 Feb 2026 04:27:00 GMT</pubDate><content:encoded>&lt;p&gt;二叉搜索树DFS共有三种遍历方式，分别为“前序遍历”、“中序遍历”与“后序遍历”。让我们先考虑以下一种简单的DFS算法：&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Samera2022</title><description>Lib</description><link>https://samera2022.github.io/</link><language>zh_CN</language><item><title>MouseMacros-2.0.0 Release</title><link>https://samera2022.github.io/posts/projects/mousemacros/mousemacros-200-release/</link><guid isPermaLink="true">https://samera2022.github.io/posts/projects/mousemacros/mousemacros-200-release/</guid><description>MouseMacros Updates</description><pubDate>Thu, 12 Feb 2026 09:46:00 GMT</pubDate><content:encoded>&lt;p&gt;::github{repo=&quot;Samera2022/MouseMacros&quot;}&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;&lt;/p&gt;
+&lt;p&gt;[2026-02-12 17:46] 2.0.0 &lt;a href=&quot;https://www.github.com/Samera2022/MouseMacros/releases/tag/2.0.0&quot;&gt;Click here to Release&lt;/a&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;h2&gt;[Added]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;添加了“暂停宏”功能，现在可以在执行宏的过程中暂停和恢复了。&lt;/li&gt;
+&lt;li&gt;添加脚本功能，现在MouseMacros支持js脚本了，详见相关文档。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;[Changed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;修改了“中止宏”的逻辑，现在点击“中止宏”按钮或按下热键会先暂停宏，再次点击或按下热键才会中止宏。&lt;/li&gt;
+&lt;li&gt;修改了“执行宏”的逻辑，现在点击“执行宏”按钮或按下热键在暂停状态下会恢复宏的执行。&lt;/li&gt;
+&lt;li&gt;修改了ComponentUtil的setMode方法，优化绘图逻辑以节约性能。&lt;/li&gt;
+&lt;li&gt;底层重构，大幅修改包结构，将项目拆分为api与app模块，同时添加测试文件并补充javadoc。&lt;/li&gt;
+&lt;li&gt;更换L&amp;amp;F的样式，使界面更加现代化。&lt;/li&gt;
+&lt;li&gt;修改SettingsDialog的实现以降低耦合度，同时引入模块化的分区以更加直观。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;[Fixed]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;修复了在宏执行过程中重复触发“执行宏”导致重复执行的问题。&lt;/li&gt;
+&lt;li&gt;修复了部分版本中“跟随系统设置”无法控制“切换语言”与“启用深色模式”的问题。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>二叉搜索树DFS的三序遍历</title><link>https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</link><guid isPermaLink="true">https://samera2022.github.io/posts/notes/ds/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91dfs%E7%9A%84%E4%B8%89%E5%BA%8F%E9%81%8D%E5%8E%86/</guid><description>对二叉搜索树DFS的一些简易理解方法</description><pubDate>Sat, 07 Feb 2026 04:27:00 GMT</pubDate><content:encoded>&lt;p&gt;二叉搜索树DFS共有三种遍历方式，分别为“前序遍历”、“中序遍历”与“后序遍历”。让我们先考虑以下一种简单的DFS算法：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;void order(TreeNode *root) {
     if (root == nullptr)
         return;
