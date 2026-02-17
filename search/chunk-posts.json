@@ -224,11 +224,11 @@
     "content": "MouseMacros-1.3.0 Release"
   },
   {
-    "id": "/posts/Projects/MouseMacros/mousemacros-200-release/",
-    "url": "/posts/Projects/MouseMacros/mousemacros-200-release/",
-    "title": "MouseMacros-2.0.0 Release - Samera2022",
+    "id": "/posts/Projects/MouseMacros/mousemacros-140-release/",
+    "url": "/posts/Projects/MouseMacros/mousemacros-140-release/",
+    "title": "MouseMacros-1.4.0 Release - Samera2022",
     "description": "MouseMacros Updates",
-    "content": "MouseMacros-2.0.0 Release"
+    "content": "MouseMacros-1.4.0 Release"
   },
   {
     "id": "/posts/Projects/MouseMacros/mousemacros-availableonaltto/",
@@ -264,6 +264,13 @@
     "title": "MouseMacros Readme - Samera2022",
     "description": "MouseMacros Readme",
     "content": "MouseMacros Readme"
+  },
+  {
+    "id": "/posts/Projects/saMacros/samacros-200-release/",
+    "url": "/posts/Projects/saMacros/samacros-200-release/",
+    "title": "saMacros-2.0.0 Release - Samera2022",
+    "description": "saMacros Updates",
+    "content": "saMacros-2.0.0 Release"
   },
   {
     "id": "/posts/Projects/UnusualChineseChess/unusualchinesechess-010-release/",
