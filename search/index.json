@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "totalDocuments": 60,
+  "totalDocuments": 72,
   "chunks": [
     {
       "file": "chunk-posts.json",
-      "count": 50,
+      "count": 55,
       "category": "posts"
     },
     {
       "file": "chunk-pages.json",
-      "count": 10,
+      "count": 17,
       "category": "pages"
     }
   ],
-  "timestamp": "2026-02-17T00:27:28.891Z"
+  "timestamp": "2026-10-11T23:33:59.752Z"
 }

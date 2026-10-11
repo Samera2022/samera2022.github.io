@@ -231,6 +231,13 @@
     "content": "MouseMacros-1.4.0 Release"
   },
   {
+    "id": "/posts/Projects/MouseMacros/mousemacros-200-release/",
+    "url": "/posts/Projects/MouseMacros/mousemacros-200-release/",
+    "title": "MouseMacros-2.0.0 Release - Samera2022",
+    "description": "MouseMacros Updates",
+    "content": "MouseMacros-2.0.0 Release"
+  },
+  {
     "id": "/posts/Projects/MouseMacros/mousemacros-availableonaltto/",
     "url": "/posts/Projects/MouseMacros/mousemacros-availableonaltto/",
     "title": "Find Us on AlternativeTo - Growing the MouseMacros Community - Samera2022",
@@ -264,13 +271,6 @@
     "title": "MouseMacros Readme - Samera2022",
     "description": "MouseMacros Readme",
     "content": "MouseMacros Readme"
-  },
-  {
-    "id": "/posts/Projects/saMacros/samacros-200-release/",
-    "url": "/posts/Projects/saMacros/samacros-200-release/",
-    "title": "saMacros-2.0.0 Release - Samera2022",
-    "description": "saMacros Updates",
-    "content": "saMacros-2.0.0 Release"
   },
   {
     "id": "/posts/Projects/UnusualChineseChess/unusualchinesechess-010-release/",
@@ -348,5 +348,40 @@
     "title": "UnusualChineseChess-2.0.1 Release - Samera2022",
     "description": "UnusualChineseChess Updates",
     "content": "UnusualChineseChess-2.0.1 Release"
+  },
+  {
+    "id": "/posts/Projects/saGraph/aboutsagraph-en/",
+    "url": "/posts/Projects/saGraph/aboutsagraph-en/",
+    "title": "About saGraph - Samera2022",
+    "description": "What saGraph does, and how it differs from other task managers",
+    "content": "About saGraph"
+  },
+  {
+    "id": "/posts/Projects/saGraph/aboutsagraph-zh/",
+    "url": "/posts/Projects/saGraph/aboutsagraph-zh/",
+    "title": "关于 saGraph - Samera2022",
+    "description": "saGraph 能做什么，以及它和其他任务管理工具的差异",
+    "content": "关于 saGraph"
+  },
+  {
+    "id": "/posts/Projects/saMacros/aboutsamacros-en/",
+    "url": "/posts/Projects/saMacros/aboutsamacros-en/",
+    "title": "About saMacros - Samera2022",
+    "description": "What saMacros does, and how it differs from other automation tools",
+    "content": "About saMacros"
+  },
+  {
+    "id": "/posts/Projects/saMacros/aboutsamacros-zh/",
+    "url": "/posts/Projects/saMacros/aboutsamacros-zh/",
+    "title": "关于 saMacros - Samera2022",
+    "description": "saMacros 能做什么，以及它和其他自动化工具的差异",
+    "content": "关于 saMacros"
+  },
+  {
+    "id": "/posts/Projects/saMacros/samacros-200-release/",
+    "url": "/posts/Projects/saMacros/samacros-200-release/",
+    "title": "saMacros-2.0.0 Release - Samera2022",
+    "description": "saMacros Updates",
+    "content": "saMacros-2.0.0 Release"
   }
 ]
